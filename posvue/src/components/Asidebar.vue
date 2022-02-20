@@ -158,7 +158,7 @@
               <div class="profile_name">Dark Mode</div>
             </div>
             <div class="profile-content">
-              <img src="../assets/LandSwitchDark.svg" alt="img" />
+              <img id="slideout" v-bind:src="darkmode" alt="img" @click="updateImage" />
             </div>
           </div>
         </li>
@@ -168,7 +168,28 @@
 <script>
 export default {
   name: "Asidebar",
+  data(){
+    return{
+      darkmode: require("../assets/LandSwitchLightlight.svg"),
+    }
+  },
   methods: {
+    
+    updateImage(){
+      
+      console.log('dark')
+      if (this.darkmode===require("../assets/LandSwitchLightlight.svg")){
+        this.darkmode= require("../assets/LandSwitchDark.svg")
+      }
+      else{
+        this.darkmode=require("../assets/LandSwitchLightlight.svg")
+      }
+      var slider= document.getElementById("slideout");
+      slider.className +=" slideout";
+      setTimeout(function(){
+        slider.classList.remove("slideout")
+      },100);
+    }
             // handleStyles() {
             //     console.log('handlestyles');
 
@@ -447,7 +468,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   background: linear-gradient(177.08deg, #9362f7 -7.99%, #892bda 118.63%);
-  padding: 6px 0;
+  padding: 0 0 6px 2px;
   transition: all 0.5s ease;
 }
 .sidebar.close .profile-details {
@@ -460,9 +481,11 @@ export default {
   align-items: center;
 }
 .sidebar .profile-details img {
+  height: 1.2em;
   object-fit: cover;
-  margin: 0 14px 0 12px;
+  margin: 0 15px 0 14px;
   transition: all 0.5s ease;
+
 }
 
 .sidebar.close .profile-details img {
@@ -471,7 +494,7 @@ export default {
 
 .sidebar .profile-details .profile_name,
 .sidebar .profile-details .job {
-  color: #fff;
+  color: #c4c4c4;
   font-size: 18px;
   font-weight: 500;
   white-space: nowrap;
@@ -486,4 +509,18 @@ export default {
 .sidebar .profile-details .job {
   font-size: 11px;
 }
+
+/* slide fade out */
+    .slideout{
+      /* animation: 1s ease-in 0s 1 slideInFromLeft; */
+      animation: fade 1s ease-in-out;
+    }
+    @keyframes fade {
+      from{
+        opacity: 0;
+      }
+      to{
+        opacity: 1;
+      }
+    }
 </style>
