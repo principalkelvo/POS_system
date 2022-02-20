@@ -46,15 +46,15 @@
               <span class="link_name">Category</span>
             </a>
             <!-- dropdown icon  -->
-            <i class="bx bxs-chevron-down arrow"></i>
+            <i class="bx bxs-chevron-down arrow" @click='handleStyles'></i>
             
           </div>
 
           <ul class="sub-menu">
             <li><a class="link_name" href="#">Category</a></li>
-            <li><a href="#">web design</a></li>
-            <li><a href="#">web design</a></li>
-            <li><a href="#">web design</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
           </ul>
         </li>
 
@@ -71,9 +71,9 @@
           </div>
           <ul class="sub-menu">
             <li><a class="link_name" href="#">Posts</a></li>
-            <li><a href="#">web design</a></li>
-            <li><a href="#">web design</a></li>
-            <li><a href="#">web design</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
           </ul>
         </li>
 
@@ -111,9 +111,9 @@
           </div>
           <ul class="sub-menu">
             <li><a class="link_name" href="#">Employees</a></li>
-            <li><a href="#">web design</a></li>
-            <li><a href="#">web design</a></li>
-            <li><a href="#">web design</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
           </ul>
         </li>
 
@@ -142,7 +142,7 @@
         <li>
           <a href="#">
             <!-- icon -->
-            <i class="bx bx-grid-alt"></i>
+            <i class="bx bx-cog"></i>
             <span class="link_name">Settings</span>
           </a>
           <ul class="sub-menu blank">
@@ -151,15 +151,15 @@
         </li>
         <li>
           <div class="profile-details">
-            <div class="profile-content">
-              <img src="#" alt="img" />
-            </div>
-            <div class="name-job">
-              <div class="profile_name">Kelvin Principal</div>
-              <div class="job">Web Designer</div>
-            </div>
+            
             <!-- logout icon  -->
             <i class="bx bx-log-out"></i>
+            <div class="name-job">
+              <div class="profile_name">Dark Mode</div>
+            </div>
+            <div class="profile-content">
+              <img src="../assets/LandSwitchDark.svg" alt="img" />
+            </div>
           </div>
         </li>
       </ul>
@@ -168,9 +168,29 @@
 <script>
 export default {
   name: "Asidebar",
+  methods: {
+            // handleStyles() {
+            //     console.log('handlestyles');
+
+            //     // let sidebar = document.querySelector(".sidebar");
+            //     // let menu = document.querySelector(".menu");
+            //     // console.log(menu);
+            //     // sidebar.classList.toggle("close");
+            //     // console.log('menu');
+
+
+            //     let arrow = document.querySelectorAll(".arrow");(e) => {
+            //         let arrowParent = e.target.parentElement.parentElement;
+            //         arrowParent.classList.toggle("showMenu");
+            //         console.log('arrow')
+            //     }
+
+            // }
+
+        },
 };
 </script>
-<style>
+<style scoped>
 .sidebar {
   position: fixed;
   top: 0;
@@ -428,7 +448,7 @@ export default {
   justify-content: space-between;
   background: linear-gradient(177.08deg, #9362f7 -7.99%, #892bda 118.63%);
   padding: 6px 0;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
 .sidebar.close .profile-details {
   width: 78px;
@@ -440,23 +460,19 @@ export default {
   align-items: center;
 }
 .sidebar .profile-details img {
-  height: 52px;
-  width: 52px;
   object-fit: cover;
-  border-radius: 16px;
   margin: 0 14px 0 12px;
-  background: #892bda;
   transition: all 0.5s ease;
 }
 
 .sidebar.close .profile-details img {
-  padding: 10px;
+  padding: 10px 15px 10px 10px;
 }
 
 .sidebar .profile-details .profile_name,
 .sidebar .profile-details .job {
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   white-space: nowrap;
 }
