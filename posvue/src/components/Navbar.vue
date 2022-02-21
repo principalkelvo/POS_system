@@ -3,7 +3,7 @@
         <div class="navbar-brand">
             <div id="navbar-item" class="mt-3">
                 <span class="icon">
-                    <i class="bx bx-menu menu" @click="handleStyles"></i>
+                    <i class="bx bx-menu bx-lg menu" @click="handleStyles"></i>
                 </span>
             </div>
             <!--search button-->
@@ -12,7 +12,7 @@
                     <form method="get" action="/search">
                         <div class="field has-addons">
                             <div class="control">
-                                <input type="text" class="input" placeholder="What are you looking for?" name="query" />
+                                <input type="text" class="input" placeholder="Search..." name="query" />
                             </div>
                             <div class="control">
                                 <button class="button">
@@ -37,8 +37,9 @@
             <div class="navbar-end">
                 <router-link to="/home" class="navbar-item">HOME</router-link>
                 <router-link to="/about" class="navbar-item">ABOUT US</router-link>
-
-               
+                <router-link to="/about" class="navbar-item "><i class="bx bx-bell bx-sm "></i></router-link>
+                
+                               
                 <div>
                     <div class="profile-details">
                         <div class="profile-content">
@@ -100,7 +101,7 @@
         width: 100px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         padding: 6px;
         transition: all 0.4s ease;
     }
@@ -117,11 +118,36 @@
           border-radius: 50%;
         transition: all 0.5s ease;
         background: red;
+        margin:0 5px 0 0;
+        
     }
 
     .profile-details .profile_name,
     .profile-details .job {
         color: #fff;
         font-size: 12px;
+    }
+    .navbar-item i.bx.bx-bell{
+        position:'relative';
+        width:40px;
+    }
+    .navbar-item i.bx.bx-bell::after{
+        content:'9';
+        position:absolute;
+        background:#c4c4c4;
+        width:20px;
+        height:20px;
+        border-radius:50%;
+        border:2px solid #FF0000;
+        bottom:20%;
+        right:30%;
+        font-size:12px;
+        font-weight: 600;
+        text-align:center;
+        padding:1.5px 0;
+    }
+    a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, .navbar-link.is-active {
+    background-color: transparent;
+    color: #ffffff;
     }
 </style>
