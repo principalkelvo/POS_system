@@ -37,8 +37,15 @@ export default {
 
 <style scoped>
 footer.footer {
+    position:relative;
   border-top: 3px solid #f1f2f2;
   background: #F9E2E3;
+  left: 260px;
+  width: calc(100% - 260px);
+  bottom:0;
+  padding: 10px;
+  transition: all 0.5s ease;
+  
   }
 
   .logo 
