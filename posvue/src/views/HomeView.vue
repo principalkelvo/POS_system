@@ -3,27 +3,30 @@
     <!--header-->
     <section class="hero is-small">
       <div class="hero-body header">
-        <p class="subtitle m-0 has-text-weight-bold has-text-white">Good aftenoon, Octal inc.</p>
+        <p class="subtitle m-0 has-text-weight-bold has-text-white">Good afternoon, Octal inc.</p>
         <p class="has-text-white">Here is what’s happening with your business today</p>
       </div>
     </section>
     <section class="hero is-small">
-      <div class="hero-body ">
+      <div class="hero-body">
         <div class="columns is-multiline">
           <div class="column is-8 has-background-white box mr-3">
             <div class="is-flex is-justify-content-space-between">
-              <h2 class="subtitle has-text-weight-bold has-text-black is-size-5">Overview</h2>
-              <button class="button is-pink is-pulled-right has-text-white">All time<i
-                  class="bx bx-chevron-down"></i></button>
+              <h2 class="subtitle has-text-weight-bold has-text-black is-size-4">Overview</h2>
+              <button class="button is-pink is-pulled-right has-text-white">
+                All time
+                <i class="bx bx-chevron-down"></i>
+              </button>
             </div>
             <div class="has-background-pink box is-justify-content-space-between overview_customer">
-            
               <div class="column is-6 has-background-white box mb-0">
                 <div class="is-flex is-justify-content-space-between">
                   <p class="has-text-weight-light has-text-black is-size-5">Customers</p>
                   <p class="is-pulled-right customer_incr px-2 is-size-5">8%</p>
                 </div>
-                <h2 class="title is-3 has-text-weight-bold has-text-black has-text-centered pt-2">856,645</h2>
+                <h2
+                  class="title is-3 has-text-weight-bold has-text-black has-text-centered pt-2"
+                >856,645</h2>
               </div>
               <div class="column is-6 ml-2">
                 <div class="is-flex is-justify-content-space-between">
@@ -37,13 +40,34 @@
               </div>
             </div>
             <div class="column is-12">
-                <h3 class="title has-text-weight-bold has-text-black ml-2">856,645</h3>
+              <h3 class="ml-2 is-size-6">Today's Top Employees</h3>
+            </div>
+            <div class="columns is-fullwidth mx-1 mb-2">
+              <div class="column is-3 is-webkit-center">
+                <div class="profile"></div>
+                <div class="has-text-black is-2 has-text-weight-bold">Crazy B.</div>
               </div>
+
+              <div class="column is-3 is-webkit-center">
+                <div class="profile"></div>
+                <div class="has-text-black is-2 has-text-weight-bold">Crazy B.</div>
+              </div>
+
+              <div class="column is-3 is-webkit-center">
+                <div class="profile"></div>
+                <div class="has-text-black is-2 has-text-weight-bold">Crazy B.</div>
+              </div>
+
+              <div class="column is-3 is-webkit-center">
+                <div class="profile"></div>
+                <div class="has-text-black has-text-weight-bold">Crazy B.</div>
+              </div>
+            </div>
           </div>
 
           <!--popular products-->
           <div class="column has-background-white box">
-            <h2 class="subtitle has-text-weight-bold has-text-black">Popular Products</h2>
+            <h2 class="subtitle has-text-weight-bold has-text-black is-size-4">Popular Products</h2>
           </div>
         </div>
       </div>
@@ -53,27 +77,27 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+  },
+};
 </script>
 
 <style scoped>
 .income_incr {
   border-radius: 1em;
-  background: #FFFFFF;
+  background: #ffffff;
   color: #000000;
 }
 
 .customer_incr {
   border-radius: 1em;
   background: #515151;
-  color: #24FF00;
+  color: #24ff00;
 }
 
 .home {
@@ -81,10 +105,14 @@ export default {
 }
 
 .header {
-  background: linear-gradient(90.06deg, #000000 -4.66%, rgba(94, 94, 94, 0.630208) 66.66%, rgba(255, 255, 255, 0) 107.08%);
+  background: linear-gradient(
+    90.06deg,
+    #000000 -4.66%,
+    rgba(94, 94, 94, 0.630208) 66.66%,
+    rgba(255, 255, 255, 0) 107.08%
+  );
   border-radius: 1em;
 }
-
 
 @media screen and (min-width: 720px) {
   .overview_customer {
@@ -94,7 +122,6 @@ export default {
   .income {
     text-align: left !important;
   }
-
 }
 
 @media screen and (max-width: 720px) {
@@ -107,9 +134,36 @@ export default {
   }
 }
 
+.profile {
+  width: 6em;
+  height: 6em;
+  background: url("../assets/img/CRAZY_BAE.jpg");
+  border: 2px #660746;
+  color: #f9e2e3;
+  border-radius: 50%;
+  background-repeat: round;
+  margin: 0.5em;
+  /* change to black and white  */
+  /* -webkit-filter: grayscale(100%);  Safari 6.0 - 9.0*/
+  /*filter: grayscale(100%); */
+  transition: box-shadow 0.6s ease-in-out;
+}
+.profile:hover {
+  box-shadow: 0 0 0 0.125em rgb(102 7 70 / 25%);
+}
+@media (max-width: 768px) {
+  .profile {
+    width: 4em;
+    height: 4em;
+  }
+}
 </style>
 <style>
-.has-background-pink, .is-pink{
-  background: #DD51ED;
+.has-background-pink,
+.is-pink {
+  background: #dd51ed;
+}
+.is-webkit-center {
+  text-align: -webkit-center;
 }
 </style>
