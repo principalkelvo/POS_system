@@ -230,7 +230,7 @@ export default {
 }
 .sidebar.close .watch {
   display: none;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 
 }
 .sidebar .watch .watch-title {
@@ -252,13 +252,17 @@ export default {
   justify-content: space-between;
   background: #c4c4c480;
   padding: 10px 10px;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
   margin: 10px 30px;
   border-radius: 10px;
   font-size: 13px;
   line-height: 15px;
   letter-spacing: 0.05em;
   color: #000000;
+}
+.sidebar .Watch-details .branch_id{
+  color: #24242490;
+
 }
 .sidebar .watch .watch-profit {
   color: #24ff00;
@@ -284,10 +288,10 @@ export default {
 }
 
 .sidebar .logo-details .logo_name {
-  font-size: 30px;
+  font-size: 25px;
   color: #fff;
   font-weight: 600;
-  transition: 0.3s ease;
+  transition: 0.5s ease;
   transition-delay: 0.1s;
 }
 
@@ -335,7 +339,19 @@ export default {
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover {
+  border-radius:20px;
+  color: #000000;
+  background: rgba(196, 196, 196, 0.18);
+border: 1px solid rgba(196, 196, 196, 0.3);
+/*margin: 0 5px;*/
+
+}
+.sidebar.close .nav-links li:hover{
   background: linear-gradient(177.08deg, #9362f7 -7.99%, #892bda 118.63%);
+  border-radius:2px;
+  border: 0;
+
+
 }
 .sidebar .nav-links li .iocn-link {
   display: flex;
@@ -354,7 +370,7 @@ export default {
   color: #fff;
   font-size: 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 
@@ -375,11 +391,13 @@ export default {
   display: flex;
   align-items: center;
   text-decoration: none;
+  padding:0 5px;
+
 }
 
 .sidebar .nav-links li a .link_name {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 21px;
   /* identical to box height */
   letter-spacing: 0.05em;
@@ -393,8 +411,11 @@ export default {
 .sidebar .nav-links li .sub-menu {
   padding: 6px 6px 14px 80px;
   margin-top: -10px;
-  background: linear-gradient(177.08deg, #9362f7 -7.99%, #892bda 118.63%);
   display: none;
+}
+.sidebar.close .nav-links li .sub-menu{
+  background: linear-gradient(177.08deg, #9362f7 -7.99%, #892bda 118.63%);
+
 }
 
 .sidebar .nav-links li.showMenu .sub-menu {
@@ -404,14 +425,16 @@ export default {
 .sidebar .nav-links li .sub-menu a {
   color: #fff;
   font-size: 15px;
-  padding: 5px 0;
+  padding: 5px;
   white-space: nowrap;
   opacity: 0.6;
+  border-radius:20px;
   transition: all 0.3s ease;
 }
 
 .sidebar .nav-links li .sub-menu a:hover {
   opacity: 1;
+
 }
 
 .sidebar.close .nav-links li .sub-menu {
@@ -431,7 +454,7 @@ export default {
   top: 0;
   opacity: 1;
   pointer-events: auto;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
 
 .sidebar .nav-links li .sub-menu .link_name {
@@ -484,12 +507,14 @@ export default {
   height: 1.2em;
   object-fit: cover;
   margin: 0 15px 0 14px;
-  transition: all 0.5s ease;
+  transition: all 0.6s ease;
+  cursor:pointer;
+
 
 }
 
 .sidebar.close .profile-details img {
-  padding: 10px 15px 10px 10px;
+  cursor:pointer;
 }
 
 .sidebar .profile-details .profile_name,

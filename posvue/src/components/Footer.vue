@@ -38,8 +38,8 @@ export default {
 <style scoped>
 footer.footer {
     position:relative;
-  border-top: 3px solid #f1f2f2;
-  background: #F9E2E3;
+  /*border-top: 3px solid #f1f2f2;*/
+    background: linear-gradient(122.46deg, rgba(221, 81, 237, 0.35) 103.87% , #DD51ED 11.61%);
   left: 260px;
   width: calc(100% - 260px);
   bottom:0;
