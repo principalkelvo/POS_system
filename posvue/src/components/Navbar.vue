@@ -11,9 +11,12 @@
                 <div class="navbar-item">
                     <form method="get" action="/search">
                         <div class="field has-addons">
+<!--search input-->
                             <div class="control">
-                                <input type="text" class="input" placeholder="Search..." name="query" />
+                                <input type="text" class="input bx" placeholder="&#xebf7; Search..." name="query" />
                             </div>
+
+<!--search input icon-->
                             <div class="control">
                                 <button class="button">
                                     <span class="icon">
@@ -35,15 +38,15 @@
         </div>
         <div class="navbar-menu" id="navbar-menu" v-bind:class="{ 'is-active': showMobileMenu }">
             <div class="navbar-end">
-                <router-link to="/home" class="navbar-item">HOME</router-link>
-                <router-link to="/about" class="navbar-item">ABOUT US</router-link>
+               <!--<router-link to="/home" class="navbar-item">HOME</router-link>
+                <router-link to="/about" class="navbar-item">ABOUT US</router-link>-->
                 <router-link to="/about" class="navbar-item "><i class="bx bx-bell bx-sm "></i></router-link>
                 
                                
                 <div>
-                    <div class="profile-details">
+                    <div class="profile-details mr-6">
                         <div class="profile-content">
-                            <img src="../assets/logo.png" alt="img" />
+                            <img src="../assets/img/CRAZY_BAE.jpg" alt="img" />
                         </div>
                         <div class="name-job">
                             <div class="profile_name">Principal</div>
@@ -98,11 +101,11 @@
 
 <style lang="scss" scoped>
     .navbar .profile-details {
-        width: 100px;
+        width: 105px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 6px;
+        padding: 8px 0 0 0;
         transition: all 0.4s ease;
     }
 
@@ -118,14 +121,14 @@
           border-radius: 50%;
         transition: all 0.5s ease;
         background: red;
-        margin:0 5px 0 0;
+        margin:0 .4em 0 0;
         
     }
 
     .profile-details .profile_name,
     .profile-details .job {
         color: #fff;
-        font-size: 12px;
+        font-size: 13px;
     }
     .navbar-item i.bx.bx-bell{
         position:'relative';
@@ -149,5 +152,8 @@
     a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, .navbar-link.is-active {
     background-color: transparent;
     color: #ffffff;
+    }
+    ::placeholder{
+        font-family:"Boxicon";
     }
 </style>
