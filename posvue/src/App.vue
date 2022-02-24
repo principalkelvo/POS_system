@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div id="app">
     <Asidebar />
     <Navbar />
     <section class="section">
       <router-view />
     </section>
+    <Footer />
   </div>
-    <Footer/>
 </template>
 
 <script>
@@ -19,10 +19,29 @@ import Footer from "@/components/Footer.vue";
 
 export default {
   name: "App",
+   
   components: {
     Navbar,
     Asidebar,
     Footer
+  },
+  data() {
+    return {
+      width: window.innerWidth, height: window.innerHeight
+    };
+  },
+  created() {
+    window.addEventListener("resize", this.onResize);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.onResize);
+  },
+  method:{
+    onResize(e) {
+      this.width = window.innerWidth;
+      this.height = window.innerHeight;
+      console.log(this.width +'port'+ this.height)
+    },
   },
 };
 </script>
@@ -31,6 +50,9 @@ export default {
 @import "@/../node_modules/bulma";
 @import "../node_modules/boxicons/css/boxicons.css";
 
+#app{
+  background: linear-gradient(122.46deg, #DD51ED 11.61%, rgba(221, 81, 237, 0.35) 103.87%);
+}
 
 nav.navbar {
   background: linear-gradient(
@@ -64,5 +86,34 @@ section.section {
 .sidebar.close ~ .footer {
   left: 78px;
   width: calc(100% - 78px);
+}
+@media screen and (max-width: 720px){
+   section.section {
+    padding:0 !important;
+    margin:0 !important;
+  }
+}
+@media screen and (max-width: 425px){
+  .sidebar.close ~ .section {
+  opacity:1;
+  transition: all 0.4s ease;
+}
+.sidebar.close ~ .footer {
+  opacity:1;
+  transition: all 0.4s ease;
+}
+  .sidebar ~ .section{
+    opacity:0;
+  }
+  .sidebar ~ .footer{
+    opacity:0;
+
+  }
+  .title.is-3 {
+    font-size: 1.4rem;
+}
+.subtitle.is-size-5 {
+    font-size: 1rem !important;
+}
 }
 </style>
