@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+
     <!--header-->
     <section class="hero is-small">
       <div class="hero-body header">
@@ -7,9 +8,12 @@
         <p class="has-text-white">Here is what’s happening with your business today</p>
       </div>
     </section>
+
     <section class="hero is-small">
       <div class="hero-body">
         <div class="columns is-multiline">
+
+          <!-- overview -->
           <div class="column is-8 has-background-white box mr-3">
             <div class="is-flex is-justify-content-space-between">
               <h2 class="subtitle has-text-weight-bold has-text-black is-size-4">Overview</h2>
@@ -39,28 +43,38 @@
                 </div>
               </div>
             </div>
+
+            <!-- top employees -->
             <div class="column is-12">
               <h3 class="ml-2 is-size-6">Today's Top Employees</h3>
             </div>
             <div class="columns is-fullwidth mx-1 mb-2">
               <div class="column is-3 is-webkit-center">
-                <div class="profile"></div>
-                <div class="has-text-black is-2 has-text-weight-bold">Crazy B.</div>
+                <div class="profile">
+                  <img src="../assets/img/CRAZY_BAE.jpg" alt="" class="">
+                </div>
+                <div class="has-text-weight-bold">Crazy B.</div>
               </div>
 
               <div class="column is-3 is-webkit-center">
-                <div class="profile"></div>
-                <div class="has-text-black is-2 has-text-weight-bold">Crazy B.</div>
+                <div class="profile">
+                  <img src="../assets/img/CRAZY_BAE.jpg" alt="" class="">
+                </div>
+                <div class="has-text-weight-bold">Mwai Kibaki</div>
               </div>
 
               <div class="column is-3 is-webkit-center">
-                <div class="profile"></div>
-                <div class="has-text-black is-2 has-text-weight-bold">Crazy B.</div>
+                <div class="profile">
+                  <img src="../assets/img/CRAZY_BAE.jpg" alt="" class="">
+                </div>
+                <div class="has-text-weight-bold">Kelvin Njoro</div>
               </div>
 
               <div class="column is-3 is-webkit-center">
-                <div class="profile"></div>
-                <div class="has-text-black has-text-weight-bold">Crazy B.</div>
+                <div class="profile">
+                  <img src="../assets/img/CRAZY_BAE.jpg" alt="" class="">
+                </div>
+                <div class="has-text-weight-bold">Evans Roy</div>
               </div>
             </div>
           </div>
@@ -137,16 +151,22 @@ export default {
 .profile {
   width: 6em;
   height: 6em;
-  background: url("../assets/img/CRAZY_BAE.jpg");
+  /* background: url("../assets/img/CRAZY_BAE.jpg"); */
   border: 2px #660746;
   color: #f9e2e3;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   background-repeat: round;
   margin: 0.5em;
   /* change to black and white  */
   /* -webkit-filter: grayscale(100%);  Safari 6.0 - 9.0*/
   /*filter: grayscale(100%); */
   transition: box-shadow 0.6s ease-in-out;
+}
+img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
 }
 .profile:hover {
   box-shadow: 0 0 0 0.125em rgb(102 7 70 / 25%);
@@ -155,6 +175,12 @@ export default {
   .profile {
     width: 4em;
     height: 4em;
+  }
+}
+@media (min-width: 1025px) {
+  .profile {
+    width: 7em;
+    height: 7em;
   }
 }
 </style>
