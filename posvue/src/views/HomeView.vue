@@ -80,8 +80,50 @@
           </div>
 
           <!--popular products-->
-          <div class="column has-background-white box">
+          <div class="column has-background-white box mb-3">
             <h2 class="subtitle has-text-weight-bold has-text-black is-size-4">Popular Products</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Products</th>
+                  <th>Earnings</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="product-tb has-text-centered">
+                    <img src="../assets/logo.png" class="image is-128x128 ">
+                    
+                    <p class="product-font"><strong class="product-strong">Product C</strong> <br>Category A</p> 
+                  </td>
+                  <td class="product-strong">Ksh 5,391</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="columns is-multiline">
+          <div class="column is-8 has-background-white box mr-3">
+            <h3>BarChart example</h3>
+            <bar-chart></bar-chart>
+          </div>
+          <div class="column has-background-white box">
+            <h2 class="subtitle has-text-weight-bold has-text-black is-size-4">Comments</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Message</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>I am excited to submit my application for the full-time police officer position at the New Haven Police Department</td>
+                  <td>19.02.20</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -91,17 +133,20 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import BarChart from "@/components/BarChart.vue"
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    BarChart
   },
 };
 </script>
 
 <style scoped>
+.home {
+  margin: 2em;
+}
 .income_incr {
   border-radius: 1em;
   background: #ffffff;
@@ -114,9 +159,7 @@ export default {
   color: #24ff00;
 }
 
-.home {
-  margin: 2em;
-}
+
 
 .header {
   background: linear-gradient(
@@ -127,6 +170,43 @@ export default {
   );
   border-radius: 1em;
 }
+
+
+.product-tb {
+  display: flex;
+        align-items: center;
+        justify-content: center;
+}
+.product-tb img{
+  height: 42px;
+  width: 54.55px;
+  object-fit: cover;
+  border-radius: 10px;
+  padding: .35em;
+  background: #C4C4C4;
+}
+
+.product-strong{
+  /* font-weight: bold; */
+  font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+letter-spacing: 0.05em;
+
+color: #000000;
+}
+
+.product-font{
+  font-weight: bold;
+  font-size: 14px;
+line-height: 16px;
+/* identical to box height */
+
+letter-spacing: 0.05em;
+color: #6E6E6E;
+}
+
 
 @media screen and (min-width: 720px) {
   .overview_customer {
