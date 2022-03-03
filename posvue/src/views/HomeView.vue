@@ -16,7 +16,7 @@
           <!-- overview -->
           <div class="column is-8 has-background-white box mr-3">
             <div class="is-flex is-justify-content-space-between">
-              <h2 class="subtitle has-text-weight-bold has-text-black is-size-4">Overview</h2>
+              <h2 class="subtitle has-text-weight-bold has-text-black is-size-4 ">Overview</h2>
               <button class="button is-pink is-pulled-right has-text-white">
                 All time
                 <i class="bx bx-chevron-down"></i>
@@ -50,28 +50,28 @@
             </div>
             <div class="columns is-fullwidth mx-1 mb-2">
               <div class="column is-3 is-webkit-center">
-                <div class="profile">
+                <div class="profile image">
                   <img src="../assets/img/CRAZY_BAE.jpg" alt="" class="">
                 </div>
                 <div class="has-text-weight-bold">Crazy B.</div>
               </div>
 
               <div class="column is-3 is-webkit-center">
-                <div class="profile">
+                <div class="profile image">
                   <img src="../assets/img/CRAZY_BAE.jpg" alt="" class="">
                 </div>
                 <div class="has-text-weight-bold">Mwai Kibaki</div>
               </div>
 
               <div class="column is-3 is-webkit-center">
-                <div class="profile">
+                <div class="profile image">
                   <img src="../assets/img/CRAZY_BAE.jpg" alt="" class="">
                 </div>
                 <div class="has-text-weight-bold">Kelvin Njoro</div>
               </div>
 
               <div class="column is-3 is-webkit-center">
-                <div class="profile">
+                <div class="profile image">
                   <img src="../assets/img/CRAZY_BAE.jpg" alt="" class="">
                 </div>
                 <div class="has-text-weight-bold">Evans Roy</div>
@@ -92,19 +92,35 @@
               <tbody>
                 <tr>
                   <td class="product-tb has-text-centered">
-                    <img src="../assets/logo.png" class="image is-128x128 ">
+                    <div class="image mr-2">
+                    <img src="../assets/logo.png" class=" is-128x128">
+                    </div>
                     
-                    <p class="product-font"><strong class="product-strong">Product C</strong> <br>Category A</p> 
+                    <p class="has-text-weight-bold has-text-grey-dark is-size-7"><strong class="is-size-6">Product C</strong> <br>Category A</p> 
                   </td>
-                  <td class="product-strong">Ksh 5,391</td>
+                  <td class="has-text-centered has-text-weight-bold is-size-6">Ksh 5,391</td>
                 </tr>
               </tbody>
             </table>
+            <button class="button has-text-black has-text-weight-bold is-size-6">
+                All Products
+                <!-- <i class="bx bx-chevron-down"></i> -->
+              </button>
           </div>
         </div>
         
+        <!-- barchat -->
         <div class="columns is-multiline">
           <div class="column is-8 has-background-white box mr-3">
+            <div class="is-flex is-justify-content-space-between">
+              <h2 class="subtitle has-text-weight-bold has-text-black is-size-4 ">Total Income</h2>
+
+              <button class="button is-pink is-pulled-right has-text-white">
+                All time
+                <i class="bx bx-chevron-down"></i>
+              </button>
+            </div>
+
             <h3>BarChart example</h3>
             <bar-chart></bar-chart>
           </div>
@@ -188,7 +204,7 @@ export default {
 
 .product-strong{
   /* font-weight: bold; */
-  font-size: 16px;
+  /* font-size: 16px; */
 line-height: 19px;
 /* identical to box height */
 
@@ -199,8 +215,8 @@ color: #000000;
 
 .product-font{
   font-weight: bold;
-  font-size: 14px;
-line-height: 16px;
+  /* font-size: 14px; */
+line-height: 1.06em;
 /* identical to box height */
 
 letter-spacing: 0.05em;
@@ -251,7 +267,7 @@ img{
 .profile:hover {
   box-shadow: 0 0 0 0.125em rgb(102 7 70 / 25%);
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .profile {
     width: 4em;
     height: 4em;
@@ -259,8 +275,8 @@ img{
 }
 @media (min-width: 1025px) {
   .profile {
-    width: 7em;
-    height: 7em;
+    width: 6em;
+    height: 6em;
   }
 }
 </style>
