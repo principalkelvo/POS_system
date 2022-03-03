@@ -30,7 +30,7 @@
         <li>
           <a href="#">
             <!-- icon -->
-            <i class="bx bx-grid-alt"></i>
+            <i class="bx bx-tachometer has-text-black"></i>
             <span class="link_name">Dashboard</span>
           </a>
           <ul class="sub-menu blank">
@@ -42,8 +42,8 @@
           <div class="iocn-link">
             <a href="#">
               <!-- icon -->
-              <i class="bx bx-grid-alt"></i>
-              <span class="link_name">Category</span>
+              <i class="bx bx-bar-chart has-text-black"></i>
+              <span class="link_name">Products</span>
             </a>
             <!-- dropdown icon  -->
             <i class="bx bxs-chevron-down arrow" @click='handleStyles'></i>
@@ -51,7 +51,7 @@
           </div>
 
           <ul class="sub-menu">
-            <li><a class="link_name" href="#">Category</a></li>
+            <li><a class="link_name" href="#">Products</a></li>
             <li><a href="#" class='pl-2'>web design</a></li>
             <li><a href="#" class='pl-2'>web design</a></li>
             <li><a href="#" class='pl-2'>web design</a></li>
@@ -62,40 +62,57 @@
           <div class="iocn-link">
             <a href="#">
               <!-- icon -->
-              <i class="bx bx-grid-alt"></i>
-              <span class="link_name">Posts</span>
+              <i class="bx bx-chart has-text-black"></i>
+              <span class="link_name">Customers</span>
             </a>
             <!-- dropdown icon  -->
                         <i class="bx bxs-chevron-down arrow"></i>
 
           </div>
           <ul class="sub-menu">
-            <li><a class="link_name" href="#">Posts</a></li>
+            <li><a class="link_name" href="#">Customers</a></li>
             <li><a href="#" class='pl-2'>web design</a></li>
             <li><a href="#" class='pl-2'>web design</a></li>
             <li><a href="#" class='pl-2'>web design</a></li>
           </ul>
         </li>
 
-        <li>
-          <a href="#">
-            <!-- icon -->
-            <i class="bx bx-grid-alt"></i>
-            <span class="link_name">Analytics</span>
-          </a>
-          <ul class="sub-menu blank">
-            <li><a class="link_name" href="#">Analytics</a></li>
+         <li>
+          <div class="iocn-link">
+            <a href="#">
+              <!-- icon -->
+              <i class="bx bxs-business has-text-black"></i>
+              <span class="link_name">Branches</span>
+            </a>
+            <!-- dropdown icon  -->
+                        <i class="bx bxs-chevron-down arrow"></i>
+
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#">Branches</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
           </ul>
         </li>
 
+
         <li>
-          <a href="#">
-            <!-- icon -->
-            <i class="bx bx-grid-alt"></i>
-            <span class="link_name">Chart</span>
-          </a>
-          <ul class="sub-menu blank">
-            <li><a class="link_name" href="#">Chart</a></li>
+          <div class="iocn-link">
+            <a href="#">
+              <!-- icon -->
+              <i class="bx bx-spreadsheet has-text-black"></i>
+              <span class="link_name">Reports</span>
+            </a>
+            <!-- dropdown icon  -->
+                        <i class="bx bxs-chevron-down arrow"></i>
+
+          </div>
+          <ul class="sub-menu">
+            <li><a class="link_name" href="#">Reports</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a href="#" class='pl-2'>web design</a></li>
           </ul>
         </li>
 
@@ -103,7 +120,7 @@
           <div class="iocn-link">
             <a href="#">
               <!-- icon -->
-              <i class="bx bx-grid-alt"></i>
+              <i class="bx bx-select-multiple has-text-black"></i>
               <span class="link_name">Employees</span>
             </a>
             <!-- dropdown icon  -->
@@ -117,32 +134,11 @@
           </ul>
         </li>
 
-        <li>
-          <a href="#">
-            <!-- icon -->
-            <i class="bx bx-grid-alt"></i>
-            <span class="link_name">Explore</span>
-          </a>
-          <ul class="sub-menu blank">
-            <li><a class="link_name" href="#">Explore</a></li>
-          </ul>
-        </li>
 
         <li>
           <a href="#">
             <!-- icon -->
-            <i class="bx bx-grid-alt"></i>
-            <span class="link_name">History</span>
-          </a>
-          <ul class="sub-menu blank">
-            <li><a class="link_name" href="#">History</a></li>
-          </ul>
-        </li>
-
-        <li>
-          <a href="#">
-            <!-- icon -->
-            <i class="bx bx-cog"></i>
+            <i class="bx bx-cog has-text-black"></i>
             <span class="link_name">Settings</span>
           </a>
           <ul class="sub-menu blank">
@@ -340,12 +336,19 @@ export default {
 }
 .sidebar .nav-links li:hover {
   border-radius:20px;
-  color: #000000;
   background: rgba(196, 196, 196, 0.18);
 border: 1px solid rgba(196, 196, 196, 0.3);
 /*margin: 0 5px;*/
 
 }
+.sidebar .nav-links li:hover .link_name {
+  color: #000000;
+}
+
+.sidebar.close .nav-links li:hover .link_name {
+    color: #c4c4c4;
+}
+
 .sidebar.close .nav-links li:hover{
   background: linear-gradient(177.08deg, #9362f7 -7.99%, #892bda 118.63%);
   border-radius:2px;
@@ -383,6 +386,7 @@ border: 1px solid rgba(196, 196, 196, 0.3);
 
 .sidebar .nav-links li.showMenu i.arrow {
   transform: rotate(-180deg);
+  color: black;
 }
 .sidebar.close .nav-links i.arrow {
   display: none;
@@ -402,6 +406,8 @@ border: 1px solid rgba(196, 196, 196, 0.3);
   /* identical to box height */
   letter-spacing: 0.05em;
   color: #c4c4c4;
+  transition: all 0.4s ease;
+
 }
 
 .sidebar.close .nav-links li a .link_name {
