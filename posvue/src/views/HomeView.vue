@@ -80,9 +80,9 @@
           </div>
 
           <!--popular products-->
-          <div class="column has-background-white box mb-3">
+          <div class="column  has-background-white box mb-3">
             <h2 class="subtitle has-text-weight-bold has-text-black is-size-4">Popular Products</h2>
-            <table class="table">
+            <table class="table is-fullwidth">
               <thead>
                 <tr>
                   <th>Products</th>
@@ -91,7 +91,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="product-tb has-text-centered">
+                  <td class="product-tb has-text-left">
                     <div class="image mr-2">
                     <img src="../assets/logo.png" class=" is-128x128">
                     </div>
@@ -190,8 +190,8 @@ export default {
 
 .product-tb {
   display: flex;
-        align-items: center;
-        justify-content: center;
+        /* align-items: center;
+        justify-content: center; */
 }
 .product-tb img{
   height: 42px;
