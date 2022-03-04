@@ -28,7 +28,7 @@
       <ul class="nav-links">
         <div class="nav-title">MAIN MENU</div>
         <li>
-          <a href="#">
+          <a href="/">
             <!-- icon -->
             <i class="bx bx-tachometer has-text-black"></i>
             <span class="link_name">Dashboard</span>
@@ -52,9 +52,8 @@
 
           <ul class="sub-menu">
             <li><a class="link_name" href="#">Products</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><router-link to="/inventory" class='pl-2'>Inventory Management</router-link></li>
+            <li><router-link to="/product" class='pl-2'>Product Management</router-link></li>
           </ul>
         </li>
 
