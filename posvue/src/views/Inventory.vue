@@ -2,7 +2,10 @@
   <div>
     <section class="hero">
       <div class="hero-body">
+          <h2 class="title has-text-weight-bold has-text-black is-size-4 ">Your Stock Portfolio</h2>
         <div class="columns is-fullwidth has-background-white box">
+              
+
           <div class="column m-2 box has-background-faded-pink">
             <h2 class="is-size-6  has-text-weight-bold has-text-black is-size-4">
               Items Ordered
