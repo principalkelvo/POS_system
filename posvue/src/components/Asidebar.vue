@@ -46,7 +46,7 @@
               <span class="link_name">Products</span>
             </a>
             <!-- dropdown icon  -->
-            <i class="bx bxs-chevron-down arrow" @click='handleStyles'></i>
+            <i class="bx bxs-chevron-down arrow"></i>
             
           </div>
 

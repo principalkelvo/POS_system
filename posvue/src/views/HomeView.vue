@@ -285,6 +285,10 @@ img{
 .is-pink {
   background: #dd51ed;
 }
+.has-background-faded-pink,
+.is-faded-pink {
+  background: rgba(221, 81, 237, 0.4);;
+}
 .is-webkit-center {
   text-align: -webkit-center;
 }
