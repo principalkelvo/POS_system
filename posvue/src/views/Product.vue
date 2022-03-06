@@ -59,25 +59,29 @@
               />
             </div>
           </div>
-          <ReturnedProducts/>
+          <StockTransfer />
 
-           
+
+          
         </div>
-
-       
-
       </div>
     </section>
   </div>
 </template>
 <script>
 import ReturnedProducts from "../components/tables/ReturnedProducts.vue";
+import AddCategory from '../components/AddEdit/AddCategory.vue'
+import StockTransfer from '../components/AddEdit/StockTransfer.vue'
 export default {
   name: "Product",
   components: {
     ReturnedProducts,
+    AddCategory,
+    StockTransfer,
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
