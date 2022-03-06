@@ -34,7 +34,7 @@
             <span class="link_name">Dashboard</span>
           </a>
           <ul class="sub-menu blank">
-            <li><a class="link_name" href="#">Dashboard</a></li>
+            <li><a class="link_name" href="/">Dashboard</a></li>
           </ul>
         </li>
 
@@ -89,7 +89,7 @@
           </div>
           <ul class="sub-menu">
             <li><a class="link_name" href="#">Branches</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a href="/branches" class='pl-2'>All Branches</a></li>
             <li><a href="#" class='pl-2'>web design</a></li>
             <li><a href="#" class='pl-2'>web design</a></li>
           </ul>
