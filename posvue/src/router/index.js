@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import Category from '../views/Category.vue'
 import Product from '../views/Product.vue'
 import Inventory from '../views/Inventory.vue'
+import Branches from '../views/Branches.vue'
 
 const routes = [{
         path: '/',
@@ -32,6 +33,11 @@ const routes = [{
         path: '/inventory',
         name: 'Inventory',
         component: Inventory
+    },
+    {
+        path: '/branches',
+        name: 'Branches',
+        component: Branches
     },
 ]
 
