@@ -18,7 +18,6 @@
                 <th>Category</th>
                 <th>Sold Quantity</th>
                 <th>Stock Status</th>
-                <th>Date Returned</th>
                 <th>Total Sell</th>
                 <th>Action</th>
               </tr>
