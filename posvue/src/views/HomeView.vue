@@ -122,7 +122,7 @@
             </div>
 
             <h3>BarChart example</h3>
-            <bar-chart></bar-chart>
+            <BarChart/>
           </div>
           <div class="column has-background-white box">
             <h2 class="subtitle has-text-weight-bold has-text-black is-size-4">Comments</h2>
@@ -154,7 +154,7 @@ import BarChart from "@/components/BarChart.vue"
 export default {
   name: "HomeView",
   components: {
-    BarChart
+    BarChart,
   },
 };
 </script>
