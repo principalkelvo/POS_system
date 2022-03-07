@@ -343,6 +343,47 @@ export default {
   border: 1px solid rgba(196, 196, 196, 0.3);
   /*margin: 0 5px;*/
 }
+
+/* add more changes */
+/* .sidebar ul.nav-links li:hover::before{
+  position: absolute;
+  top:-30px;
+  right: 0;
+  content: "";
+  height:30px;
+  width: 30px;
+  background-color:rgba(221, 81, 237);
+} 
+ .sidebar .nav-links li:hover .link_name::before{
+  position: absolute;
+  top:-60px;
+  right: 0;
+  content: "";
+  height:60px;
+  width: 60px;
+  background-color:#892bda;
+  border-radius:50%
+}
+.sidebar .nav-links li:hover::after{
+  position: absolute;
+  bottom:-30px;
+  right: 0;
+  content: "";
+  height:30px;
+  width: 30px;
+  background-color:rgba(221, 81, 237);
+}
+.sidebar .nav-links li:hover .link_name::after{
+  position: absolute;
+  bottom:-60px;
+  right: 0;
+  content: "";
+  height:60px;
+  width: 60px;
+  background-color:#892bda;
+  border-radius:50%;
+  z-index: 1;
+} */
 .sidebar .nav-links li:hover .link_name {
   color: #000000;
 }
