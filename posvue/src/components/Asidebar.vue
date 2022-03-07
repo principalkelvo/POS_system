@@ -28,19 +28,21 @@
       <ul class="nav-links">
         <div class="nav-title">MAIN MENU</div>
         <li>
-          <a href="/">
+          <a >
+          <router-link to="/">
             <!-- icon -->
             <i class="bx bx-tachometer has-text-black"></i>
             <span class="link_name">Dashboard</span>
+            </router-link>
           </a>
           <ul class="sub-menu blank">
-            <li><a class="link_name" href="/">Dashboard</a></li>
+            <li><a class="link_name"><router-link to="/">Dashboard</router-link></a></li>
           </ul>
         </li>
 
         <li>
           <div class="iocn-link">
-            <a href="#">
+            <a ><router-link to="#"></router-link>
               <!-- icon -->
               <i class="bx bx-bar-chart has-text-black"></i>
               <span class="link_name">Products</span>
@@ -51,7 +53,7 @@
           </div>
 
           <ul class="sub-menu">
-            <li><a class="link_name" href="#">Products</a></li>
+            <li><a class="link_name" ><router-link to="#">Products</router-link></a></li>
             <li><router-link to="/inventory" class='pl-2'>Inventory Management</router-link></li>
             <li><router-link to="/product" class='pl-2'>Product Management</router-link></li>
           </ul>
@@ -59,7 +61,7 @@
 
         <li>
           <div class="iocn-link">
-            <a href="#">
+            <a ><router-link to="#"></router-link>
               <!-- icon -->
               <i class="bx bx-chart has-text-black"></i>
               <span class="link_name">Customers</span>
@@ -69,16 +71,16 @@
 
           </div>
           <ul class="sub-menu">
-            <li><a class="link_name" href="#">Customers</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a class="link_name" ><router-link to="#">Customers</router-link></a></li>
+            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
+            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
+            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
           </ul>
         </li>
 
          <li>
           <div class="iocn-link">
-            <a href="#">
+            <a ><router-link to="#"></router-link>
               <!-- icon -->
               <i class="bx bxs-business has-text-black"></i>
               <span class="link_name">Branches</span>
@@ -88,17 +90,17 @@
 
           </div>
           <ul class="sub-menu">
-            <li><a class="link_name" href="#">Branches</a></li>
-            <li><a href="/branches" class='pl-2'>All Branches</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a class="link_name" ><router-link to="#">Branches</router-link></a></li>
+            <li><a href="/branches" class='pl-2'><router-link to="/branches">All Branches</router-link></a></li>
+            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
+            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
           </ul>
         </li>
 
 
         <li>
           <div class="iocn-link">
-            <a href="#">
+            <a ><router-link to="#"></router-link>
               <!-- icon -->
               <i class="bx bx-spreadsheet has-text-black"></i>
               <span class="link_name">Reports</span>
@@ -108,16 +110,16 @@
 
           </div>
           <ul class="sub-menu">
-            <li><a class="link_name" href="#">Reports</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a class="link_name" ><router-link to="#">Reports</router-link></a></li>
+            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
+            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
+            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
           </ul>
         </li>
 
         <li>
           <div class="iocn-link">
-            <a href="#">
+            <a ><router-link to="#"></router-link>
               <!-- icon -->
               <i class="bx bx-select-multiple has-text-black"></i>
               <span class="link_name">Employees</span>
@@ -126,22 +128,22 @@
             <i class="bx bxs-chevron-down arrow"></i>
           </div>
           <ul class="sub-menu">
-            <li><a class="link_name" href="#">Employees</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
-            <li><a href="#" class='pl-2'>web design</a></li>
+            <li><a class="link_name" ><router-link to="#">Employees</router-link></a></li>
+            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
+            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
+            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
           </ul>
         </li>
 
 
         <li>
-          <a href="#">
+          <a ><router-link to="#"></router-link>
             <!-- icon -->
             <i class="bx bx-cog has-text-black"></i>
             <span class="link_name">Settings</span>
           </a>
           <ul class="sub-menu blank">
-            <li><a class="link_name" href="#">Settings</a></li>
+            <li><a class="link_name" ><router-link to="#">Settings</router-link></a></li>
           </ul>
         </li>
         <li>
