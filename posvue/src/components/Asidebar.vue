@@ -1,15 +1,15 @@
 <template>
-   <div class="sidebar">
-      <div class="logo-details">
-        <!-- icon -->
-        <i class="bx bx-grid-alt"></i>
-        <span class="logo_name">Company</span>
-      </div>
+  <div class="sidebar">
+    <div class="logo-details">
+      <!-- icon -->
+      <i class="bx bx-grid-alt"></i>
+      <span class="logo_name">Company</span>
+    </div>
 
-      <!-- WATCHLIST -->
-      <div class="watch">
-        <div class="watch-title">WATCHLIST</div>
-      <div class="Watch-details" style="margin-top: 5px;">
+    <!-- WATCHLIST -->
+    <div class="watch">
+      <div class="watch-title">WATCHLIST</div>
+      <div class="Watch-details" style="margin-top: 5px">
         <div class="watch-content">
           <div class="branch_name">Branch E</div>
           <div class="branch_id">123213</div>
@@ -23,189 +23,195 @@
         </div>
         <p class="watch-loss">-3.45%</p>
       </div>
-      </div>
-
-      <ul class="nav-links">
-        <div class="nav-title">MAIN MENU</div>
-        <li>
-          <a >
-          <router-link to="/">
-            <!-- icon -->
-            <i class="bx bx-tachometer has-text-black"></i>
-            <span class="link_name">Dashboard</span>
-            </router-link>
-          </a>
-          <ul class="sub-menu blank">
-            <li><a class="link_name"><router-link to="/">Dashboard</router-link></a></li>
-          </ul>
-        </li>
-
-        <li>
-          <div class="iocn-link">
-            <a ><router-link to="#"></router-link>
-              <!-- icon -->
-              <i class="bx bx-bar-chart has-text-black"></i>
-              <span class="link_name">Products</span>
-            </a>
-            <!-- dropdown icon  -->
-            <i class="bx bxs-chevron-down arrow"></i>
-            
-          </div>
-
-          <ul class="sub-menu">
-            <li><a class="link_name" ><router-link to="#">Products</router-link></a></li>
-            <li><router-link to="/inventory" class='pl-2'>Inventory Management</router-link></li>
-            <li><router-link to="/product" class='pl-2'>Product Management</router-link></li>
-          </ul>
-        </li>
-
-        <li>
-          <div class="iocn-link">
-            <a ><router-link to="#"></router-link>
-              <!-- icon -->
-              <i class="bx bx-chart has-text-black"></i>
-              <span class="link_name">Customers</span>
-            </a>
-            <!-- dropdown icon  -->
-                        <i class="bx bxs-chevron-down arrow"></i>
-
-          </div>
-          <ul class="sub-menu">
-            <li><a class="link_name" ><router-link to="#">Customers</router-link></a></li>
-            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
-            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
-            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
-          </ul>
-        </li>
-
-         <li>
-          <div class="iocn-link">
-            <a ><router-link to="#"></router-link>
-              <!-- icon -->
-              <i class="bx bxs-business has-text-black"></i>
-              <span class="link_name">Branches</span>
-            </a>
-            <!-- dropdown icon  -->
-                        <i class="bx bxs-chevron-down arrow"></i>
-
-          </div>
-          <ul class="sub-menu">
-            <li><a class="link_name" ><router-link to="#">Branches</router-link></a></li>
-            <li><a href="/branches" class='pl-2'><router-link to="/branches">All Branches</router-link></a></li>
-            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
-            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
-          </ul>
-        </li>
-
-
-        <li>
-          <div class="iocn-link">
-            <a ><router-link to="#"></router-link>
-              <!-- icon -->
-              <i class="bx bx-spreadsheet has-text-black"></i>
-              <span class="link_name">Reports</span>
-            </a>
-            <!-- dropdown icon  -->
-                        <i class="bx bxs-chevron-down arrow"></i>
-
-          </div>
-          <ul class="sub-menu">
-            <li><a class="link_name" ><router-link to="#">Reports</router-link></a></li>
-            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
-            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
-            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
-          </ul>
-        </li>
-
-        <li>
-          <div class="iocn-link">
-            <a ><router-link to="#"></router-link>
-              <!-- icon -->
-              <i class="bx bx-select-multiple has-text-black"></i>
-              <span class="link_name">Employees</span>
-            </a>
-            <!-- dropdown icon  -->
-            <i class="bx bxs-chevron-down arrow"></i>
-          </div>
-          <ul class="sub-menu">
-            <li><a class="link_name" ><router-link to="#">Employees</router-link></a></li>
-            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
-            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
-            <li><a  class='pl-2'><router-link to="#">web design</router-link></a></li>
-          </ul>
-        </li>
-
-
-        <li>
-          <a ><router-link to="#"></router-link>
-            <!-- icon -->
-            <i class="bx bx-cog has-text-black"></i>
-            <span class="link_name">Settings</span>
-          </a>
-          <ul class="sub-menu blank">
-            <li><a class="link_name" ><router-link to="#">Settings</router-link></a></li>
-          </ul>
-        </li>
-        <li>
-          <div class="profile-details">
-            
-            <!-- logout icon  -->
-            <i class="bx bx-log-out"></i>
-            <div class="name-job">
-              <div class="profile_name">Dark Mode</div>
-            </div>
-            <div class="profile-content">
-              <img id="slideout" v-bind:src="darkmode" alt="img" @click="updateImage" />
-            </div>
-          </div>
-        </li>
-      </ul>
     </div>
+
+    <ul class="nav-links">
+      <div class="nav-title">MAIN MENU</div>
+      <li>
+        <router-link class="link_icon" to="/">
+          <!-- icon -->
+          <i class="bx bx-tachometer has-text-black"></i>
+          <span class="link_name">Dashboard</span>
+        </router-link>
+        <ul class="sub-menu blank">
+          <li><router-link class="link_name" to="/">Dashboard</router-link></li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="iocn-link">
+          <router-link to="#">
+            <!-- icon -->
+            <i class="bx bx-bar-chart has-text-black"></i>
+            <span class="link_name">Products</span>
+          </router-link>
+          <!-- dropdown icon  -->
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+
+        <ul class="sub-menu">
+          <li><router-link class="link_name" to="#">Products </router-link></li>
+          <li>
+            <router-link to="/inventory" class="pl-2"
+              >Inventory Management</router-link
+            >
+          </li>
+          <li>
+            <router-link to="/product" class="pl-2"
+              >Product Management</router-link
+            >
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="iocn-link">
+          <router-link to="#">
+            <!-- icon -->
+            <i class="bx bx-chart has-text-black"></i>
+            <span class="link_name">Customers</span>
+          </router-link>
+          <!-- dropdown icon  -->
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <ul class="sub-menu">
+          <li><router-link class="link_name" to="#">Customers</router-link></li>
+          <li><router-link class="pl-2" to="#">web design</router-link></li>
+          <li><router-link class="pl-2" to="#">web design</router-link></li>
+          <li><router-link class="pl-2" to="#">web design</router-link></li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="iocn-link">
+          <router-link to="#">
+            <!-- icon -->
+            <i class="bx bxs-business has-text-black"></i>
+            <span class="link_name">Branches</span>
+          </router-link>
+          <!-- dropdown icon  -->
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <ul class="sub-menu">
+          <li><router-link class="link_name" to="#">Branches </router-link></li>
+          <li>
+            <router-link href="/branches" class="pl-2" to="/branches"
+              >All Branches</router-link
+            >
+          </li>
+          <li><router-link class="pl-2" to="#">web design</router-link></li>
+          <li><router-link class="pl-2" to="#">web design </router-link></li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="iocn-link">
+          <router-link to="#">
+            <!-- icon -->
+            <i class="bx bx-spreadsheet has-text-black"></i>
+            <span class="link_name">Reports</span>
+          </router-link>
+          <!-- dropdown icon  -->
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <ul class="sub-menu">
+          <li><router-link class="link_name" to="#">Reports</router-link></li>
+          <li><router-link class="pl-2" to="#">web design</router-link></li>
+          <li><router-link class="pl-2" to="#">web design</router-link></li>
+          <li><router-link class="pl-2" to="#">web design</router-link></li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="iocn-link">
+          <router-link to="#">
+            <!-- icon -->
+            <i class="bx bx-select-multiple has-text-black"></i>
+            <span class="link_name">Employees</span>
+          </router-link>
+          <!-- dropdown icon  -->
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <ul class="sub-menu">
+          <li>
+            <router-link class="link_name" to="#">Employees </router-link>
+          </li>
+          <li><router-link class="pl-2" to="#">web design</router-link></li>
+          <li><router-link class="pl-2" to="#">web design</router-link></li>
+          <li><router-link class="pl-2" to="#">web design</router-link></li>
+        </ul>
+      </li>
+
+      <li>
+        <router-link to="#">
+          <!-- icon -->
+          <i class="bx bx-cog has-text-black"></i>
+          <span class="link_name">Settings</span>
+        </router-link>
+        <ul class="sub-menu blank">
+          <li><router-link class="link_name" to="#">Settings </router-link></li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="profile-details">
+          <!-- logout icon  -->
+          <i class="bx bx-log-out"></i>
+          <div class="name-job">
+            <div class="profile_name">Dark Mode</div>
+          </div>
+          <div class="profile-content">
+            <img
+              id="slideout"
+              v-bind:src="darkmode"
+              alt="img"
+              @click="updateImage"
+            />
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 <script>
 export default {
   name: "Asidebar",
-  data(){
-    return{
+  data() {
+    return {
       darkmode: require("../assets/LandSwitchLightlight.svg"),
-    }
+    };
   },
   methods: {
-    
-    updateImage(){
-      
-      console.log('dark')
-      if (this.darkmode===require("../assets/LandSwitchLightlight.svg")){
-        this.darkmode= require("../assets/LandSwitchDark.svg")
+    updateImage() {
+      console.log("dark");
+      if (this.darkmode === require("../assets/LandSwitchLightlight.svg")) {
+        this.darkmode = require("../assets/LandSwitchDark.svg");
+      } else {
+        this.darkmode = require("../assets/LandSwitchLightlight.svg");
       }
-      else{
-        this.darkmode=require("../assets/LandSwitchLightlight.svg")
-      }
-      var slider= document.getElementById("slideout");
-      slider.className +=" slideout";
-      setTimeout(function(){
-        slider.classList.remove("slideout")
-      },100);
-    }
-            // handleStyles() {
-            //     console.log('handlestyles');
+      var slider = document.getElementById("slideout");
+      slider.className += " slideout";
+      setTimeout(function () {
+        slider.classList.remove("slideout");
+      }, 100);
+    },
+    // handleStyles() {
+    //     console.log('handlestyles');
 
-            //     // let sidebar = document.querySelector(".sidebar");
-            //     // let menu = document.querySelector(".menu");
-            //     // console.log(menu);
-            //     // sidebar.classList.toggle("close");
-            //     // console.log('menu');
+    //     // let sidebar = document.querySelector(".sidebar");
+    //     // let menu = document.querySelector(".menu");
+    //     // console.log(menu);
+    //     // sidebar.classList.toggle("close");
+    //     // console.log('menu');
 
+    //     let arrow = document.querySelectorAll(".arrow");(e) => {
+    //         let arrowParent = e.target.parentElement.parentElement;
+    //         arrowParent.classList.toggle("showMenu");
+    //         console.log('arrow')
+    //     }
 
-            //     let arrow = document.querySelectorAll(".arrow");(e) => {
-            //         let arrowParent = e.target.parentElement.parentElement;
-            //         arrowParent.classList.toggle("showMenu");
-            //         console.log('arrow')
-            //     }
-
-            // }
-
-        },
+    // }
+  },
 };
 </script>
 <style scoped>
@@ -228,7 +234,6 @@ export default {
 .sidebar.close .watch {
   display: none;
   transition: all 0.5s ease;
-
 }
 .sidebar .watch .watch-title {
   margin: 0 30px;
@@ -257,9 +262,8 @@ export default {
   letter-spacing: 0.05em;
   color: #000000;
 }
-.sidebar .Watch-details .branch_id{
+.sidebar .Watch-details .branch_id {
   color: #24242490;
-
 }
 .sidebar .watch .watch-profit {
   color: #24ff00;
@@ -308,8 +312,8 @@ export default {
 }
 
 .sidebar .nav-links::-webkit-scrollbar {
-    display: none;
-  }
+  display: none;
+}
 
 .sidebar .nav-links .nav-title {
   margin: 0 30px;
@@ -324,11 +328,9 @@ export default {
 
   color: #c4c4c4;
 }
-.sidebar.close .nav-links .nav-title{
+.sidebar.close .nav-links .nav-title {
   display: none;
-
 }
-
 
 .sidebar .nav-links li {
   position: relative;
@@ -336,26 +338,23 @@ export default {
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover {
-  border-radius:20px;
+  border-radius: 20px;
   background: rgba(196, 196, 196, 0.18);
-border: 1px solid rgba(196, 196, 196, 0.3);
-/*margin: 0 5px;*/
-
+  border: 1px solid rgba(196, 196, 196, 0.3);
+  /*margin: 0 5px;*/
 }
 .sidebar .nav-links li:hover .link_name {
   color: #000000;
 }
 
 .sidebar.close .nav-links li:hover .link_name {
-    color: #c4c4c4;
+  color: #c4c4c4;
 }
 
-.sidebar.close .nav-links li:hover{
+.sidebar.close .nav-links li:hover {
   background: linear-gradient(177.08deg, #9362f7 -7.99%, #892bda 118.63%);
-  border-radius:2px;
+  border-radius: 2px;
   border: 0;
-
-
 }
 .sidebar .nav-links li .iocn-link {
   display: flex;
@@ -377,12 +376,9 @@ border: 1px solid rgba(196, 196, 196, 0.3);
   transition: all 0.5s ease;
 }
 
-
-.sidebar.close .nav-links li i{
+.sidebar.close .nav-links li i {
   line-height: 50px;
   height: 50px;
-
-
 }
 
 .sidebar .nav-links li.showMenu i.arrow {
@@ -396,8 +392,7 @@ border: 1px solid rgba(196, 196, 196, 0.3);
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding:0 5px;
-
+  /* padding:0 5px; */
 }
 
 .sidebar .nav-links li a .link_name {
@@ -408,7 +403,6 @@ border: 1px solid rgba(196, 196, 196, 0.3);
   letter-spacing: 0.05em;
   color: #c4c4c4;
   transition: all 0.4s ease;
-
 }
 
 .sidebar.close .nav-links li a .link_name {
@@ -420,9 +414,8 @@ border: 1px solid rgba(196, 196, 196, 0.3);
   margin-top: -10px;
   display: none;
 }
-.sidebar.close .nav-links li .sub-menu{
+.sidebar.close .nav-links li .sub-menu {
   background: linear-gradient(177.08deg, #9362f7 -7.99%, #892bda 118.63%);
-
 }
 
 .sidebar .nav-links li.showMenu .sub-menu {
@@ -435,13 +428,12 @@ border: 1px solid rgba(196, 196, 196, 0.3);
   padding: 5px;
   white-space: nowrap;
   opacity: 0.6;
-  border-radius:20px;
+  border-radius: 20px;
   transition: all 0.3s ease;
 }
 
 .sidebar .nav-links li .sub-menu a:hover {
   opacity: 1;
-
 }
 
 .sidebar.close .nav-links li .sub-menu {
@@ -515,13 +507,11 @@ border: 1px solid rgba(196, 196, 196, 0.3);
   object-fit: cover;
   margin: 0 15px 0 14px;
   transition: all 0.6s ease;
-  cursor:pointer;
-
-
+  cursor: pointer;
 }
 
 .sidebar.close .profile-details img {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .sidebar .profile-details .profile_name,
@@ -543,16 +533,16 @@ border: 1px solid rgba(196, 196, 196, 0.3);
 }
 
 /* slide fade out */
-    .slideout{
-      /* animation: 1s ease-in 0s 1 slideInFromLeft; */
-      animation: fade 1s ease-in-out;
-    }
-    @keyframes fade {
-      from{
-        opacity: 0;
-      }
-      to{
-        opacity: 1;
-      }
-    }
+.slideout {
+  /* animation: 1s ease-in 0s 1 slideInFromLeft; */
+  animation: fade 1s ease-in-out;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 </style>
