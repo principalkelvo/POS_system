@@ -60,7 +60,8 @@ export default {
 
 <style lang="scss">
 @import "@/../node_modules/bulma";
-@import "../node_modules/boxicons/css/boxicons.css";
+@import "../node_modules/boxicons/css/boxicons.min.css";
+
 
 #app{
   background: linear-gradient(122.46deg, #DD51ED 11.61%, rgba(221, 81, 237, 0.35) 103.87%);

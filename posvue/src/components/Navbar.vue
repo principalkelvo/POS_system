@@ -10,20 +10,20 @@
             <div class="navbar-start">
                 <div class="navbar-item">
                     <form method="get" action="/search">
-                        <div class="field has-addons">
+                        <div class="field ">
 <!--search input-->
-                            <div class="control">
-                                <input type="text" class="input bx" placeholder="&#xebf7; Search..." name="query" />
+                            <div class="control is-flex">
+                                <input type="text" class="input is-small is-rounded" placeholder="&#xebf7; Search..." name="query" />
                             </div>
 
 <!--search input icon-->
-                            <div class="control">
+                            <!-- <div class="control">
                                 <button class="button">
                                     <span class="icon">
                                         <i class="bx bx-search"></i>
                                     </span>
                                 </button>
-                            </div>
+                            </div> -->
                         </div>
                     </form>
                 </div>
@@ -100,7 +100,12 @@
 </script>
 
 <style lang="scss" scoped>
-    .navbar .profile-details {
+
+input::placeholder{
+  font-family: "boxicons";
+  color: rgba(0, 0, 0, 0.809);
+}
+.navbar .profile-details {
         width: 105px;
         display: flex;
         align-items: center;
