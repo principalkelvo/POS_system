@@ -1,5 +1,12 @@
 import { createApp } from 'vue'
+
+/* Vue. Main component */
+
 import App from './App.vue'
+
+
+/* Router & Store */
+
 import router from './router'
 import store from './store'
 import axios from 'axios'
