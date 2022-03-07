@@ -27,7 +27,8 @@ export default {
   },
   data() {
     return {
-      width: window.innerWidth, height: window.innerHeight
+      width: window.innerWidth, 
+      height: window.innerHeight
     };
   },
   created() {
@@ -36,13 +37,24 @@ export default {
   destroyed() {
     window.removeEventListener("resize", this.onResize);
   },
-  method:{
-    onResize(e) {
+  mounted() {
+    this.onResize();
+
+  },
+  methods:{
+    onResize() {
       this.width = window.innerWidth;
       this.height = window.innerHeight;
       console.log(this.width +'port'+ this.height)
+      if (this.width<=768){
+      let sidebar = document.querySelector(".sidebar");
+                let menu = document.querySelector(".menu");
+                console.log(menu);
+                sidebar.classList.add("close");
+                console.log('menu');}
     },
   },
+  
 };
 </script>
 
