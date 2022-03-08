@@ -3,21 +3,19 @@
           <h2
             class="title has-text-weight-bold has-text-black is-size-4"
           >
-            Products
+            Branches
           </h2>
           <!-- <div class="column has-background-white box"></div> -->
 
           <table class="table is-fullwidth box">
             <thead>
               <tr>
-                <th>Product</th>
+                <th>Branch</th>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Price</th>
-                <th>Category</th>
+                <th>Location</th>
                 <th>Quantity</th>
-                <th>Brand</th>
-                <th>Stock Status</th>
+                <th>Status</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -32,7 +30,7 @@
 
 <script>
 export default {
-    name:'Products'
+    name:'Branches'
 };
 </script>
 
