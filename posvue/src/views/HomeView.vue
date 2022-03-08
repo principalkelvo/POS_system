@@ -93,7 +93,7 @@
                 <tr>
                   <td class="product-tb has-text-left">
                     <div class="image mr-2">
-                    <img src="../assets/logo.png" class=" is-128x128">
+                    <img src="../assets/logo.png" class="">
                     </div>
                     
                     <p class="has-text-weight-bold has-text-grey-dark is-size-7"><strong class="is-size-6">Product C</strong> <br>Category A</p> 
@@ -195,7 +195,7 @@ export default {
 }
 .product-tb img{
   height: 42px;
-  width: 54.55px;
+  min-width: 54.55px;
   object-fit: cover;
   border-radius: 10px;
   padding: .35em;
