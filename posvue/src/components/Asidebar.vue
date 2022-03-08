@@ -100,7 +100,6 @@
             >
           </li>
           <li><router-link class="pl-2" to="#">Warehouse</router-link></li>
-          <li><router-link class="pl-2" to="#">web design </router-link></li>
         </ul>
       </li>
 
@@ -117,9 +116,10 @@
         <ul class="sub-menu">
           <li><router-link class="link_name" to="#">Reports</router-link></li>
           <li><router-link class="pl-2" to="#">Accounts</router-link></li>
-          <li><router-link class="pl-2" to="#">Employees reports</router-link></li>
-          <li><router-link class="pl-2" to="#">HR reports</router-link></li>
+          <li><router-link class="pl-2" to="#">Staffs reports</router-link></li>
+          <li><router-link class="pl-2" to="#">Customers reports</router-link></li>
           <li><router-link class="pl-2" to="#">Branch reports</router-link></li>
+          <li><router-link class="pl-2" to="#">HR reports</router-link></li>
         </ul>
       </li>
 
