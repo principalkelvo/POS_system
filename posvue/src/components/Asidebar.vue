@@ -76,9 +76,9 @@
         </div>
         <ul class="sub-menu">
           <li><router-link class="link_name" to="#">Customers</router-link></li>
-          <li><router-link class="pl-2" to="#">web design</router-link></li>
-          <li><router-link class="pl-2" to="#">web design</router-link></li>
-          <li><router-link class="pl-2" to="#">web design</router-link></li>
+          <li><router-link class="pl-2" to="#">Customers</router-link></li>
+          <li><router-link class="pl-2" to="#">Customer Charts</router-link></li>
+          <li><router-link class="pl-2" to="#">Customers Reviews</router-link></li>
         </ul>
       </li>
 
@@ -99,7 +99,7 @@
               >All Branches</router-link
             >
           </li>
-          <li><router-link class="pl-2" to="#">web design</router-link></li>
+          <li><router-link class="pl-2" to="#">Warehouse</router-link></li>
           <li><router-link class="pl-2" to="#">web design </router-link></li>
         </ul>
       </li>
@@ -116,9 +116,10 @@
         </div>
         <ul class="sub-menu">
           <li><router-link class="link_name" to="#">Reports</router-link></li>
-          <li><router-link class="pl-2" to="#">web design</router-link></li>
-          <li><router-link class="pl-2" to="#">web design</router-link></li>
-          <li><router-link class="pl-2" to="#">web design</router-link></li>
+          <li><router-link class="pl-2" to="#">Accounts</router-link></li>
+          <li><router-link class="pl-2" to="#">Employees reports</router-link></li>
+          <li><router-link class="pl-2" to="#">HR reports</router-link></li>
+          <li><router-link class="pl-2" to="#">Branch reports</router-link></li>
         </ul>
       </li>
 
@@ -136,9 +137,9 @@
           <li>
             <router-link class="link_name" to="#">Employees </router-link>
           </li>
-          <li><router-link class="pl-2" to="#">web design</router-link></li>
-          <li><router-link class="pl-2" to="#">web design</router-link></li>
-          <li><router-link class="pl-2" to="#">web design</router-link></li>
+          <li><router-link class="pl-2" to="#">Staffs</router-link></li>
+          <li><router-link class="pl-2" to="#">Leave</router-link></li>
+          <li><router-link class="pl-2" to="#">Ex employees</router-link></li>
         </ul>
       </li>
 
