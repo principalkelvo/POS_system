@@ -107,6 +107,45 @@
         <div class="iocn-link">
           <router-link to="#">
             <!-- icon -->
+            <i class="bx bx-user has-text-black"></i>
+            <span class="link_name">Employees</span>
+          </router-link>
+          <!-- dropdown icon  -->
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <ul class="sub-menu">
+          <li>
+            <router-link class="link_name" to="#">Employees </router-link>
+          </li>
+          <li><router-link class="pl-2" to="#">Staffs</router-link></li>
+          <li><router-link class="pl-2" to="#">Leave</router-link></li>
+          <li><router-link class="pl-2" to="#">Ex employees</router-link></li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="iocn-link">
+          <router-link to="#">
+            <!-- icon -->
+            <i class="bx bx-select-multiple has-text-black"></i>
+            <span class="link_name">Orders</span>
+          </router-link>
+          <!-- dropdown icon  -->
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <ul class="sub-menu">
+          <li>
+            <router-link class="link_name" to="#">Orders </router-link>
+          </li>
+          <li><router-link class="pl-2" to="#">Orders</router-link></li>
+          <li><router-link class="pl-2" to="#">Transactions</router-link></li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="iocn-link">
+          <router-link to="#">
+            <!-- icon -->
             <i class="bx bx-spreadsheet has-text-black"></i>
             <span class="link_name">Reports</span>
           </router-link>
@@ -123,25 +162,7 @@
         </ul>
       </li>
 
-      <li>
-        <div class="iocn-link">
-          <router-link to="#">
-            <!-- icon -->
-            <i class="bx bx-select-multiple has-text-black"></i>
-            <span class="link_name">Employees</span>
-          </router-link>
-          <!-- dropdown icon  -->
-          <i class="bx bxs-chevron-down arrow"></i>
-        </div>
-        <ul class="sub-menu">
-          <li>
-            <router-link class="link_name" to="#">Employees </router-link>
-          </li>
-          <li><router-link class="pl-2" to="#">Staffs</router-link></li>
-          <li><router-link class="pl-2" to="#">Leave</router-link></li>
-          <li><router-link class="pl-2" to="#">Ex employees</router-link></li>
-        </ul>
-      </li>
+      
 
       <li>
         <router-link to="#">
