@@ -45,22 +45,6 @@
                 <div class="field is-horizontal">
                   <!-- Name -->
                   <div class="field-body">
-                    <!-- <div class="field">
-                      <label class="label is-uppercase is-size-7">Branch name *</label>
-                      <p class="control is-expanded has-icons-left">
-                        <input
-                          class="input is-small"
-                          type="text"
-                          placeholder="Branch Name"
-                          v-model="Name"
-                        />
-                        <span class="icon is-small is-left">
-                          <i class="bx bxs-business"></i>
-                        </span>
-                      </p>
-                    </div> -->
-
-                    <!-- Categories -->
 
                     <div class="field">
                       <label class="label is-uppercase is-size-7"

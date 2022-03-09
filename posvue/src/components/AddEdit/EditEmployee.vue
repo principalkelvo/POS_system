@@ -3,7 +3,7 @@
       <h2
             class="title has-text-weight-bold has-text-white is-size-4"
           >
-            Add Product
+            Edit Employee
           </h2>
             <div class="columns is-multiline has-background-white box">
               <div class="column is-4 m-4">
@@ -11,24 +11,6 @@
                   <img src="#" alt="" class="p-2" />
                   <i class="bx bx-pencil box"></i>
                 </div>
-                <!-- <div class="is-flex is-justify-content-space-between mr-6">
-                  <div class="image variant_image">
-                    <img src="#" alt="" class="p-2" />
-                    <i class="bx bx-pencil box"></i>
-                  </div>
-                  <div class="image variant_image">
-                    <img src="#" alt="" class="p-2" />
-                    <i class="bx bx-pencil box"></i>
-                  </div>
-                  <div class="image variant_image">
-                    <img src="#" alt="" class="p-2" />
-                    <i class="bx bx-pencil box"></i>
-                  </div>
-                  <div class="image variant_image">
-                    <img src="#" alt="" class="p-2" />
-                    <i class="bx bx-pencil box"></i>
-                  </div>
-                </div> -->
               </div>
 
               <div class="column m-4">
@@ -49,24 +31,6 @@
                         </span>
                       </p>
                     </div>
-
-                    <!-- Categories -->
-
-                    <!-- <div class="field">
-                      <label class="label is-uppercase is-size-7"
-                        >Category *</label
-                      >
-                      <div class="control">
-                        <div class="select is-fullwidth is-small">
-                          <select v-model="enquiry">
-                            <option>General</option>
-                            <option>enquiry</option>
-                            <option>Conference</option>
-                            <option>enquiry</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div> -->
                   </div>
                 </div>
 
@@ -104,45 +68,7 @@
                   </div>
                 </div>
 
-                <!-- <div class="field is-horizontal mt-5"> -->
-                  <!-- Price -->
-                  <!-- <div class="field-body"> -->
-                    <!-- <div class="field">
-                      <label class="label is-uppercase is-size-7"
-                        >Supplier *</label
-                      >
-                      <div class="control">
-                        <div class="select is-fullwidth is-small">
-                          <select v-model="supplier">
-                            <option>General</option>
-                            <option>enquiry</option>
-                            <option>Conference</option>
-                            <option>enquiry</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div> -->
 
-                    <!-- Quantity -->
-                    <!-- <div class="field">
-                      <label class="label is-uppercase is-size-7"
-                        >Brand *</label
-                      >
-                      <div class="control">
-                        <div class="select is-fullwidth is-small">
-                          <select v-model="brand">
-                            <option>General</option>
-                            <option>enquiry</option>
-                            <option>Conference</option>
-                            <option>enquiry</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-
-                <!-- <label class="label is-uppercase  is-size-7">Price *</label> -->
                 <div class="field is-horizontal mt-5">
                   <!-- Price -->
                   <div class="field-body">
@@ -214,7 +140,7 @@
 
 <script>
 export default {
-    name:'AddProduct'
+    name:'EditEmployee'
 
 }
 </script>
@@ -235,13 +161,6 @@ export default {
   border-radius: 10px;
   margin-top: 1em;
 }
-/* .variant_image img {
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-  background: #c4c4c4;
-} */
  img {
   height: 100%;
   width: 100%;
@@ -253,17 +172,9 @@ export default {
   position: absolute;
   top: 0.5em;
   right: 0.5em;
-  /* border: 1px solid black; */
   border-radius: 4px;
   padding: 0.1em;
 }
-.variant_image i {
-  position: absolute;
-  top: 0.1em;
-  right: 0.1em;
-  /* border: 1px solid black; */
-  border-radius: 5px;
-  padding: 0.1em;
-}
+
 
 </style>

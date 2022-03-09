@@ -3,7 +3,7 @@
       <h2
             class="title has-text-weight-bold has-text-white is-size-4"
           >
-            Add Product
+            Add Supplier
           </h2>
             <div class="columns is-multiline has-background-white box">
               <div class="column is-4 m-4">
@@ -11,24 +11,6 @@
                   <img src="#" alt="" class="p-2" />
                   <i class="bx bx-pencil box"></i>
                 </div>
-                <!-- <div class="is-flex is-justify-content-space-between mr-6">
-                  <div class="image variant_image">
-                    <img src="#" alt="" class="p-2" />
-                    <i class="bx bx-pencil box"></i>
-                  </div>
-                  <div class="image variant_image">
-                    <img src="#" alt="" class="p-2" />
-                    <i class="bx bx-pencil box"></i>
-                  </div>
-                  <div class="image variant_image">
-                    <img src="#" alt="" class="p-2" />
-                    <i class="bx bx-pencil box"></i>
-                  </div>
-                  <div class="image variant_image">
-                    <img src="#" alt="" class="p-2" />
-                    <i class="bx bx-pencil box"></i>
-                  </div>
-                </div> -->
               </div>
 
               <div class="column m-4">
@@ -49,24 +31,6 @@
                         </span>
                       </p>
                     </div>
-
-                    <!-- Categories -->
-
-                    <!-- <div class="field">
-                      <label class="label is-uppercase is-size-7"
-                        >Category *</label
-                      >
-                      <div class="control">
-                        <div class="select is-fullwidth is-small">
-                          <select v-model="enquiry">
-                            <option>General</option>
-                            <option>enquiry</option>
-                            <option>Conference</option>
-                            <option>enquiry</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div> -->
                   </div>
                 </div>
 
@@ -213,7 +177,7 @@
 
 <script>
 export default {
-    name:'AddProduct'
+    name:'AddSupplier'
 
 }
 </script>

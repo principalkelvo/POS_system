@@ -11,24 +11,7 @@
                   <img src="#" alt="" class="p-2" />
                   <i class="bx bx-pencil box"></i>
                 </div>
-                <!-- <div class="is-flex is-justify-content-space-between mr-6">
-                  <div class="image variant_image">
-                    <img src="#" alt="" class="p-2" />
-                    <i class="bx bx-pencil box"></i>
-                  </div>
-                  <div class="image variant_image">
-                    <img src="#" alt="" class="p-2" />
-                    <i class="bx bx-pencil box"></i>
-                  </div>
-                  <div class="image variant_image">
-                    <img src="#" alt="" class="p-2" />
-                    <i class="bx bx-pencil box"></i>
-                  </div>
-                  <div class="image variant_image">
-                    <img src="#" alt="" class="p-2" />
-                    <i class="bx bx-pencil box"></i>
-                  </div>
-                </div> -->
+                
               </div>
 
               <div class="column m-4">
@@ -50,23 +33,6 @@
                       </p>
                     </div>
 
-                    <!-- Categories -->
-
-                    <!-- <div class="field">
-                      <label class="label is-uppercase is-size-7"
-                        >Category *</label
-                      >
-                      <div class="control">
-                        <div class="select is-fullwidth is-small">
-                          <select v-model="enquiry">
-                            <option>General</option>
-                            <option>enquiry</option>
-                            <option>Conference</option>
-                            <option>enquiry</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div> -->
                   </div>
                 </div>
 
@@ -103,85 +69,6 @@
                     </div>
                   </div>
                 </div>
-
-                <!-- <div class="field is-horizontal mt-5"> -->
-                  <!-- Price -->
-                  <!-- <div class="field-body">
-                    <div class="field">
-                      <label class="label is-uppercase is-size-7"
-                        >Supplier *</label
-                      >
-                      <div class="control">
-                        <div class="select is-fullwidth is-small">
-                          <select v-model="supplier">
-                            <option>General</option>
-                            <option>enquiry</option>
-                            <option>Conference</option>
-                            <option>enquiry</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div> -->
-
-                    <!-- Quantity -->
-                    <!-- <div class="field">
-                      <label class="label is-uppercase is-size-7"
-                        >Brand *</label
-                      >
-                      <div class="control">
-                        <div class="select is-fullwidth is-small">
-                          <select v-model="brand">
-                            <option>General</option>
-                            <option>enquiry</option>
-                            <option>Conference</option>
-                            <option>enquiry</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-
-                <!-- <label class="label is-uppercase  is-size-7">Price *</label> -->
-                <!-- <div class="field is-horizontal mt-5"> -->
-                  <!-- Price -->
-                  <!-- <div class="field-body">
-                    <div class="field">
-                      <label class="label is-uppercase is-size-7"
-                        >Price *</label
-                      >
-                      <p class="control is-expanded has-icons-left">
-                        <input
-                          class="input is-small"
-                          type="number"
-                          placeholder="Price"
-                          v-model="Price"
-                        />
-                        <span class="icon is-small is-left">
-                          <i class="bx bx-money"></i>
-                        </span>
-                      </p>
-                    </div> -->
-
-                    <!-- Quantity -->
-                    <!-- <div class="field">
-                      <label class="label is-uppercase is-size-7"
-                        >Quantity *</label
-                      >
-                      <p class="control is-expanded has-icons-left">
-                        <input
-                          class="input is-small"
-                          type="number"
-                          placeholder="Quantity"
-                          v-model="Quantity"
-                        />
-                        <span class="icon is-small is-left">
-                          <i class="bx bxs-report"></i>
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </div> -->
 
                 <!-- Category tags -->
                 <label class="label is-uppercase mt-5 is-size-7"
