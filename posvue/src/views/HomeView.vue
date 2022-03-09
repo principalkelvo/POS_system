@@ -149,7 +149,7 @@
 
 <script>
 // @ is an alias to /src
-import BarChart from "@/components/BarChart.vue"
+import BarChart from "@/components/Charts/BarChart.vue"
 
 export default {
   name: "HomeView",
