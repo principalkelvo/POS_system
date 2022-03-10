@@ -64,21 +64,21 @@
         </ul>
       </li>
 
-      <li>
-        <div class="iocn-link">
-          <router-link to="#">
-            <!-- icon -->
-            <i class="bx bx-chart has-text-black"></i>
-            <span class="link_name">Customers</span>
-          </router-link>
-          <!-- dropdown icon  -->
-          <i class="bx bxs-chevron-down arrow"></i>
-        </div>
-        <ul class="sub-menu">
+      
+        <!-- <ul class="sub-menu">
           <li><router-link class="link_name" to="#">Customers</router-link></li>
           <li><router-link class="pl-2" to="#">Customers</router-link></li>
           <li><router-link class="pl-2" to="#">Customer Charts</router-link></li>
           <li><router-link class="pl-2" to="#">Customers Reviews</router-link></li>
+        </ul> -->
+      <li>
+        <router-link class="link_icon" to="/customer">
+          <!-- icon -->
+          <i class="bx bx-chart has-text-black"></i>
+          <span class="link_name">Customers</span>
+        </router-link>
+        <ul class="sub-menu blank">
+          <li><router-link class="link_name" to="/customer">Customers</router-link></li>
         </ul>
       </li>
 
