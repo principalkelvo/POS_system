@@ -4,6 +4,7 @@ import Category from '../views/Category.vue'
 import Product from '../views/Product.vue'
 import Inventory from '../views/Inventory.vue'
 import Branches from '../views/Branches.vue'
+import Customer from '../views/Customer.vue'
 
 const routes = [{
         path: '/',
@@ -38,6 +39,11 @@ const routes = [{
         path: '/branches',
         name: 'Branches',
         component: Branches
+    },
+    {
+        path: '/customer',
+        name: 'Customer',
+        component: Customer
     },
 ]
 

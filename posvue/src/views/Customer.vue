@@ -4,7 +4,7 @@
       <div class="hero-body">
         <div class="">
           <h2 class="title has-text-weight-bold has-text-black is-size-4">
-            Products
+            Customers
           </h2>
           <div class="columns is-fullwidth has-background-white box">
             <div class="column m-2 box has-background-faded-pink">
@@ -45,11 +45,11 @@
                 alt=""
               />
             </div>
-            <!-- <div class="column m-2 box has-background-faded-pink">
+            <div class="column m-2 box has-background-faded-pink">
               <h2
                 class="is-size-6 has-text-weight-bold has-text-black is-size-4"
               >
-                Sold Products
+                Reviews
               </h2>
 
               <img
@@ -57,7 +57,7 @@
                 src="../assets/arrows/arrows4.svg"
                 alt=""
               />
-            </div> -->
+            </div>
           </div>
 
         </div>
@@ -67,7 +67,7 @@
 </template>
 <script>
 export default {
-  name: "Product",
+  name: "Customer",
   components: {
   },
 };
