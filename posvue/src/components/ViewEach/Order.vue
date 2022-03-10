@@ -16,13 +16,20 @@
                 <p> <strong>Order Id : </strong> 00233  </p>
                 <p> <strong>Product Name : </strong>product A, productB,</p>
                 <p> <strong>Product Id : </strong> 00233  </p>
+                <p> <strong>Order Date : </strong> 2/01/2023  </p>
                 <p> <strong>Customer contact : </strong> 079993932  </p>
                 <p> <strong>Customer Name : </strong>john Smith</p>
-                <p> <strong>Delivery Location : </strong> Nai </p>
-                <p> <strong>Order Status : </strong> Shipped  </p>
-                <p> <strong>Order Date : </strong> 2/01/2023  </p>
                 <p> <strong>Products Quantity : </strong> 2 items  </p>
+                <p> <strong>Delivered To : </strong> Nai </p>
+                <p> <strong>Order Status : </strong> Shipped  </p>
               </div>
+
+                <div class="column ">
+                <p> <strong>Shipping : </strong> Fargo express  </p>
+                <p> <strong>Payment method : </strong> M-pesa </p>
+                <p> <strong>Location : </strong> Nai </p>
+              </div>
+
 
                 <div class="column ">
                 <p> <strong>Order Manager : </strong> Loris name  </p>

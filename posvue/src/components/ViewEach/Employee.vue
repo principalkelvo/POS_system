@@ -22,7 +22,7 @@
                 <p> <strong>Position : </strong> Single  </p>
                 <p> <strong>Status : </strong> Active  </p>
                 <p> <strong>Rate : </strong> 2 star  </p>
-                <p> <strong>Products Quantity : </strong> 2,567  </p>
+                <p> <strong>Total Sales : </strong> 2,567  </p>
                 <button disabled="disabled">Documents</button>
               </div>
 
