@@ -59,10 +59,8 @@
               />
             </div>
           </div>
-          <StockTransfer />
 
-
-          
+          <Branch />
         </div>
       </div>
     </section>
@@ -70,18 +68,18 @@
 </template>
 <script>
 import ReturnedProducts from "../components/tables/ReturnedProducts.vue";
-import AddCategory from '../components/AddEdit/AddCategory.vue'
-import StockTransfer from '../components/AddEdit/StockTransfer.vue'
+import AddCategory from "../components/AddEdit/AddCategory.vue";
+import StockTransfer from "../components/AddEdit/StockTransfer.vue";
+import Branch from "@/components/ViewEach/Branch.vue";
 export default {
   name: "Product",
   components: {
     ReturnedProducts,
     AddCategory,
     StockTransfer,
+    Branch,
   },
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
