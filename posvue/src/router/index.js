@@ -6,7 +6,30 @@ import Inventory from '../views/Inventory.vue'
 import Branches from '../views/Branches.vue'
 import Customer from '../views/Customer.vue'
 
-const routes = [{
+import SignUp from '../views/SignUp.vue'
+import Login from '../views/Login.vue'
+import Password from '../views/Password.vue'
+
+const routes = [
+
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login
+    },
+    {
+        path: '/signup',
+        name: 'SignUp',
+        component: SignUp
+    },
+
+    {
+        path: '/forgotpassword',
+        name: 'Password',
+        component: Password
+    },
+
+    {
         path: '/',
         name: 'home',
         component: HomeView
