@@ -42,7 +42,21 @@
         <div class="iocn-link">
           <router-link to="#">
             <!-- icon -->
-            <i class="bx bx-bar-chart has-text-black"></i>
+            <i class="has-text-black"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                ></path></svg
+            ></i>
             <span class="link_name">Products</span>
           </router-link>
           <!-- dropdown icon  -->
@@ -64,8 +78,7 @@
         </ul>
       </li>
 
-      
-        <!-- <ul class="sub-menu">
+      <!-- <ul class="sub-menu">
           <li><router-link class="link_name" to="#">Customers</router-link></li>
           <li><router-link class="pl-2" to="#">Customers</router-link></li>
           <li><router-link class="pl-2" to="#">Customer Charts</router-link></li>
@@ -74,13 +87,32 @@
       <li>
         <router-link class="link_icon" to="/customer">
           <!-- icon -->
-          <i class="bx bx-chart has-text-black"></i>
+          <i class="has-text-black"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path></svg
+          ></i>
           <span class="link_name">Customers</span>
         </router-link>
         <ul class="sub-menu blank">
-          <li><router-link class="link_name" to="/customer">Customers</router-link></li>
+          <li>
+            <router-link class="link_name" to="/customer"
+              >Customers</router-link
+            >
+          </li>
         </ul>
       </li>
+      
 
       <li>
         <div class="iocn-link">
@@ -127,7 +159,21 @@
         <div class="iocn-link">
           <router-link to="#">
             <!-- icon -->
-            <i class="bx bx-select-multiple has-text-black"></i>
+            <i class="has-text-black"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path></svg
+            ></i>
             <span class="link_name">Orders</span>
           </router-link>
           <!-- dropdown icon  -->
@@ -156,13 +202,13 @@
           <li><router-link class="link_name" to="#">Reports</router-link></li>
           <li><router-link class="pl-2" to="#">Accounts</router-link></li>
           <li><router-link class="pl-2" to="#">Staffs reports</router-link></li>
-          <li><router-link class="pl-2" to="#">Customers reports</router-link></li>
+          <li>
+            <router-link class="pl-2" to="#">Customers reports</router-link>
+          </li>
           <li><router-link class="pl-2" to="#">Branch reports</router-link></li>
           <li><router-link class="pl-2" to="#">HR reports</router-link></li>
         </ul>
       </li>
-
-      
 
       <li>
         <router-link to="#">
@@ -176,9 +222,19 @@
       </li>
 
       <li>
+        <div class="profile-details-help profile-details">
+          <!-- logout icon  -->
+          <i class="bx bx-phone has-text-black"></i>
+          <div class="name-job">
+            <div class="profile_name">Help & support</div>
+          </div>
+          <div class="profile-content"></div>
+        </div>
+      </li>
+      <li>
         <div class="profile-details">
           <!-- logout icon  -->
-          <i class="bx bx-log-out"></i>
+          <i class="bx bx-moon"></i>
           <div class="name-job">
             <div class="profile_name">Dark Mode</div>
           </div>
@@ -551,8 +607,19 @@ export default {
   width: 260px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(177.08deg, #9362f7 -7.99%, #892bda 118.63%);
+  justify-content: left;
+  background: #9362f7;
+  padding: 0 0 6px 2px;
+  transition: all 0.5s ease;
+}
+.sidebar .profile-details-help {
+  position: fixed;
+  bottom: 2.5em;
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background: #9362f7;
   padding: 0 0 6px 2px;
   transition: all 0.5s ease;
 }
@@ -567,10 +634,13 @@ export default {
 }
 .sidebar .profile-details img {
   height: 1.2em;
-  object-fit: cover;
-  margin: 0 15px 0 14px;
+  /* object-fit: cover; */
+  margin: 5px 20px 0 35px;
   transition: all 0.6s ease;
   cursor: pointer;
+}
+.sidebar.close .profile-details img {
+  margin: 0 15px 0 14px;
 }
 
 .sidebar.close .profile-details img {
@@ -580,7 +650,7 @@ export default {
 .sidebar .profile-details .profile_name,
 .sidebar .profile-details .job {
   color: #c4c4c4;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   white-space: nowrap;
 }
