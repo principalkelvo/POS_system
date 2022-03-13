@@ -5,6 +5,26 @@
         <div class="columns ">
           <div class="column is-5 is-offset-4 has-background-faded-purple box p-4 has-text-white my-4">
             <h1 class="title has-text-white">Sign Up</h1>
+            <p class="has-text-centered is-size-6 ">
+                  Choose your social account to create account
+                </p>
+                <div class="columns is-multiline my-1 is-flex is-justify-content-center">
+                  <div class="column is-2 mx-4 my-1">
+                    <i class="bx bxl-facebook bx-md"></i>
+                  </div>
+                  <div class="column is-2 mx-4 my-1">
+                    <i class="bx bxl-instagram bx-md"></i>
+                  </div>
+                  <div class="column is-2 mx-4 my-1">
+                    <i class="bx bxl-google bx-md"></i>
+                  </div>
+                   <div class="column is-2 mx-4 my-1">
+                    <i class="bx bxl-github bx-md"></i>
+                  </div>
+                </div>
+                <p class="has-text-centered is-size-6 my-3 text">
+                  Or Register with email
+                </p>
             <form
               @submit.prevent="submitForm"
               class="is-justify-content-center"
@@ -136,7 +156,7 @@ export default {
 #cover {
   /* background: #222 url('https://unsplash.it/1920/1080/?random') center center no-repeat; */
   /* background-size: cover; */
-  height: 92vh;
+  height: 100%;
   text-align: center;
   display: flex;
   align-items: center;
@@ -148,6 +168,8 @@ export default {
   position: relative;
   z-index: 1;
 }
+
+
 
 /* only used for background overlay not needed for centering */
 /* form:before {

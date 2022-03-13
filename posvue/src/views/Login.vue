@@ -5,12 +5,32 @@
         <div class="columns">
           <div class="column is-5 is-offset-4 has-background-faded-purple box has-text-white p-4 my-6">
             <h1 class="title has-text-white">Login</h1>
+            <p class="has-text-centered is-size-6 ">
+                  Log in to your account to continue
+                </p>
+                <div class="columns is-multiline my-1 is-flex">
+                  <div class="column box mx-4 my-1">
+                    <i class="bx bxl-facebook bx-md"></i>
+                  </div>
+                  <div class="column box mx-4 my-1">
+                    <i class="bx bxl-instagram bx-md"></i>
+                  </div>
+                  <div class="column box mx-4 my-1">
+                    <i class="bx bxl-google bx-md"></i>
+                  </div>
+                   <div class="column box mx-4 my-1">
+                    <i class="bx bxl-github bx-md"></i>
+                  </div>
+                </div>
+                <p class="has-text-centered is-size-6 my-3 text">
+                  Or Log in with email
+                </p>
             <form
               @submit.prevent="submitForm"
               class="is-justify-content-center"
             >
               <div class="field">
-                <label class="is-size-7">Email</label>
+                <label class="is-size-6">Email</label>
                 <div class="control">
                   <input
                     type="email"
@@ -22,7 +42,7 @@
                 </div>
               </div>
               <div class="field">
-                <label class="is-size-7">Password</label>
+                <label class="is-size-6">Password</label>
                 <div class="control">
                   <input
                     type="password"
@@ -130,12 +150,17 @@ export default {
 #cover {
   /* background: #222 url('https://unsplash.it/1920/1080/?random') center center no-repeat; */
   background-size: cover;
-  height: 87vh;
+  height: 100%;
   text-align: center;
   display: flex;
   align-items: center;
   position: relative;
 }
+/* @media screen and (max-width: 1024px){
+  #cover{
+    height: 100%;
+  }
+} */
 
 #cover-caption {
   width: 100%;
@@ -155,6 +180,24 @@ export default {
   z-index: -1;
   border-radius: 10px;
 } */
+
+.text{
+  white-space: auto;
+}
+/* stroke before and after */
+ /* .text::before {
+    content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
+    text-decoration: line-through;
+    color: #f178ff;
+
+    margin: auto 0.3em;
+  }
+  .text::after {
+    content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
+    text-decoration: line-through;
+    color: #f178ff;
+    margin: auto 0.3em;
+  } */
 .field {
   text-align: left;
 }
