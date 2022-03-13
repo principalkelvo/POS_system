@@ -14,14 +14,15 @@
         <div class="columns is-multiline">
 
           <!-- overview -->
-          <div class="column is-8 has-background-white box mr-3">
-            <div class="is-flex is-justify-content-space-between">
-              <h2 class="subtitle has-text-weight-bold has-text-black is-size-4 ">Overview</h2>
-              <button class="button is-pink is-pulled-right has-text-white">
+          <div class="column is-12 is-flex is-justify-content-space-between">
+              <h2 class="subtitle has-text-weight-bold has-text-black is-size-3 ">Overview</h2>
+              <button class="button is-purple is-pulled-right has-text-white">
                 All time
                 <i class="bx bx-chevron-down"></i>
               </button>
             </div>
+          <div class="column is-8 has-background-white box mr-3">
+            
             <div class="has-background-pink box is-justify-content-space-between overview_customer">
               <div class="column is-6 has-background-white box mb-0">
                 <div class="is-flex is-justify-content-space-between">
@@ -115,10 +116,10 @@
             <div class="is-flex is-justify-content-space-between">
               <h2 class="subtitle has-text-weight-bold has-text-black is-size-4 ">Total Income</h2>
 
-              <button class="button is-pink is-pulled-right has-text-white">
+              <!-- <button class="button is-pink is-pulled-right has-text-white">
                 All time
                 <i class="bx bx-chevron-down"></i>
-              </button>
+              </button> -->
             </div>
 
             <h3>BarChart example</h3>
@@ -290,7 +291,7 @@ img{
 }
 .has-background-faded-pink,
 .is-faded-pink {
-  background: rgba(221, 81, 237, 0.4);;
+  background: rgba(221, 81, 237, 0.4);
 }
 .has-background-purple,
 .is-purple {
