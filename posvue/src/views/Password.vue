@@ -25,10 +25,10 @@
               <div class="notification is-danger" v-if="errors.length">
                 <p v-for="error in errors" v-bind:key="error">{{ error }}</p>
               </div>
-              <div class="field">
+              <div class="field is-flex is-justify-content-center">
                 <div class="control">
-                  <button class="button is-pink has-text-white is-fullwidth is-small">
-                    Submit
+                  <button class="button is-pink has-text-white is-small">
+                    Reset
                   </button>
                 </div>
               </div>
@@ -87,8 +87,7 @@ export default {
   //           localStorage.setItem('token', token)
 
   //           //back to previous page or to home
-  //           const toPath = this.$route.query.to || '/home'
-  //           this.$router.push(toPath)
+  //           this.$router.push('/success')
   //         })
   //          .catch(error=>{
   //             if(error.response){
