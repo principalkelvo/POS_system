@@ -105,7 +105,7 @@
                     <svg class="svg-icon mr-0 text-secondary" id="h-05-p" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
                                           </svg>
-                  <a href="" class=""> Logout </a>
+                  <a href="" class="" @click="logout()"> Logout </a>
                   </li>
                 </ul>
               </div>
@@ -124,6 +124,7 @@
 </template>
 
 <script>
+// import axios from axios
 export default {
   name: "Navbar",
   data() {
@@ -132,11 +133,20 @@ export default {
     };
   },
   methods: {
-    //   drop() {
-    //       let dropdown = document.getElementById("dropdown");
-    //       dropdown.classList.toggle('is-active')
-    //       console.log("dropdown")
-    //   },
+    // async logout() {
+    //   await axios
+    //     .post('/api/v1/token/logout/')
+    //     .then(response=>{
+    //       console.log('logged out')
+    //     })
+    //     .catch(error=>{
+    //       console.log(JSON.stringify(error))
+    //     })
+    //     axios.defaults.headers.common['Authorization']=''
+    //     localStorage.RemoveItem('token')
+    //     this.$store.commit('removeToken')
+    //     this.$router.push('/')
+    // },
     handleStyles() {
       console.log("handlestyles");
 
