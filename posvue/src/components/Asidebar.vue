@@ -272,6 +272,7 @@ export default {
       setTimeout(function () {
         slider.classList.remove("slideout");
       }, 100);
+      this.$store.commit('darkModeToggle')
     },
     // handleStyles() {
     //     console.log('handlestyles');
@@ -381,7 +382,7 @@ export default {
 }
 .sidebar .nav-links {
   height: 75%;
-  padding: 10px 0 150px 0;
+  padding: 10px 0 12em 0;
   overflow: auto;
   margin-top: 0;
 }
