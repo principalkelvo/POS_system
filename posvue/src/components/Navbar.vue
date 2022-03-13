@@ -133,6 +133,7 @@ export default {
     };
   },
   methods: {
+    //logout
     // async logout() {
     //   await axios
     //     .post('/api/v1/token/logout/')
