@@ -9,6 +9,7 @@ import Customer from '../views/Customer.vue'
 import SignUp from '../views/SignUp.vue'
 import Login from '../views/Login.vue'
 import Password from '../views/Password.vue'
+import Success from '../views/Success.vue'
 
 const routes = [
 
@@ -27,6 +28,12 @@ const routes = [
         path: '/forgotpassword',
         name: 'Password',
         component: Password
+    },
+
+    {
+        path: '/success',
+        name: 'Success',
+        component: Success
     },
 
     {
