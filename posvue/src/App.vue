@@ -25,6 +25,17 @@ export default {
     Asidebar,
     Footer
   },
+  beforeCreate() {
+    this.$store.commit('initializeStore')
+    const token= this.$store.state.token
+    // check if token exists
+    if(this.$store.state.token){
+      axios.defaults.headers.common['Authorization']= "Token "+ this.$store.state.token
+    }
+    else{
+      axios.defaults.headers.common['Authorization']=" "
+    }
+  },
   data() {
     return {
       width: window.innerWidth, 
