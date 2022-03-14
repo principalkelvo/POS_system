@@ -5,6 +5,12 @@
           >
             Add Employee
           </h2>
+          <!-- Personal info Date of join, birthday, Address,gender, Id no. Nationality Religion marital status
+          Bank info Bank name, account number,kra
+          Emergency info primary, name relationship phone
+          Family info
+          Education info
+          Experience info -->
             <div class="columns is-multiline has-background-white box">
               <div class="column is-4 m-4">
                 <div class="image main_image">
