@@ -149,9 +149,9 @@
           <li>
             <router-link class="link_name" to="#">Employees </router-link>
           </li>
-          <li><router-link class="pl-2" to="#">Staffs</router-link></li>
-          <li><router-link class="pl-2" to="#">Leave</router-link></li>
-          <li><router-link class="pl-2" to="#">Ex employees</router-link></li>
+          <li><router-link class="pl-2" to="/employees">Staffs</router-link></li>
+          <li><router-link class="pl-2" to="Leave">Leave</router-link></li>
+          <li><router-link class="pl-2" to="/ex-employees">Ex employees</router-link></li>
         </ul>
       </li>
 
@@ -183,14 +183,14 @@
           <li>
             <router-link class="link_name" to="#">Orders </router-link>
           </li>
-          <li><router-link class="pl-2" to="#">Orders</router-link></li>
-          <li><router-link class="pl-2" to="#">Transactions</router-link></li>
+          <li><router-link class="pl-2" to="/orders">Orders</router-link></li>
+          <li><router-link class="pl-2" to="/transactions">Transactions</router-link></li>
         </ul>
       </li>
 
       <li>
         <div class="iocn-link">
-          <router-link to="#">
+          <router-link to="/reports">
             <!-- icon -->
             <i class="bx bx-spreadsheet has-text-black"></i>
             <span class="link_name">Reports</span>
@@ -199,25 +199,25 @@
           <i class="bx bxs-chevron-down arrow"></i>
         </div>
         <ul class="sub-menu">
-          <li><router-link class="link_name" to="#">Reports</router-link></li>
-          <li><router-link class="pl-2" to="#">Accounts</router-link></li>
-          <li><router-link class="pl-2" to="#">Staffs reports</router-link></li>
+          <li><router-link class="link_name" to="/reports">Reports</router-link></li>
+          <li><router-link class="pl-2" to="/accountsreports">Accounts</router-link></li>
+          <li><router-link class="pl-2" to="/staffsreports">Staffs reports</router-link></li>
           <li>
-            <router-link class="pl-2" to="#">Customers reports</router-link>
+            <router-link class="pl-2" to="/customerreports">Customers reports</router-link>
           </li>
-          <li><router-link class="pl-2" to="#">Branch reports</router-link></li>
-          <li><router-link class="pl-2" to="#">HR reports</router-link></li>
+          <li><router-link class="pl-2" to="/branchesreports">Branch reports</router-link></li>
+          <li><router-link class="pl-2" to="/hrreports">HR reports</router-link></li>
         </ul>
       </li>
 
       <li>
-        <router-link to="#">
+        <router-link to="/settings">
           <!-- icon -->
           <i class="bx bx-cog has-text-black"></i>
           <span class="link_name">Settings</span>
         </router-link>
         <ul class="sub-menu blank">
-          <li><router-link class="link_name" to="#">Settings </router-link></li>
+          <li><router-link class="link_name" to="/settings">Settings </router-link></li>
         </ul>
       </li>
 
