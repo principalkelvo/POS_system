@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar">
     <div class="navbar-brand">
-      <div id="navbar-item" class="mt-3">
+      <div id="navbar-item" class="mt-4">
         <span class="icon">
-          <i class="bx bx-menu bx-lg menu" @click="handleStyles"></i>
+          <i class="bx bx-anchor bx-md menu" @click="handleStyles"></i>
         </span>
       </div>
       <!--search button-->
