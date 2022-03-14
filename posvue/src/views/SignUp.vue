@@ -70,7 +70,7 @@
               </div>
               <div class="field ">
                 <div class="control ">
-                  <button class="button has-background-pink has-text-white is-fullwidth is-small">Submit</button>
+                  <button class="button has-background-pink has-text-white is-fullwidth is-small">Create Account</button>
                 </div>
               </div>
 
