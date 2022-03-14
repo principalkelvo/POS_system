@@ -134,20 +134,22 @@ export default {
   },
   methods: {
     //logout
-    // async logout() {
-    //   await axios
-    //     .post('/api/v1/token/logout/')
-    //     .then(response=>{
-    //       console.log('logged out')
-    //     })
-    //     .catch(error=>{
-    //       console.log(JSON.stringify(error))
-    //     })
-    //     axios.defaults.headers.common['Authorization']=''
-    //     localStorage.RemoveItem('token')
-    //     this.$store.commit('removeToken')
-    //     this.$router.push('/')
-    // },
+    async logout() {
+      await axios
+        .post('/api/v1/token/logout/')
+        .then(response=>{
+          console.log('logged out')
+        })
+        .catch(error=>{
+          console.log(JSON.stringify(error))
+        })
+        axios.defaults.headers.common['Authorization']=''
+        localStorage.RemoveItem('token')
+        this.$store.commit('removeToken')
+        this.$router.push('/')
+    },
+
+
     handleStyles() {
       console.log("handlestyles");
 
@@ -155,6 +157,7 @@ export default {
       let menu = document.querySelector(".menu");
       console.log(menu);
       sidebar.classList.toggle("close");
+      menu.classList.toggle("rotate");
       console.log("menu");
 
       // let arrow = document.querySelectorAll(".arrow");
@@ -207,6 +210,17 @@ export default {
     display: flex;
   }
 }
+
+
+.menu {
+  transform: rotate(-90deg);
+}
+.menu.rotate {
+  transform: rotate(-270deg);
+  color: rgb(255, 0, 0);
+  transition: all .4s ease;
+}
+
 input::placeholder {
   font-family: "boxicons";
   color: rgba(0, 0, 0, 0.809);
