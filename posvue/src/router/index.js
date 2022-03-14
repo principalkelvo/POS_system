@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import store from '../store'
+
 import HomeView from '../views/HomeView.vue'
 import Category from '../views/Category.vue'
 import Product from '../views/Product.vue'
@@ -49,13 +51,19 @@ const routes = [
     {
         path: '/success',
         name: 'Success',
-        component: Success
+        component: Success,
+        meta: {
+            requireLogin: true
+        }
     },
 
     {
         path: '/',
         name: 'home',
-        component: HomeView
+        component: HomeView,
+        meta: {
+            requireLogin: true
+        }
     },
     {
         path: '/about',
@@ -69,34 +77,52 @@ const routes = [
     {
         path: '/category',
         name: 'Category',
-        component: Category
+        component: Category,
+        meta: {
+            requireLogin: true
+        }
     },
     {
         path: '/product',
         name: 'Product',
-        component: Product
+        component: Product,
+        meta: {
+            requireLogin: true
+        }
     },
     {
         path: '/inventory',
         name: 'Inventory',
-        component: Inventory
+        component: Inventory,
+        meta: {
+            requireLogin: true
+        }
     },
     {
         path: '/branches',
         name: 'Branches',
-        component: Branches
+        component: Branches,
+        meta: {
+            requireLogin: true
+        }
     },
     {
         path: '/customer',
         name: 'Customer',
-        component: Customer
+        component: Customer,
+        meta: {
+            requireLogin: true
+        }
     },
 
 
     {
         path: '/employees',
         name: 'Employees',
-        component: Employees
+        component: Employees,
+        meta: {
+            requireLogin: true
+        }
     },
     {
         path: '/leave',
@@ -106,57 +132,87 @@ const routes = [
     {
         path: '/ex-employees',
         name: 'Exemployees',
-        component: Exemployees
+        component: Exemployees,
+        meta: {
+            requireLogin: true
+        }
     },
 
 
     {
         path: '/orders',
         name: 'Orders',
-        component: Orders
+        component: Orders,
+        meta: {
+            requireLogin: true
+        }
     },
     {
         path: '/transactions',
         name: 'Transactions',
-        component: Transactions
+        component: Transactions,
+        meta: {
+            requireLogin: true
+        }
     },
 
 
     {
         path: '/reports',
         name: 'Reports',
-        component: Reports
+        component: Reports,
+        meta: {
+            requireLogin: true
+        }
     },
     {
         path: '/accountsreports',
         name: 'AccountsReports',
-        component: AccountsReports
+        component: AccountsReports,
+        meta: {
+            requireLogin: true
+        }
     },
     {
         path: '/staffsreports',
         name: 'StaffsReports',
-        component: StaffsReports
+        component: StaffsReports,
+        meta: {
+            requireLogin: true
+        }
     },
     {
         path: '/customerreports',
         name: 'CustomerReports',
-        component: CustomerReports
+        component: CustomerReports,
+        meta: {
+            requireLogin: true
+        }
     },
     {
         path: '/branchesreports',
         name: 'BranchesReports',
-        component: BranchesReports
+        component: BranchesReports,
+        meta: {
+            requireLogin: true
+        }
     },
     {
         path: '/hrreports',
         name: 'HRReports',
-        component: HRReports
+        component: HRReports,
+        meta: {
+            requireLogin: true
+        }
     },
 
     {
         path: '/settings',
         name: 'Settings',
-        component: Settings
+        component: Settings,
+        meta: {
+            requireLogin: true
+        }
     },
 ]
 

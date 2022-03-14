@@ -105,7 +105,7 @@
                     <svg class="svg-icon mr-0 text-secondary" id="h-05-p" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
                                           </svg>
-                  <a href="" class="" @click="logout()"> Logout </a>
+                  <a @click="logout()"> Logout </a>
                   </li>
                 </ul>
               </div>
@@ -124,7 +124,7 @@
 </template>
 
 <script>
-// import axios from axios
+import axios from 'axios'
 export default {
   name: "Navbar",
   data() {
@@ -144,9 +144,10 @@ export default {
           console.log(JSON.stringify(error))
         })
         axios.defaults.headers.common['Authorization']=''
-        localStorage.RemoveItem('token')
+        localStorage.removeItem('token')
         this.$store.commit('removeToken')
-        this.$router.push('/')
+        this.$router.push('/login')
+
     },
 
 
@@ -214,11 +215,12 @@ export default {
 
 .menu {
   transform: rotate(-90deg);
+  transition: all .4s ease;
+
 }
 .menu.rotate {
   transform: rotate(-270deg);
   color: rgb(255, 0, 0);
-  transition: all .4s ease;
 }
 
 input::placeholder {
