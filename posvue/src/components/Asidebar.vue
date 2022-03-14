@@ -243,7 +243,7 @@
               id="slideout"
               v-bind:src="darkmode"
               alt="img"
-              @click="updateImage"
+              @click="darkmode"
             />
           </div>
         </div>
@@ -260,7 +260,8 @@ export default {
     };
   },
   methods: {
-    updateImage() {
+    //darkmode
+    darkmode() {
       console.log("dark");
       if (this.darkmode === require("../assets/LandSwitchLightlight.svg")) {
         this.darkmode = require("../assets/LandSwitchDark.svg");
@@ -274,6 +275,7 @@ export default {
       }, 100);
       this.$store.commit('darkModeToggle')
     },
+
     // handleStyles() {
     //     console.log('handlestyles');
 
