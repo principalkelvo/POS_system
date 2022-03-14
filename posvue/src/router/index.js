@@ -6,6 +6,22 @@ import Inventory from '../views/Inventory.vue'
 import Branches from '../views/Branches.vue'
 import Customer from '../views/Customer.vue'
 
+import Employees from '../views/Employees.vue'
+import Leave from '../views/Leave.vue'
+import Exemployees from '../views/Exemployees.vue'
+
+import Orders from '../views/Orders.vue'
+import Transactions from '../views/Transactions.vue'
+
+import Reports from '../views/Reports.vue'
+import AccountsReports from '../views/AccountsReports.vue'
+import StaffsReports from '../views/StaffsReports.vue'
+import CustomerReports from '../views/CustomerReports.vue'
+import BranchesReports from '../views/BranchesReports.vue'
+import HRReports from '../views/HRReports.vue'
+
+import Settings from '../views/Settings.vue'
+
 import SignUp from '../views/SignUp.vue'
 import Login from '../views/Login.vue'
 import Password from '../views/Password.vue'
@@ -74,6 +90,73 @@ const routes = [
         path: '/customer',
         name: 'Customer',
         component: Customer
+    },
+
+
+    {
+        path: '/employees',
+        name: 'Employees',
+        component: Employees
+    },
+    {
+        path: '/leave',
+        name: 'Leave',
+        component: Leave
+    },
+    {
+        path: '/ex-employees',
+        name: 'Exemployees',
+        component: Exemployees
+    },
+
+
+    {
+        path: '/orders',
+        name: 'Orders',
+        component: Orders
+    },
+    {
+        path: '/transactions',
+        name: 'Transactions',
+        component: Transactions
+    },
+
+
+    {
+        path: '/reports',
+        name: 'Reports',
+        component: Reports
+    },
+    {
+        path: '/accountsreports',
+        name: 'AccountsReports',
+        component: AccountsReports
+    },
+    {
+        path: '/staffsreports',
+        name: 'StaffsReports',
+        component: StaffsReports
+    },
+    {
+        path: '/customerreports',
+        name: 'CustomerReports',
+        component: CustomerReports
+    },
+    {
+        path: '/branchesreports',
+        name: 'BranchesReports',
+        component: BranchesReports
+    },
+    {
+        path: '/hrreports',
+        name: 'HRReports',
+        component: HRReports
+    },
+
+    {
+        path: '/settings',
+        name: 'Settings',
+        component: Settings
     },
 ]
 
