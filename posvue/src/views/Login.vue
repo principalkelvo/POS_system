@@ -86,8 +86,8 @@
 </template>
 
 <script>
-// import axios from 'axios'
-// import {toast} from 'bulma-toast'
+import axios from 'axios'
+import {toast} from 'bulma-toast'
 
 export default {
   name: "Login",
@@ -98,9 +98,9 @@ export default {
       errors: [],
     };
   },
-  //   mounted(){
-  //     document.title='Welcome | Pokot'
-  //   },
+    mounted(){
+      document.title='Welcome | POS'
+    },
     methods:{
       async submitForm(){
         this.$store.commit('setIsLoading',true)
@@ -111,37 +111,37 @@ export default {
       if(this.password===''||this.password.length<4){
         this.errors.push('The password is too short')
       }
-  //       axios.defaults.headers.common['Authorization']='' //reset the authorization
-  //       localStorage.removeItem('token') //just to make sure that we are not auntheticated
-  //       const formData={
-  //         username: this.username,
-  //         password: this.password
-  //       }
-  //       await axios
-  //         .post('/api/v1/token/login/',formData)
-  //         .then(response=>{
-  //           const token=response.data.auth_token
+        axios.defaults.headers.common['Authorization']='' //reset the authorization
+        localStorage.removeItem('token') //just to make sure that we are not auntheticated
+        const formData={
+          username: this.username,
+          password: this.password
+        }
+        await axios
+          .post('/api/v1/token/login/',formData)
+          .then(response=>{
+            const token=response.data.auth_token
 
-  //           this.$store.commit('setToken', token)
-  //           axios.defaults.headers.common['Authorization']='Token '+ token
-  //           localStorage.setItem('token', token)
+            this.$store.commit('setToken', token)
+            axios.defaults.headers.common['Authorization']='Token '+ token
+            localStorage.setItem('token', token)
 
-  //           //back to previous page or to home
-  //           const toPath = this.$route.query.to || '/'
-  //           this.$router.push(toPath)
-  //         })
-  //          .catch(error=>{
-  //             if(error.response){
-  //               for(const property in error.response.data){
-  //                 this.errors.push(`${property}:${error.response.data[property]}`)
-  //               }
-  //             }
-  //             else if(error.message){
-  //               this.errors.push('Something went wrong. Please try again')
-  //             }
-  //           })
+            //back to previous page or to home
+            const toPath = this.$route.query.to || '/'
+            this.$router.push(toPath)
+          })
+           .catch(error=>{
+              if(error.response){
+                for(const property in error.response.data){
+                  this.errors.push(`${property}:${error.response.data[property]}`)
+                }
+              }
+              else if(error.message){
+                this.errors.push('Something went wrong. Please try again')
+              }
+            })
 
-  //           this.$store.commit('setIsLoading',false)
+            this.$store.commit('setIsLoading',false)
       }
     }
 };

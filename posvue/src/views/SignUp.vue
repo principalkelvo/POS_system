@@ -87,8 +87,8 @@
 </template>
 
 <script>
-// import axios from 'axios'
-// import {toast} from 'bulma-toast'
+import axios from 'axios'
+import {toast} from 'bulma-toast'
 
 export default {
   name: "SignUp",
@@ -100,9 +100,9 @@ export default {
       errors:[]
       }
   },
-//   mounted(){
-//     document.title='Register | Djackets'
-//   },
+  mounted(){
+    document.title='Register | POS'
+  },
   methods:{
     async submitForm(){
       this.$store.commit('setIsLoading',true)
@@ -121,31 +121,31 @@ export default {
           username:this.username,
           password:this.password1
         }
-//         axios
-//           .post('/api/v1/users/',formData)
-//           .then(response=>{
-//             toast({
-//               message:'Account was created, Please login',
-//               type:'is-success',
-//               dismissible:true,
-//               pauseOnHover:true,
-//               duration:2000,
-//               position:'bottom-right'
-//             })
-//             this.$router.push('/login')
-//           })
-//           .catch(error=>{
-//             if(error.response){
-//               for(const property in error.response.data){
-//                 this.errors.push(`${property}:${error.response.data[property]}`)
-//               }
-//             }
-//             else if(error.message){
-//               this.errors.push('Something went wrong. Please try again')
-//             }
-//           })
+        axios
+          .post('/api/v1/users/',formData)
+          .then(response=>{
+            toast({
+              message:'Account was created, Please login',
+              type:'is-success',
+              dismissible:true,
+              pauseOnHover:true,
+              duration:2000,
+              position:'bottom-right'
+            })
+            this.$router.push('/login')
+          })
+          .catch(error=>{
+            if(error.response){
+              for(const property in error.response.data){
+                this.errors.push(`${property}:${error.response.data[property]}`)
+              }
+            }
+            else if(error.message){
+              this.errors.push('Something went wrong. Please try again')
+            }
+          })
 
-//           this.$store.commit('setIsLoading',false)
+          this.$store.commit('setIsLoading',false)
       }
     }
   }
