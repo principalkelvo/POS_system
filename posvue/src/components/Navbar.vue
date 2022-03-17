@@ -54,8 +54,10 @@
     <div class="navbar-end">
       <!--<router-link to="/home" class="navbar-item">HOME</router-link>
                 <router-link to="/about" class="navbar-item">ABOUT US</router-link>-->
+
       <router-link to="/about" class="navbar-item"
-        ><i class="bx bx-bell bx-sm"></i
+        ><i class="bx bx-bell bx-sm">
+          <p class="notifications">2</p></i
       ></router-link>
 
       <div>
@@ -293,8 +295,22 @@ a {
   position: "relative";
   width: 40px;
 }
-.navbar-item i.bx.bx-bell::after {
-  content: "9";
+// .navbar-item i.bx.bx-bell::after {
+//   content: "9";
+//   position: absolute;
+//   background: #c4c4c4;
+//   width: 20px;
+//   height: 20px;
+//   border-radius: 50%;
+//   border: 2px solid #ff0000;
+//   bottom: 20%;
+//   right: 30%;
+//   font-size: 12px;
+//   font-weight: 600;
+//   text-align: center;
+//   padding: 1.5px 0;
+// }
+.navbar-item i.bx.bx-bell p.notifications{
   position: absolute;
   background: #c4c4c4;
   width: 20px;
