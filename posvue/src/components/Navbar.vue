@@ -55,10 +55,30 @@
       <!--<router-link to="/home" class="navbar-item">HOME</router-link>
                 <router-link to="/about" class="navbar-item">ABOUT US</router-link>-->
 
+      <div class="dropdown is-hoverable" @click="drop" id="dropdown">
+        <div class="dropdown-trigger navbar-item">
+            <span class=" " >
+               <i class="bx bx-bell bx-sm" aria-hidden="true">
+          <p class="notifications">2</p></i
+      >
+            </span>
+          </div>
+
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <ul class="dropdown-content">
+              <li href="" class="is-flex dropdown-item"> <a> First Notification</a></li>
+              <li href="" class="is-flex dropdown-item"> <a> second Notification</a></li>
+              <li href="" class="is-flex dropdown-item"> <a> shipping Notification</a></li>
+              <li href="" class="is-flex dropdown-item"> <a> delivery Notification</a></li>
+              <li href="" class="is-flex dropdown-item"> <a> promotion</a></li>
+            </ul>
+          </div>
+      </div>
+<!-- 
       <router-link to="/about" class="navbar-item"
         ><i class="bx bx-bell bx-sm">
           <p class="notifications">2</p></i
-      ></router-link>
+      ></router-link> -->
 
       <div>
         <div class="profile-details mr-5 ">
@@ -135,6 +155,10 @@ export default {
     };
   },
   methods: {
+    drop(){
+      let drop = document.querySelector(".dropdown");
+      drop.classList.toggle("is-active");
+    },
     //logout
     async logout() {
       await axios
@@ -265,10 +289,11 @@ a {
   padding: 8px 0 0 0;
   transition: all 0.4s ease;
 
-  .dropdown:hover {
+  
+}
+.dropdown:hover {
     cursor: pointer;
   }
-}
 
 .profile-details .profile_content {
   display: flex;
