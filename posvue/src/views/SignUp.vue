@@ -30,6 +30,18 @@
               class="is-justify-content-center"
             >
               <div class="field">
+                <label class="is-size-7">Username</label>
+                <div class="control">
+                  <input
+                    type="name"
+                    name="name"
+                    class="input is-small"
+                    placeholder="Username"
+                    v-model="username"
+                  />
+                </div>
+              </div>
+              <div class="field">
                 <label class="is-size-7">Email</label>
                 <div class="control">
                   <input
@@ -37,7 +49,7 @@
                     name="email"
                     class="input is-small"
                     placeholder="Email"
-                    v-model="username"
+                    v-model="Email"
                   />
                 </div>
               </div>
@@ -95,6 +107,7 @@ export default {
   data(){
     return{
       username:'',
+      email:'',
       password1 :'',
       password2:'',
       errors:[]
@@ -118,6 +131,7 @@ export default {
       }
       if(!this.errors.length){
         const formData={
+          email: this.email,
           username:this.username,
           password:this.password1
         }

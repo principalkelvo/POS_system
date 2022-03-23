@@ -30,11 +30,11 @@
               class="is-justify-content-center"
             >
               <div class="field">
-                <label class="is-size-6">Email</label>
+                <label class="is-size-6">Username</label>
                 <div class="control">
                   <input
-                    type="email"
-                    name="email"
+                    type="name"
+                    name="username"
                     class="input is-small"
                     placeholder="Email"
                     v-model="username"
