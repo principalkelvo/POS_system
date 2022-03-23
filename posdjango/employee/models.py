@@ -37,7 +37,7 @@ class Employee(models.Model):
     marital_status= models.CharField(max_length=255, choices=MARITAL_CHOICES, default=SINGLE)
     position= models.CharField(max_length=255)
     status= models.CharField(max_length=25, choices=STATUS_CHOICES,default=ACTIVE)
-    total_sales= models.CharField(max_length=255)
+    total_sales= models.CharField(max_length=255,default=0)
     image= models.ImageField(upload_to='uploads/',blank=True,null=True)
     thumbnail= models.ImageField(upload_to='uploads/',blank=True,null=True)
     created_by= models.ForeignKey(User, related_name='employees', on_delete=models.CASCADE)
