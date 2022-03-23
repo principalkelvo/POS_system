@@ -1,154 +1,272 @@
 <template>
   <div class="mt-5">
-      <h2
-            class="title has-text-weight-bold has-text-white is-size-4"
-          >
-            Add Employee
-          </h2>
-          <!-- Personal info Date of join, birthday, Address,gender, Id no. Nationality Religion marital status
+    <h2 class="title has-text-weight-bold has-text-white is-size-4">
+      Add Employee
+    </h2>
+    <!-- Personal info Date of join, birthday, Address,gender, Id no. Nationality Religion marital status
           Bank info Bank name, account number,kra
           Emergency info primary, name relationship phone
           Family info
           Education info
           Experience info -->
-            <div class="columns is-multiline has-background-white box">
-              <div class="column is-4 m-4">
-                <div class="image main_image">
-                  <img src="#" alt="" class="p-2" />
-                  <i class="bx bx-pencil box"></i>
+    <div class="columns is-multiline has-background-white box">
+      <div class="column is-4 m-4">
+        <div class="image main_image">
+          <img class="p-2" v-bind:src="selectedFile" @click="selectImage" />
+          <!-- <i class="bx bx-pencil box is-clickable">
+                    </i> -->
+          <input @input="pickFile" ref="fileInput" type="file" />
+        </div>
+      </div>
+
+      <div class="column m-4">
+        <div class="field is-horizontal">
+          <!-- Name -->
+          <div class="field-body">
+            <div class="field">
+              <label class="label is-uppercase is-size-7">name *</label>
+              <p class="control is-expanded has-icons-left">
+                <input
+                  class="input is-small"
+                  type="text"
+                  placeholder="Name"
+                  v-model="Name"
+                />
+                <span class="icon is-small is-left">
+                  <i class="bx bx-package"></i>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <label class="label is-uppercase mt-5 is-size-7">ID no *</label>
+        <div class="field is-4">
+          <div class="field-body">
+            <div class="field">
+              <p class="control">
+                <input
+                  class="input is-small"
+                  type="text"
+                  v-model="Id"
+                  placeholder="ID number"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <!-- Name -->
+          <div class="field-body">
+            <div class="field">
+              <label class="label is-uppercase is-size-7">reg no. *</label>
+              <p class="control is-expanded has-icons-left">
+                <input
+                  class="input is-small"
+                  type="number"
+                  placeholder="Registration Number"
+                  v-model="reg_no"
+                />
+                <span class="icon is-small is-left">
+                  <i class="bx bx-package"></i>
+                </span>
+              </p>
+            </div>
+
+            <!-- Status -->
+
+            <div class="field">
+              <label class="label is-uppercase is-size-7">Status *</label>
+              <div class="control">
+                <div class="select is-fullwidth is-small">
+                  <select class="select" v-model="emp_status">
+                    <option value="inactive">Inactive</option>
+                    <option value="active">Active</option>
+                  </select>
                 </div>
-              </div>
-
-              <div class="column m-4">
-                <div class="field is-horizontal">
-                  <!-- Name -->
-                  <div class="field-body">
-                    <div class="field">
-                      <label class="label is-uppercase is-size-7">name *</label>
-                      <p class="control is-expanded has-icons-left">
-                        <input
-                          class="input is-small"
-                          type="text"
-                          placeholder="Name"
-                          v-model="Name"
-                        />
-                        <span class="icon is-small is-left">
-                          <i class="bx bx-package"></i>
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <label class="label is-uppercase mt-5 is-size-7">ID no *</label>
-                <div class="field is-4">
-                  <div class="field-body">
-                    <div class="field">
-                      <p class="control">
-                        <input
-                          class="input is-small"
-                          type="text"
-                          v-model="Id"
-                          placeholder="ID number"
-                        />
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <label class="label is-uppercase mt-5 is-size-7"
-                  >phone*</label
-                >
-                <div class="field is-horizontal">
-                  <div class="field-body">
-                    <div class="field">
-                      <p class="control">
-                        <input
-                          class="input is-small"
-                          type="phone"
-                          v-model="phone"
-                          placeholder="phone number"
-                        />
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-               
-                <div class="field is-horizontal mt-5">
-                  <!-- Price -->
-                  <div class="field-body">
-                    <div class="field">
-                      <label class="label is-uppercase is-size-7"
-                        >Email *</label
-                      >
-                      <p class="control is-expanded has-icons-left">
-                        <input
-                          class="input is-small"
-                          type="email"
-                          placeholder="Email"
-                          v-model="Email"
-                        />
-                        <span class="icon is-small is-left">
-                          <i class="bx bx-money"></i>
-                        </span>
-                      </p>
-                    </div>
-
-                    <!-- Quantity -->
-                    <div class="field">
-                      <label class="label is-uppercase is-size-7"
-                        >Branch *</label
-                      >
-                      <p class="control is-expanded has-icons-left">
-                        <input
-                          class="input is-small"
-                          type="number"
-                          placeholder="Branch"
-                          v-model="Branch"
-                        />
-                        <span class="icon is-small is-left">
-                          <i class="bx bxs-report"></i>
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <label class="label is-uppercase mt-5 is-size-7"
-                  >upload documentation *</label
-                >
-                <div class="field is-horizontal">
-                  <div class="field-body">
-                    <div class="field">
-                      <p class="control">
-                        <input
-                          class="input is-small"
-                          type="text"
-                          v-model="Product_tags"
-                          placeholder="Product Tags"
-                        />
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <button
-                  class="button has-text-white has-text-weight-bold is-size-6 is-pink"
-                >
-                  Submit
-                  <!-- <i class="bx bx-chevron-down"></i> -->
-                </button>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="field is-horizontal mt-5">
+          <!-- Phone -->
+          <div class="field-body">
+            <div class="field">
+              <label class="label is-uppercase is-size-7">Phone *</label>
+              <p class="control is-expanded has-icons-left">
+                <input
+                  class="input is-small"
+                  type="number"
+                  placeholder="Phone number"
+                  v-model="Phone"
+                />
+                <span class="icon is-small is-left">
+                  <i class="bx bx-money"></i>
+                </span>
+              </p>
+            </div>
+
+            <!-- Email -->
+            <div class="field">
+              <label class="label is-uppercase is-size-7">Email *</label>
+              <p class="control is-expanded has-icons-left">
+                <input
+                  class="input is-small"
+                  type="email"
+                  placeholder="Email"
+                  v-model="email"
+                />
+                <span class="icon is-small is-left">
+                  <i class="bx bxs-envelope"></i>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal mt-5">
+          <!-- Price -->
+          <div class="field-body">
+            <div class="field">
+              <label class="label is-uppercase is-size-7">Location *</label>
+              <p class="control is-expanded has-icons-left">
+                <input
+                  class="input is-small"
+                  type="text"
+                  placeholder="Location"
+                  v-model="location"
+                />
+                <span class="icon is-small is-left">
+                  <i class="bx bx-money"></i>
+                </span>
+              </p>
+            </div>
+
+            <!-- Quantity -->
+            <div class="field">
+              <label class="label is-uppercase is-size-7">Branch *</label>
+              <p class="control is-expanded has-icons-left">
+                <input
+                  class="input is-small"
+                  type="number"
+                  placeholder="Branch"
+                  v-model="Branch"
+                />
+                <span class="icon is-small is-left">
+                  <i class="bx bxs-report"></i>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <!-- Name -->
+          <div class="field-body">
+            <div class="field">
+              <label class="label is-uppercase is-size-7">Position *</label>
+              <p class="control is-expanded has-icons-left">
+                <input
+                  class="input is-small"
+                  type="number"
+                  placeholder="Position"
+                  v-model="position"
+                />
+                <span class="icon is-small is-left">
+                  <i class="bx bx-package"></i>
+                </span>
+              </p>
+            </div>
+
+            <!-- Marital Status -->
+
+            <div class="field">
+              <label class="label is-uppercase is-size-7"
+                >Marital Status *</label
+              >
+              <div class="control">
+                <div class="select is-fullwidth is-small">
+                  <select class="select" v-model="marital_status">
+                    <option value="married">Married</option>
+                    <option value="single">Single</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <label class="label is-uppercase mt-5 is-size-7"
+          >upload documentation *</label
+        >
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <p class="control">
+                <input
+                  class="input is-small"
+                  type="text"
+                  v-model="document_tags"
+                  placeholder="Documents Tags"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="button has-text-white has-text-weight-bold is-size-6 is-pink"
+        >
+          Submit
+          <!-- <i class="bx bx-chevron-down"></i> -->
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name:'AddEmployee'
+  name: "AddEmployee",
+  data() {
+    return {
+      selectedFile: null,
+    };
+  },
+  methods: {
+    // onFileSelected(event) {
+    //   this.selectedFile = event.target.files[0];
+    //   console.log(event);
+    //   console.log(this.selectedFile.name);
+    // },
+    // onUpload(){
+    //   const fd= new FormData();
+    //   fd.append('image',this.selectedFile,this.selectedFile.name)
+    //   this.selectedFile=fd
+    //   console.log(this.selectedFile)
+    // }
 
-}
+    //upload image and preview
+    selectImage(){
+      this.$refs.fileInput.click()
+    },
+    pickFile() {
+      let input= this.$refs.fileInput
+      let file= input.files
+      if(file && file[0]){
+        let reader =new FileReader
+        reader.onload= e => {
+          this.selectedFile=e.target.result
+        }
+      reader.readAsDataURL(file[0])
+      this.$emit('input',file[0])
+      }
+
+    }
+  },
+};
 </script>
 
 <style scoped>
@@ -174,11 +292,11 @@ export default {
   object-fit: cover;
   background: #c4c4c4;
 } */
- img {
+img {
   height: 100%;
   width: 100%;
   border-radius: 10px;
-  object-fit: cover;
+  object-fit:contain;
   background: #c4c4c4;
 }
 .main_image i {
@@ -197,5 +315,4 @@ export default {
   border-radius: 5px;
   padding: 0.1em;
 }
-
 </style>
