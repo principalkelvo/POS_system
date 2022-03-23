@@ -241,7 +241,7 @@
           <div class="profile-content">
             <img
               id="slideout"
-              v-bind:src="darkmode"
+              v-bind:src="darkmode1"
               alt="img"
               @click="darkmode"
             />
@@ -256,17 +256,17 @@ export default {
   name: "Asidebar",
   data() {
     return {
-      darkmode: require("../assets/LandSwitchLightlight.svg"),
+      darkmode1: require("../assets/LandSwitchLightlight.svg"),
     };
   },
   methods: {
     //darkmode
     darkmode() {
       console.log("dark");
-      if (this.darkmode === require("../assets/LandSwitchLightlight.svg")) {
-        this.darkmode = require("../assets/LandSwitchDark.svg");
+      if (this.darkmode1 === require("../assets/LandSwitchLightlight.svg")) {
+        this.darkmode1 = require("../assets/LandSwitchDark.svg");
       } else {
-        this.darkmode = require("../assets/LandSwitchLightlight.svg");
+        this.darkmode1 = require("../assets/LandSwitchLightlight.svg");
       }
       var slider = document.getElementById("slideout");
       slider.className += " slideout";
