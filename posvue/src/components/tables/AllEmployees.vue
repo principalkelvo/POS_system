@@ -21,7 +21,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr v-for="employee in employees" v-bind:key="employee.id">
+                <td>{{employee.get_thumbnail}}</td>
+                <td>{{employee.reg_no}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.position}}</td>
+                <td>{{employee.branch}}</td>
+                <td>{{employee.status}}</td>
+                <td></td>
                 </tr>
             </tbody>
           </table>
@@ -30,8 +38,30 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
-    name:'Employees'
+    name:'Employees',
+    data(){
+      return{
+        employees: []
+      }
+    },
+    mounted(){
+      this.getEmployees()
+    },
+    methods: {
+      async getEmployees(){
+        await axios
+          .get('api/v1/employees/')
+          .then(response =>{
+            this.employees = response.data
+          })
+          .catch(error=>{
+            console.log(error)
+          })
+      }
+    }
+
 };
 </script>
 
