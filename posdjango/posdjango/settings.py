@@ -31,6 +31,15 @@ CORS_ALLOWED_ORIGINS=[
     'http://localhost:8080',
 ]
 
+REST_FRAMEWORK={
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSIONS_CLASSES':[
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
+
 
 # Application definition
 
@@ -131,3 +140,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_URL = '/static/'
+MEDIA_URL ='/media/' #where to put uploaded image
+MEDIA_ROOT =BASE_DIR / 'media/'
