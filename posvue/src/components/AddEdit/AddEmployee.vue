@@ -10,12 +10,14 @@
           Education info
           Experience info -->
     <div class="columns is-multiline has-background-white box">
+      
+      <form @submit.prevent="submitForm" class="column is-12">
       <div class="column is-4 m-4">
         <div class="image main_image">
           <img class="p-2" v-bind:src="selectedFile" @click="selectImage" />
-          <!-- <i class="bx bx-pencil box is-clickable">
-                    </i> -->
-          <input @input="pickFile" ref="fileInput" type="file" />
+          <i class="bx bx-pencil box is-clickable" @click="$refs.fileInput.click()">
+                    </i>
+          <input @input="pickFile" ref="fileInput" type="file" style="display:none" accept='image/*'/>
         </div>
       </div>
 
@@ -30,10 +32,10 @@
                   class="input is-small"
                   type="text"
                   placeholder="Name"
-                  v-model="Name"
+                  v-model="name"
                 />
                 <span class="icon is-small is-left">
-                  <i class="bx bx-package"></i>
+                  <i class="bx bx-user"></i>
                 </span>
               </p>
             </div>
@@ -44,13 +46,16 @@
         <div class="field is-4">
           <div class="field-body">
             <div class="field">
-              <p class="control">
+              <p class="control is-expanded has-icons-left">
                 <input
                   class="input is-small"
                   type="text"
-                  v-model="Id"
+                  v-model="id_card"
                   placeholder="ID number"
                 />
+                <span class="icon is-small is-left">
+                  <i class="bx bx-card"></i>
+                </span>
               </p>
             </div>
           </div>
@@ -98,12 +103,12 @@
               <p class="control is-expanded has-icons-left">
                 <input
                   class="input is-small"
-                  type="number"
+                  type="tel"
                   placeholder="Phone number"
-                  v-model="Phone"
+                  v-model="phone"
                 />
                 <span class="icon is-small is-left">
-                  <i class="bx bx-money"></i>
+                  <i class="bx bx-phone"></i>
                 </span>
               </p>
             </div>
@@ -127,7 +132,7 @@
         </div>
 
         <div class="field is-horizontal mt-5">
-          <!-- Price -->
+          <!-- location -->
           <div class="field-body">
             <div class="field">
               <label class="label is-uppercase is-size-7">Location *</label>
@@ -139,7 +144,7 @@
                   v-model="location"
                 />
                 <span class="icon is-small is-left">
-                  <i class="bx bx-money"></i>
+                  <i class="bx bx-map"></i>
                 </span>
               </p>
             </div>
@@ -150,12 +155,12 @@
               <p class="control is-expanded has-icons-left">
                 <input
                   class="input is-small"
-                  type="number"
+                  type="text"
                   placeholder="Branch"
-                  v-model="Branch"
+                  v-model="branch"
                 />
                 <span class="icon is-small is-left">
-                  <i class="bx bxs-report"></i>
+                  <i class="bx bxs-store"></i>
                 </span>
               </p>
             </div>
@@ -170,7 +175,7 @@
               <p class="control is-expanded has-icons-left">
                 <input
                   class="input is-small"
-                  type="number"
+                  type="text"
                   placeholder="Position"
                   v-model="position"
                 />
@@ -198,6 +203,8 @@
           </div>
         </div>
 
+
+        <!-- upload all documents -->
         <label class="label is-uppercase mt-5 is-size-7"
           >upload documentation *</label
         >
@@ -223,19 +230,61 @@
           <!-- <i class="bx bx-chevron-down"></i> -->
         </button>
       </div>
+      </form>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: "AddEmployee",
   data() {
     return {
       selectedFile: null,
+      name:'',
+      id_card:'',
+      reg_no:'',
+      emp_status:'active',
+      phone:'',
+      email:'',
+      location:'',
+      branch:'', //not added to backend
+      position:'',
+      marital_status:'single',
+      document_tags:'', //not added to backend
     };
   },
   methods: {
+    async submitForm(){
+      console.log("submit")
+
+      const employee={
+        name:this.name,
+        id_card:this.id_card,
+        reg_no:this.reg_no,
+        emp_status:this.emp_status,
+        phone:this.phone,
+        email:this.email,
+        location:this.location,
+        position:this.position,
+        marital_status:this.marital_status,
+        get_image:this.selectedFile,
+      }
+
+      await axios
+        .post('/api/v1/employees/',employee)
+        .then(response=>{
+          console.log(response)
+          this.$router.push('/')
+        })
+        .catch(error=>{
+          console.log(error)
+        })
+    },
+
+
     // onFileSelected(event) {
     //   this.selectedFile = event.target.files[0];
     //   console.log(event);
@@ -271,20 +320,21 @@ export default {
 
 <style scoped>
 .main_image {
-  width: 15em;
+  width: 100%;
+  max-width: 15em;
   height: 17em;
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 10px;
 }
-.variant_image {
+/* .variant_image {
   width: 3em;
   height: 3em;
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 10px;
   margin-top: 1em;
-}
+} */
 /* .variant_image img {
   height: 100%;
   width: 100%;
