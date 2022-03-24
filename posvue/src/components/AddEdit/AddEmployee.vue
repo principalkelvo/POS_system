@@ -9,9 +9,9 @@
           Family info
           Education info
           Experience info -->
+      <form @submit.prevent="submitForm" >
     <div class="columns is-multiline has-background-white box">
       
-      <form @submit.prevent="submitForm" class="column is-12">
       <div class="column is-4 m-4">
         <div class="image main_image">
           <img class="p-2" v-bind:src="selectedFile" @click="selectImage" />
@@ -230,8 +230,8 @@
           <!-- <i class="bx bx-chevron-down"></i> -->
         </button>
       </div>
-      </form>
     </div>
+      </form>
   </div>
 </template>
 
