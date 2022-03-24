@@ -1,5 +1,6 @@
-from django.contrib.auth.models import User
 from django.db import models
+from django.contrib.auth.models import User
+
 
 from io import BytesIO
 from PIL import Image
@@ -37,10 +38,10 @@ class Employee(models.Model):
     marital_status= models.CharField(max_length=255, choices=MARITAL_CHOICES, default=SINGLE)
     position= models.CharField(max_length=255)
     status= models.CharField(max_length=25, choices=STATUS_CHOICES,default=ACTIVE)
-    total_sales= models.CharField(max_length=255,default=0)
+    total_sales= models.CharField(max_length=255,default=0,blank=True,null=True)
     image= models.ImageField(upload_to='uploads/',blank=True,null=True)
     thumbnail= models.ImageField(upload_to='uploads/',blank=True,null=True)
-    created_by= models.ForeignKey(User, related_name='employees', on_delete=models.CASCADE)
+    created_by= models.ForeignKey(User, related_name="employees", on_delete= models.CASCADE)
     created_at= models.DateTimeField(auto_now_add=True)
     modified_at= models.DateTimeField(auto_now=True)
     

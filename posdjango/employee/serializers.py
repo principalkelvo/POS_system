@@ -4,6 +4,11 @@ from .models import Employee
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
+        read_only_fields=(
+            'created_by',
+            'created_at',
+            'modified_at',
+        ),
         fields=(
             'id',
             'name',
@@ -15,7 +20,7 @@ class EmployeeSerializer(serializers.ModelSerializer):
             'marital_status',
             'position',
             'status',
-            'total_sales'
+            'total_sales',
             'get_absolute_url',
             'get_image',
             'get_thumbnail',
