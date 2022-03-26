@@ -14,10 +14,20 @@
       
       <div class="column is-4 m-4">
         <div class="image main_image">
-          <img class="p-2" v-bind:src="selectedFile" @click="selectImage" />
-          <i class="bx bx-pencil box is-clickable" @click="$refs.fileInput.click()">
+          <img class="p-2" 
+          v-bind:src="previewImage" 
+          @click="selectImage" />
+          
+          <i class="bx bx-pencil box is-clickable" 
+          @click="$refs.fileInput.click()">
                     </i>
-          <input @input="pickFile" ref="fileInput" type="file" style="display:none" accept='image/*'/>
+
+          <input @input="pickFile" 
+          ref="fileInput" 
+          type="file" 
+          style="display:none" 
+          accept='image/*' 
+          @change="onFileSelected"/>
         </div>
       </div>
 
@@ -237,11 +247,12 @@
 
 <script>
 import axios from 'axios'
-
+// const fs =require('fs');
 export default {
   name: "AddEmployee",
   data() {
     return {
+      previewImage: null,
       selectedFile: null,
       name:'',
       id_card:'',
@@ -254,42 +265,16 @@ export default {
       position:'',
       marital_status:'single',
       document_tags:'', //not added to backend
+      image:'',
     };
   },
   methods: {
-    async submitForm(){
-      console.log("submit")
+    async onFileSelected(event) {
+      console.log(event.target.value)
+      this.selectedFile = event.target.files[0];
+      console.log(this.selectedFile)
 
-      const employee={
-        name:this.name,
-        id_card:this.id_card,
-        reg_no:this.reg_no,
-        emp_status:this.emp_status,
-        phone:this.phone,
-        email:this.email,
-        location:this.location,
-        position:this.position,
-        marital_status:this.marital_status,
-        get_image:this.selectedFile,
-      }
-
-      await axios
-        .post('/api/v1/employees/',employee)
-        .then(response=>{
-          console.log(response)
-          this.$router.push('/')
-        })
-        .catch(error=>{
-          console.log(error)
-        })
     },
-
-
-    // onFileSelected(event) {
-    //   this.selectedFile = event.target.files[0];
-    //   console.log(event);
-    //   console.log(this.selectedFile.name);
-    // },
     // onUpload(){
     //   const fd= new FormData();
     //   fd.append('image',this.selectedFile,this.selectedFile.name)
@@ -305,15 +290,68 @@ export default {
       let input= this.$refs.fileInput
       let file= input.files
       if(file && file[0]){
-        let reader =new FileReader
+        let reader =new FileReader()
         reader.onload= e => {
-          this.selectedFile=e.target.result
+          this.previewImage= reader.result
         }
       reader.readAsDataURL(file[0])
       this.$emit('input',file[0])
-      }
 
-    }
+      }
+    },
+
+    async submitForm(){
+      console.log("submit")
+      const employee= new FormData();
+      console.log(this.selectedFile)
+      employee.append('image',this.selectedFile, this.selectedFile.name)
+      employee.append('name',this.name)
+      employee.append('id_card',this.id_card)
+      employee.append('reg_no',this.reg_no)
+      employee.append('email',this.email)
+      employee.append('emp_status',this.emp_status)
+      employee.append('phone',this.phone)
+      employee.append('position',this.position)
+      employee.append('location',this.location)
+      employee.append('marital_status',this.marital_status)
+
+      
+      // var image =new Image
+      // image.src=this.previewImage
+      // document.body.appendChild(image)
+      // console.log(this.previewImage)
+      // const employer={
+      //   name:this.name,
+      //   id_card:this.id_card,
+      //   reg_no:this.reg_no,
+      //   emp_status:this.emp_status,
+      //   phone:this.phone,
+      //   email:this.email,
+      //   location:this.location,
+      //   position:this.position,
+      //   marital_status:this.marital_status,
+      //   get_image:this.previewImage,
+      // }
+
+      await axios
+        .post('/api/v1/employees/',employee,{
+          headers:{
+            'Content-Type':"multipart/form-data"
+          }
+        })
+        .then(response=>{
+      console.log(' image '+ this.image)
+
+          console.log(response)
+          // this.$router.push('/')
+        })
+        .catch(error=>{
+          console.log(error)
+        })
+    },
+
+
+    
   },
 };
 </script>
