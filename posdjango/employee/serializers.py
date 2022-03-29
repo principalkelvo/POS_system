@@ -5,9 +5,10 @@ class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
         read_only_fields=(
-            'created_by',
             'created_at',
             'modified_at',
+            'created_by',
+            
         ),
         fields=(
             'id',
@@ -22,6 +23,7 @@ class EmployeeSerializer(serializers.ModelSerializer):
             'status',
             'total_sales',
             'get_absolute_url',
+            'image',
             'get_image',
             'get_thumbnail',
         )
