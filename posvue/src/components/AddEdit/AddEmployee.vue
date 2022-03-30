@@ -349,23 +349,7 @@ export default {
       formData.append("marital_status", this.marital_status);
       console.log(this.formData);
 
-      // var img =new Image
-      // img.src=this.image
-      // document.body.appendChild(img)
-      // console.log(this.image)
-      // const employee={
-      //   name:this.name,
-      //   id_card:this.id_card,
-      //   reg_no:this.reg_no,
-      //   emp_status:this.emp_status,
-      //   phone:this.phone,
-      //   email:this.email,
-      //   location:this.location,
-      //   position:this.position,
-      //   marital_status:this.marital_status,
-      //   get_image:this.previewImage,
-      // }
-
+      
       await axios
         .post("/api/v1/employees/", formData,{
           headers: {
@@ -376,7 +360,7 @@ export default {
           console.log(" image " + this.image);
 
           console.log(response.data);
-          // this.$router.push('/')
+          this.$router.push('/')
         })
         .catch((error) => {
           console.log(error);
