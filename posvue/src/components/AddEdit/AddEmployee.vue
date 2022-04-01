@@ -279,6 +279,7 @@
 
 <script>
 import axios from "axios";
+import {toast} from 'bulma-toast'
 export default {
   name: "AddEmployee",
   data() {
@@ -357,9 +358,15 @@ export default {
             }
         })
         .then((response) => {
-          console.log(" image " + this.image);
-
           console.log(response.data);
+          toast({
+            message:'The employee was successfully created',
+            type: 'is-success',
+            dismissible:true,
+            pauseOnHover:true,
+            duration:2000,
+            position:'bottom-right',
+          })
           this.$router.push('/')
         })
         .catch((error) => {
