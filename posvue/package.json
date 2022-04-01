@@ -14,9 +14,9 @@
     "chart.js": "^2.9.4",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
-    "vue-bulma-table": "^1.6.4",
     "vue-chart-3": "^3.1.2",
     "vue-chartjs": "^3.5.1",
+    "vue-good-table-next": "^0.1.0",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
   },
