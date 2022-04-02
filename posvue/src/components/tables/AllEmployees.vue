@@ -3,8 +3,8 @@
     <h2 class="title has-text-weight-bold has-text-black is-size-4">
       Employees
     </h2>
-    <div class="column is-12 is-fullwidth">
-      <table class="table is-fullwidth">
+    <div class="column is-12 is-fullwidth box">
+      <!-- <table class="table is-fullwidth">
         <thead>
           <tr>
             <th>ID</th>
@@ -36,12 +36,8 @@
             <td>{{ row.created_by }}</td>
           </tr>
         </tbody>
-      </table>
-    </div>
-
-    <h1>All Posts</h1>
-
-    <vue-good-table
+      </table> -->
+      <vue-good-table
       :columns="columns"
       :rows="rows"
       :search-options="{
@@ -53,9 +49,11 @@
       }"
       styleClass="vgt-table condensed"
     >
-      <template slot="table-row" slot-scope="props">
-        <span v-if="props.column.field == 'status'">
-          age: {{ props.row.status }}
+      <template #table-row="props">
+        <span v-if="props.column.field == 'get_image'">
+          <div class="product-tb">
+                <img :src="props.row.get_image" class="image mr-2" />
+              </div>
         </span>
         <span v-else>
           {{ props.formattedRow[props.column.field] }}
@@ -64,13 +62,16 @@
 
       <template slot="table-column" slot-scope="props">
         <span v-if="props.column.label == 'Name'">
-          <i class="fa fa-address-book"></i> {{ props.column.label }}
+          <i class="bx bx-book-alt"></i> {{ props.column.label }}
         </span>
         <span v-else>
           {{ props.column.label }}
         </span>
       </template>
     </vue-good-table>
+    </div>
+
+    
   </div>
 </template>
 
@@ -84,7 +85,7 @@ export default {
     return {
       columns: [
         { label: "ID", field: "id" },
-        { label: "Employee", field: "get_image", type: "image" },
+        { label: "Employee", field: "get_image" },
         { label: "Registration Number", field: "reg_no" },
         { label: "Name", field: "name" },
         { label: "E-mail", field: "email" },
