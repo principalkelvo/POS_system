@@ -38,40 +38,38 @@
         </tbody>
       </table> -->
       <vue-good-table
-      :columns="columns"
-      :rows="rows"
-      :search-options="{
-        enabled: true,
-      }"
-      :pagination-options="{
-        enabled: true,
-        perPage: 5,
-      }"
-      styleClass="vgt-table condensed"
-    >
-      <template #table-row="props">
-        <span v-if="props.column.field == 'get_image'">
-          <div class="product-tb">
-                <img :src="props.row.get_image" class="image mr-2" />
-              </div>
-        </span>
-        <span v-else>
-          {{ props.formattedRow[props.column.field] }}
-        </span>
-      </template>
+        :columns="columns"
+        :rows="rows"
+        :search-options="{
+          enabled: true,
+        }"
+        :pagination-options="{
+          enabled: true,
+          perPage: 5,
+        }"
+        styleClass="vgt-table condensed"
+      >
+        <template #table-row="props">
+          <span v-if="props.column.field == 'get_image'">
+            <div class="product-tb">
+              <img :src="props.row.get_image" class="image mr-2" />
+            </div>
+          </span>
+          <span v-else>
+            {{ props.formattedRow[props.column.field] }}
+          </span>
+        </template>
 
-      <template slot="table-column" slot-scope="props">
-        <span v-if="props.column.label == 'Name'">
-          <i class="bx bx-book-alt"></i> {{ props.column.label }}
-        </span>
-        <span v-else>
-          {{ props.column.label }}
-        </span>
-      </template>
-    </vue-good-table>
+        <template slot="table-column" slot-scope="props">
+          <span v-if="props.column.label == 'Name'">
+            <i class="bx bx-book-alt"></i> {{ props.column.label }}
+          </span>
+          <span v-else>
+            {{ props.column.label }}
+          </span>
+        </template>
+      </vue-good-table>
     </div>
-
-    
   </div>
 </template>
 
