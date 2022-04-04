@@ -1,5 +1,15 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <Loader/>
   </div>
 </template>
+
+<script>
+import Loader from "../components/Loader"
+export default {
+  name: "About",
+  components: {
+    Loader
+  }
+}
+</script>

@@ -9,8 +9,9 @@ import Branches from '../views/Branches.vue'
 import Customer from '../views/Customer.vue'
 
 import Employees from '../views/Employees.vue'
+import Employee from '../views/Employee.vue' //view each employee
 import EditEmployee from '../views/EditEmployee.vue'
-// import Leave from '../views/Leave.vue'
+import Leave from '../views/Leave.vue'
 import ExEmployees from '../views/ExEmployees.vue'
 
 import Orders from '../views/Orders.vue'
@@ -133,14 +134,22 @@ const routes = [
             requireLogin: true
         }
     },
-    // {
-    //     path: '/leave',
-    //     name: 'Leave',
-    //     component: Leave,
-    //     meta: {
-    //         requireLogin: true
-    //     }
-    // },
+    {
+        path: '/employees/:id',
+        name: 'Employee',
+        component: Employee,
+        meta: {
+            requireLogin: true
+        }
+    },
+    {
+        path: '/leave',
+        name: 'Leave',
+        component: Leave,
+        meta: {
+            requireLogin: true
+        }
+    },
     {
         path: '/ex-employees',
         name: 'ExEmployees',
