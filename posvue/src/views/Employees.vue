@@ -46,7 +46,6 @@
 <script>
 import AddEmployee from "../components/AddEdit/AddEmployee.vue";
 import AllEmployees from "../components/tables/AllEmployees.vue";
-import Employee from "../components/ViewEach/Employee.vue";
 import TableBase from "../components/tables/TableBase.vue";
 
 export default {
@@ -54,7 +53,6 @@ export default {
   components: {
     AddEmployee,
     AllEmployees,
-    Employee,
     TableBase
   },
 };
