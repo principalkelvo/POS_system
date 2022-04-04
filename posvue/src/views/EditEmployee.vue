@@ -3,13 +3,8 @@
     <section class="hero">
       <div class="hero-body">
         <div class="">
-          <h2 class="title has-text-weight-bold has-text-black is-size-4">
-            Staff
-          </h2>
-          <div class="columns is-fullwidth has-background-white box">
-  <div class="mt-5">
-    <h2 class="title has-text-weight-bold has-text-white is-size-4">
-      {{employee.name}}
+    <h2 class="title has-text-weight-bold has-text-black is-size-4">
+      {{employee.name}} #{{employee.id}}
     </h2>
     <!-- Personal info Date of join, birthday, Address,gender, Id no. Nationality Religion marital status
           Bank info Bank name, account number,kra
@@ -54,7 +49,7 @@
                     class="input is-small"
                     type="text"
                     placeholder="Name"
-                    v-model="name"
+                    v-model="employee.name"
                   />
                   <span class="icon is-small is-left">
                     <i class="bx bx-user"></i>
@@ -72,7 +67,7 @@
                   <input
                     class="input is-small"
                     type="text"
-                    v-model="id_card"
+                    v-model="employee.id_card"
                     placeholder="ID number"
                   />
                   <span class="icon is-small is-left">
@@ -93,7 +88,7 @@
                     class="input is-small"
                     type="number"
                     placeholder="Registration Number"
-                    v-model="reg_no"
+                    v-model="employee.reg_no"
                   />
                   <span class="icon is-small is-left">
                     <i class="bx bx-package"></i>
@@ -107,7 +102,7 @@
               <label class="label is-uppercase is-size-7">Status *</label>
                 <div class="control">
                   <div class="select is-fullwidth is-small">
-                    <select class="select" v-model="emp_status">
+                    <select class="select" v-model="employee.status">
                       <option value="inactive">Inactive</option>
                       <option value="active">Active</option>
                     </select>
@@ -127,7 +122,7 @@
                     class="input is-small"
                     type="tel"
                     placeholder="Phone number"
-                    v-model="phone"
+                    v-model="employee.phone"
                   />
                   <span class="icon is-small is-left">
                     <i class="bx bx-phone"></i>
@@ -143,7 +138,7 @@
                     class="input is-small"
                     type="email"
                     placeholder="Email"
-                    v-model="email"
+                    v-model="employee.email"
                   />
                   <span class="icon is-small is-left">
                     <i class="bx bxs-envelope"></i>
@@ -163,7 +158,7 @@
                     class="input is-small"
                     type="text"
                     placeholder="Location"
-                    v-model="location"
+                    v-model="employee.location"
                   />
                   <span class="icon is-small is-left">
                     <i class="bx bx-map"></i>
@@ -179,7 +174,7 @@
                     class="input is-small"
                     type="text"
                     placeholder="Branch"
-                    v-model="branch"
+                    v-model="employee.branch"
                   />
                   <span class="icon is-small is-left">
                     <i class="bx bxs-store"></i>
@@ -199,7 +194,7 @@
                     class="input is-small"
                     type="text"
                     placeholder="Position"
-                    v-model="position"
+                    v-model="employee.position"
                   />
                   <span class="icon is-small is-left">
                     <i class="bx bx-package"></i>
@@ -215,7 +210,7 @@
                 >
                 <div class="control">
                   <div class="select is-fullwidth is-small">
-                    <select class="select" v-model="marital_status">
+                    <select class="select" v-model="employee.marital_status">
                       <option value="married">Married</option>
                       <option value="single">Single</option>
                     </select>
@@ -255,8 +250,6 @@
     </form>
   </div>
   </div>
-  </div>
-  </div>
   </section>
   </div>
 </template>
@@ -291,6 +284,7 @@ export default {
 
   mounted() {
     this.getEmployee()
+    
   },
 
   methods: {
@@ -298,7 +292,7 @@ export default {
       this.currentImage = this.$refs.file.files.item(0);
       this.previewImage = URL.createObjectURL(this.currentImage);
       this.image = event.target.files[0];
-      console.log(this.image);
+      console.log(this.image +'image 2');
     },
 
     selectImage(){
@@ -322,13 +316,15 @@ export default {
 
 
     async getEmployee(){
-      // const employeeID= this.$route.params.id
       const employeeID= this.$route.params.id
       axios
         .get(`api/v1/employees/${employeeID}/`)
         .then(response=>{
           this.employee= response.data
-          console.log(this.employee.id)
+          console.log(this.employee.image)
+          this.previewImage= this.employee.image
+          this.image= this.previewImage
+          console.log(' image '+this.image)
         })
         .catch(error=>{
           console.log(error)
@@ -338,22 +334,24 @@ export default {
 
     async submitForm() {
 
+      const employeeID= this.$route.params.id
+
       let formData = new FormData();
       formData.append("image", this.image);
-      formData.append("name", this.name);
-      formData.append("id_card", this.id_card);
-      formData.append("reg_no", this.reg_no);
-      formData.append("email", this.email);
-      formData.append("emp_status", this.emp_status);
-      formData.append("phone", this.phone);
-      formData.append("position", this.position);
-      formData.append("location", this.location);
-      formData.append("marital_status", this.marital_status);
+      formData.append("name", this.employee.name);
+      formData.append("id_card", this.employee.id_card);
+      formData.append("reg_no", this.employee.reg_no);
+      formData.append("email", this.employee.email);
+      formData.append("emp_status", this.employee.emp_status);
+      formData.append("phone", this.employee.phone);
+      formData.append("position", this.employee.position);
+      formData.append("location", this.employee.location);
+      formData.append("marital_status", this.employee.marital_status);
       console.log(this.formData);
 
       
       await axios
-        .post("/api/v1/employees/", formData,{
+        .patch(`/api/v1/employees/${employeeID}/`, formData,{
           headers: {
             "Content-Type": "multipart/form-data"
             }
@@ -361,8 +359,8 @@ export default {
         .then((response) => {
           console.log(response.data);
           toast({
-            message:'The employee was successfully created',
-            type: 'is-success',
+            message:'The employee was successfully updated',
+            type: 'is-grey box',
             dismissible:true,
             pauseOnHover:true,
             duration:2000,

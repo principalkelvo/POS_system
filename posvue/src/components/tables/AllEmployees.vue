@@ -65,6 +65,8 @@
           <span v-if="props.column.field == 'get_image'">
             <div class="product-tb">
               <img :src="props.row.get_image" class="image mr-2" />
+              
+
             </div>
           </span>
 
@@ -75,8 +77,8 @@
           <span v-if="props.column.field == 'btn'">
 
             
-            <span class="icon mr-2 is-clickable" @click="dynamicRouterView"
-              ><svg
+            <span class="icon mr-2 is-clickable"
+              ><router-link :to="{name:'Employee', params:{id:props.row.id}}"><svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="is-family-secondary"
                 width="16"
@@ -96,12 +98,13 @@
                   stroke-width="2"
                   d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                 ></path></svg
-            ></span>
+            ></router-link></span>
 
             
-            <!-- <router-link :to="{name:'employee', params:{id:props.row.id}}"></router-link> -->
-            <span class="icon is-clickable" @click="dynamicRouterEdit">
-              <i class="bx bx-pencil "></i>
+            <span class="icon is-clickable">
+            <router-link :to="{name:'EditEmployee', params:{id:props.row.id}}"><i class="bx bx-pencil "></i></router-link>
+              <!-- {{props.row.id}} -->
+              <!-- <i class="bx bx-pencil "></i> -->
             </span>
 
             <!-- <span class="icon">
@@ -173,9 +176,10 @@ export default {
     //   }
     //   else{console.log("Imaaage")}
     // },
-    dynamicRouterEdit(){
-      router.push({name:'EditEmployee', params:{ id: this.employee.id}})
-    },
+    // dynamicRouterEdit(){
+      
+    //   router.push({name:'EditEmployee', params:{ id: employee.id}})
+    // },
     dynamicRouterView(){
       router.push('/')
     },
@@ -184,7 +188,7 @@ export default {
         .get("/api/v1/employees/")
         .then((response) => {
           this.rows = response.data;
-          console.log(response.data);
+          console.log(this.rows.id);
         })
         .catch((error) => {
           console.log(error);
