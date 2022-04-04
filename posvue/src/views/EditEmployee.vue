@@ -1,7 +1,15 @@
 <template>
+  <div>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="">
+          <h2 class="title has-text-weight-bold has-text-black is-size-4">
+            Staff
+          </h2>
+          <div class="columns is-fullwidth has-background-white box">
   <div class="mt-5">
     <h2 class="title has-text-weight-bold has-text-white is-size-4">
-      Add Employee
+      {{employee.name}}
     </h2>
     <!-- Personal info Date of join, birthday, Address,gender, Id no. Nationality Religion marital status
           Bank info Bank name, account number,kra
@@ -30,39 +38,10 @@
               @change="onFileSelected"
               @input="pickFile"
             />
-          </div>
-          <!-- <div>list of images</div>
-    <ul>
-      <li v-for="(image, index) in imageInfos"
-      :key="index">
-      <a href="image.url">{{image.name}}</a>
-      </li>
-    </ul> -->
-          <!-- <div>
-      <button :disabled="!currentImage" @click="upload"></button>
-    </div>
-
-    <div></div> -->
+          </div>         
         </div>
 
-        <!-- <div class="column is-4 m-4">
-        <div class="image main_image">
-          <img class="p-2" 
-          v-bind:src="previewImage" 
-          @click="selectImage" />
-          
-          <i class="bx bx-pencil box is-clickable" 
-          @click="$refs.fileInput.click()">
-                    </i>
-
-          <input @input="pickFile" 
-          ref="fileInput" 
-          type="file" 
-          style="display:none" 
-          accept='image/*' 
-          @change="onFileSelected"/>
-        </div>
-      </div> -->
+        
 
         <div class="column m-4">
           <div class="field is-horizontal">
@@ -85,7 +64,7 @@
             </div>
           </div>
 
-          <label class="label is-uppercase mt-5 is-size-7">ID no *</label>
+          <label class="label is-uppercase mt-5 is-size-7">National ID *</label>
           <div class="field is-4">
             <div class="field-body">
               <div class="field">
@@ -108,7 +87,7 @@
             <!-- Name -->
             <div class="field-body">
               <div class="field">
-                <label class="label is-uppercase is-size-7">reg no. *</label>
+                <label class="label is-uppercase is-size-7">Registration Number *</label>
                 <p class="control is-expanded has-icons-left">
                   <input
                     class="input is-small"
@@ -125,7 +104,7 @@
               <!-- Status -->
 
               <div class="field">
-                <label class="label is-uppercase is-size-7">Status *</label>
+              <label class="label is-uppercase is-size-7">Status *</label>
                 <div class="control">
                   <div class="select is-fullwidth is-small">
                     <select class="select" v-model="emp_status">
@@ -142,7 +121,7 @@
             <!-- Phone -->
             <div class="field-body">
               <div class="field">
-                <label class="label is-uppercase is-size-7">Phone *</label>
+                <label class="label is-uppercase is-size-7">Phone Number *</label>
                 <p class="control is-expanded has-icons-left">
                   <input
                     class="input is-small"
@@ -232,7 +211,7 @@
 
               <div class="field">
                 <label class="label is-uppercase is-size-7"
-                  >Marital Status *</label
+                  >Status *</label
                 >
                 <div class="control">
                   <div class="select is-fullwidth is-small">
@@ -267,14 +246,18 @@
 
           <button
             class="button has-text-white has-text-weight-bold is-size-6 is-pink"
-            @click="upload"
           >
-            Submit
+            Update
             <!-- <i class="bx bx-chevron-down"></i> -->
           </button>
         </div>
       </div>
     </form>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
   </div>
 </template>
 
@@ -282,7 +265,7 @@
 import axios from "axios";
 import {toast} from 'bulma-toast'
 export default {
-  name: "AddEmployee",
+  name: "EditEmployee",
   data() {
     return {
       name: "",
@@ -301,12 +284,13 @@ export default {
       currentImage: undefined,
       previewImage: undefined,
       progress: 0,
-      message: "",
-      imageInfos: [],
+
+      employee:[],
     };
   },
-  components: {
-    // UploadImage,
+
+  mounted() {
+    this.getEmployee()
   },
 
   methods: {
@@ -334,6 +318,23 @@ export default {
 
       }
     },
+
+
+
+    async getEmployee(){
+      // const employeeID= this.$route.params.id
+      const employeeID= this.$route.params.id
+      axios
+        .get(`api/v1/employees/${employeeID}/`)
+        .then(response=>{
+          this.employee= response.data
+          console.log(this.employee.id)
+        })
+        .catch(error=>{
+          console.log(error)
+        })
+    },
+
 
     async submitForm() {
 
@@ -374,12 +375,6 @@ export default {
         });
     },
   },
-  // mounted() {
-  //   UploadService.getFiles().then(response => {
-  //     this.imageInfos = response.data;
-  //     console.log(this.imageInfos)
-  //   });
-  // },
 };
 </script>
 

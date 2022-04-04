@@ -27,7 +27,6 @@
               >
                 Recent Employees
               </h2>
-
             </div>
             <div class="column m-2 box has-background-faded-pink">
               <h2
@@ -35,9 +34,9 @@
               >
                 WatchList Employees
               </h2>
-
             </div>
           </div>
+          <AllEmployees/>
         </div>
       </div>
     </section>
@@ -45,11 +44,20 @@
 </template>
 
 <script>
+import AddEmployee from "../components/AddEdit/AddEmployee.vue";
+import AllEmployees from "../components/tables/AllEmployees.vue";
+import Employee from "../components/ViewEach/Employee.vue";
+import TableBase from "../components/tables/TableBase.vue";
+
 export default {
-    
-}
+  name: "Employees",
+  components: {
+    AddEmployee,
+    AllEmployees,
+    Employee,
+    TableBase
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

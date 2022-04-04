@@ -37,36 +37,96 @@
           </tr>
         </tbody>
       </table> -->
+      <input
+        type="text"
+        class="input is-small is-rounded column is-6"
+        placeholder="&#xebf7; Search..."
+        v-model="searchTerm"
+      />
       <vue-good-table
         :columns="columns"
-        :rows="rows"
+        :rows="rows"        
+        :line-numbers="true"
+        max-height="500px"
         :search-options="{
           enabled: true,
+          externalQuery: searchTerm,
         }"
         :pagination-options="{
           enabled: true,
+          mode: 'pages',
           perPage: 5,
         }"
         styleClass="vgt-table condensed"
+        compactMode
       >
+        <!-- format images -->
         <template #table-row="props">
           <span v-if="props.column.field == 'get_image'">
             <div class="product-tb">
               <img :src="props.row.get_image" class="image mr-2" />
             </div>
           </span>
+
           <span v-else>
             {{ props.formattedRow[props.column.field] }}
           </span>
+
+          <span v-if="props.column.field == 'btn'">
+
+            
+            <span class="icon mr-2 is-clickable" @click="dynamicRouterView"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="is-family-secondary"
+                width="16"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                ></path></svg
+            ></span>
+
+            
+            <!-- <router-link :to="{name:'employee', params:{id:props.row.id}}"></router-link> -->
+            <span class="icon is-clickable" @click="dynamicRouterEdit">
+              <i class="bx bx-pencil "></i>
+            </span>
+
+            <!-- <span class="icon">
+              <i class="bx bx-trash is-clickable" style="color: red"></i>
+            </span> -->
+
+
+          </span>
         </template>
 
-        <template slot="table-column" slot-scope="props">
-          <span v-if="props.column.label == 'Name'">
-            <i class="bx bx-book-alt"></i> {{ props.column.label }}
-          </span>
-          <span v-else>
-            {{ props.column.label }}
-          </span>
+        <!-- add action buttons -->
+        <template #table-actions>
+          <button
+            class="button has-text-white has-text-weight-bold is-size-7 is-pink mx-2"
+          >
+            Submit
+            <!-- <i class="bx bx-chevron-down"></i> -->
+          </button>
+
+          <button
+            class="button has-text-white has-text-weight-bold is-size-7 is-pink mx-2"
+          >
+            Submit
+            <!-- <i class="bx bx-chevron-down"></i> -->
+          </button>
         </template>
       </vue-good-table>
     </div>
@@ -76,20 +136,23 @@
 <script>
 import { VueGoodTable } from "vue-good-table-next";
 import axios from "axios";
+import router from "@/router";
 
 export default {
   name: "Employees",
   data() {
     return {
+      searchTerm: "",
       columns: [
-        { label: "ID", field: "id" },
-        { label: "Employee", field: "get_image" },
-        { label: "Registration Number", field: "reg_no" },
-        { label: "Name", field: "name" },
-        { label: "E-mail", field: "email" },
-        { label: "Position", field: "position" },
-        { label: "Location", field: "location" },
-        { label: "status", field: "status" },
+        { label: "ID", field: "id", tdClass:'is-size-7' },
+        { label: "Employee", field: "get_image", tdClass:'is-size-7'},
+        { label: "Number", field: "reg_no", tdClass:'is-size-7' },
+        { label: "Name", field: "name", tdClass:'is-size-7' },
+        { label: "E-mail", field: "email", width: "20px", tdClass:'is-size-7' },
+        { label: "Position", field: "position", tdClass:'is-size-7' },
+        { label: "Location", field: "location", tdClass:'is-size-7' },
+        { label: "status", field: "status", tdClass:'is-size-7' },
+        { label: "Action", field: "btn", html: true },
       ],
       rows: [],
     };
@@ -110,6 +173,12 @@ export default {
     //   }
     //   else{console.log("Imaaage")}
     // },
+    dynamicRouterEdit(){
+      router.push({name:'EditEmployee', params:{ id: this.employee.id}})
+    },
+    dynamicRouterView(){
+      router.push('/')
+    },
     async getEmployees() {
       await axios
         .get("/api/v1/employees/")
@@ -134,6 +203,7 @@ export default {
   img {
     height: 42px;
     min-width: 54.55px;
+    width: 54.55px;
     object-fit: cover;
     border-radius: 10px;
     padding: 0.05em;

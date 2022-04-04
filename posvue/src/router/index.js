@@ -9,8 +9,9 @@ import Branches from '../views/Branches.vue'
 import Customer from '../views/Customer.vue'
 
 import Employees from '../views/Employees.vue'
-import Leave from '../views/Leave.vue'
-import Exemployees from '../views/Exemployees.vue'
+import EditEmployee from '../views/EditEmployee.vue'
+// import Leave from '../views/Leave.vue'
+import ExEmployees from '../views/ExEmployees.vue'
 
 import Orders from '../views/Orders.vue'
 import Transactions from '../views/Transactions.vue'
@@ -43,7 +44,7 @@ const routes = [
     },
 
     {
-        path: '/forgotpassword',
+        path: '/forgotPassword',
         name: 'Password',
         component: Password
     },
@@ -125,14 +126,25 @@ const routes = [
         }
     },
     {
-        path: '/leave',
-        name: 'Leave',
-        component: Leave
+        path: '/employees/:id/edit',
+        name: 'EditEmployee',
+        component: EditEmployee,
+        meta: {
+            requireLogin: true
+        }
     },
+    // {
+    //     path: '/leave',
+    //     name: 'Leave',
+    //     component: Leave,
+    //     meta: {
+    //         requireLogin: true
+    //     }
+    // },
     {
         path: '/ex-employees',
-        name: 'Exemployees',
-        component: Exemployees,
+        name: 'ExEmployees',
+        component: ExEmployees,
         meta: {
             requireLogin: true
         }
