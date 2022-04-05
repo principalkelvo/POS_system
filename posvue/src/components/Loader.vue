@@ -1,20 +1,20 @@
 <template>
-<body>
+<div class="main">
     
-    <div class="loader">
+    <div class="loader1">
         <span style="--i:1;"> </span>
         <span style="--i:2;"> </span>
         <span style="--i:3;"> </span>
         <span style="--i:4;"> </span>
         <span style="--i:5;"> </span>
-        <span style="--i:6;"> </span>
+        <!-- <span style="--i:6;"> </span>
         <span style="--i:7;"> </span>
         <span style="--i:8;"> </span>
         <span style="--i:9;"> </span>
-        <span style="--i:10;"> </span>
+        <span style="--i:10;"> </span> -->
     </div>
     
-</body>
+</div>
 </template>
 <script>
 export default {
@@ -30,53 +30,54 @@ export default {
     box-sizing: border-box;
 }
 
-body{
+.main{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    width: 100%;
     overflow: hidden;
     background:#001f25;
 }
-.loader{
+.loader1{
     position:relative;
-    width: 300px;
-    height: 300px;
+    width: 110px;
+    height: 110px;
 }
-.loader span{
+.loader1 span{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    transform: rotate(calc(36deg*var(--i)));
+    transform: rotate(calc(72deg*var(--i)));
 }
-.loader span::before{
+.loader1 span::before{
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: transparent;
     border: 4px solid #00efff;
-    box-shadow: 0 0 20px #00efff,
-                -30px -30px 0 #00efff,
-                -30px -30px 20px  #00efff,
-                30px 30px 0 #00efff,
-                30px 30px 20px #00efff,
-                30px -30px 0 #00efff,
-                30px -30px 20px #00efff,
-                -30px 30px 0 #00efff,
-                -30px 30px 20px #00efff,;
+    box-shadow: 0 0 10px #00efff,
+                -20px -20px 0 #00efff,
+                -20px -20px 10px  #00efff,
+                20px 20px 0 #00efff,
+                20px 20px 10px #00efff,
+                20px -20px 0 #00efff,
+                20px -20px 10px #00efff,
+                -20px 20px 0 #00efff,
+                -20px 20px 10px #00efff,;
     transition:2s;
     transform-origin: 20px;
     animation:animate 5s linear infinite;
-    animation-delay: calc(0.25s * var(--i));
+    animation-delay: calc(0.5s * var(--i));
 }
 
-.loader:hover span::before{
+.loader1:hover span::before{
     box-shadow:0 0 20px #00efff,
                 -200px -200px 0 #00efff,
                 -200px -200px 20px  #00efff,
@@ -91,7 +92,7 @@ body{
 
 @keyframes animate{
     0%{
-        transform:rotate(360deg);
+        transform:rotate(0deg);
         filter: hue-rotate(0deg);
     }
     100%{
