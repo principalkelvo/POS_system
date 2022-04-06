@@ -316,6 +316,8 @@ export default {
 
 
     async getEmployee(){
+      this.$store.commit('setIsLoading',true)
+
       const employeeID= this.$route.params.id
       axios
         .get(`api/v1/employees/${employeeID}/`)
@@ -329,10 +331,13 @@ export default {
         .catch(error=>{
           console.log(error)
         })
+      this.$store.commit('setIsLoading',false)
+
     },
 
 
     async submitForm() {
+      this.$store.commit('setIsLoading',true)
 
       const employeeID= this.$route.params.id
 
@@ -371,6 +376,8 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+      this.$store.commit('setIsLoading',false)
+
     },
   },
 };

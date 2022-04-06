@@ -118,6 +118,7 @@ export default {
   },
   methods:{
     async submitForm(){
+
       this.$store.commit('setIsLoading',true)
       this.errors=[]
       if(this.username===''){

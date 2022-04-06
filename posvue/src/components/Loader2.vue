@@ -1,32 +1,58 @@
 <template>
-  <div class="page-loader">
+<div class="main" >
+  <div class="page-loader" >
     <div class="cube"></div>
     <div class="cube"></div>
     <div class="cube"></div>
     <div class="cube"></div>
   </div>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name:'Loader2',
+  mounted() {
+        document.onreadystatechange=() =>{
+            if(document.readyState=='complete')[
+                this.$store.commit('setIsLoading',true)
+            ]
+        }
+    }
+};
 </script>
 
 <style lang="scss" scoped>
 $colors: #8cc271, #69beeb, #f5aa39, #e9643b;
 
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background:#001f25aa;
+    z-index: 999;
+  position:fixed;
+
+}
 .page-loader {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  overflow: hidden;
+    // width: 110px;
+    // height: 110px;
+
+  // justify-content: center;
+  // align-items: center;
+  // position: fixed;
+  // overflow: hidden;
 
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #333;
-  z-index: 1;
+  // width: 100%;
+  // height: 100vh;
+  // background-color: #333;
+  
 }
 
 .cube {

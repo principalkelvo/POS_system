@@ -316,6 +316,7 @@ export default {
 
 
     async getEmployee(){
+      this.$store.commit('setIsLoading',true)
       // const employeeID= this.$route.params.id
       const employeeID= this.$route.params.id
       axios
@@ -327,10 +328,14 @@ export default {
         .catch(error=>{
           console.log(error)
         })
+      this.$store.commit('setIsLoading',false)
+
     },
 
 
     async submitForm() {
+
+      this.$store.commit('setIsLoading',true)
 
       let formData = new FormData();
       formData.append("image", this.image);
@@ -367,6 +372,8 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+      this.$store.commit('setIsLoading',false)
+
     },
   },
 };

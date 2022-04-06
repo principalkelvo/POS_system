@@ -167,23 +167,10 @@ export default {
     this.getEmployees();
   },
   methods: {
-    // rowStyleClass(row){
-    //   if(row.image){
-    //   const image= new Image;
-    //   image.src= row.image
-    //   row.image=== image
-    //   return row.image
-    //   }
-    //   else{console.log("Imaaage")}
-    // },
-    // dynamicRouterEdit(){
-      
-    //   router.push({name:'EditEmployee', params:{ id: employee.id}})
-    // },
-    dynamicRouterView(){
-      router.push('/')
-    },
+    
     async getEmployees() {
+      
+      this.$store.commit('setIsLoading',true)
       await axios
         .get("/api/v1/employees/")
         .then((response) => {
@@ -193,6 +180,8 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+        
+      this.$store.commit('setIsLoading',false)
     },
   },
 };

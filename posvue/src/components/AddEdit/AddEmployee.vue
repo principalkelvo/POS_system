@@ -336,6 +336,8 @@ export default {
     },
 
     async submitForm() {
+      
+      this.$store.commit('setIsLoading',true)
 
       let formData = new FormData();
       formData.append("image", this.image);
@@ -372,6 +374,8 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+        
+      this.$store.commit('setIsLoading',false)
     },
   },
   // mounted() {

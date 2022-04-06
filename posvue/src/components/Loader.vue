@@ -1,5 +1,5 @@
 <template>
-<div class="main">
+<div class="main"  v-if="!$store.state.isLoading">
     
     <div class="loader1">
         <span style="--i:1;"> </span>
@@ -18,7 +18,14 @@
 </template>
 <script>
 export default {
-    name:'loader'
+    name:'loader',
+    mounted() {
+        document.onreadystatechange=() =>{
+            if(document.readyState=='complete')[
+                this.$store.commit('setIsLoading',true)
+            ]
+        }
+    }
 
 }
 </script>

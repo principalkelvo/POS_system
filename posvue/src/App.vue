@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <!-- <Loader/> -->
+    <Loader2  v-if="$store.state.isLoading"/>
     <Asidebar />
     <Navbar />
     <section class="section">
@@ -15,6 +17,8 @@ import axios from "axios";
 import Navbar from "@/components/Navbar.vue";
 import Asidebar from "@/components/Asidebar.vue";
 import Footer from "@/components/Footer.vue";
+import Loader2 from "@/components/Loader2.vue";
+import Loader from "@/components/Loader.vue";
 
 
 
@@ -25,7 +29,9 @@ export default {
   components: {
     Navbar,
     Asidebar,
-    Footer
+    Footer,
+    Loader2,
+    Loader
   },
   beforeCreate() {
     this.$store.commit('initializeStore')
