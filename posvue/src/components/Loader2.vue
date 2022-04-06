@@ -1,46 +1,59 @@
 <template>
-<div class="main" >
-  <div class="page-loader" >
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-  </div>
+  <div class="main"  v-if="$store.state.isLoading">
+    <div class="page-loader">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+    <svg>
+      <filter id="gooey">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+        <feColorMatrix values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 20 -10
+        "/>
+      </filter>
+    </svg>
   </div>
 </template>
 
 <script>
 export default {
-  name:'Loader2',
+  name: "Loader2",
   mounted() {
-        document.onreadystatechange=() =>{
-            if(document.readyState=='complete')[
-                this.$store.commit('setIsLoading',true)
-            ]
-        }
-    }
+    document.onreadystatechange = () => {
+      if (document.readyState == "complete"){
+        this.$store.commit("setIsLoading", false);
+      }
+      else if (document.readyState == "interactive"){
+        this.$store.commit("setIsLoading", true);
+      }
+    };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 $colors: #8cc271, #69beeb, #f5aa39, #e9643b;
 
-.main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    background:#001f25aa;
-    z-index: 999;
-  position:fixed;
-
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: #001f25aa;
+  z-index: 999;
+  position: fixed;
 }
 .page-loader {
   display: flex;
-    // width: 110px;
-    // height: 110px;
+  // width: 110px;
+  // height: 110px;
 
   // justify-content: center;
   // align-items: center;
@@ -52,13 +65,15 @@ $colors: #8cc271, #69beeb, #f5aa39, #e9643b;
   // width: 100%;
   // height: 100vh;
   // background-color: #333;
+  filter:url(#gooey);
   
 }
 
 .cube {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  border-radius: 50%;
 
   //scss magic
   @for $i from 1 through length($colors) {
@@ -67,10 +82,16 @@ $colors: #8cc271, #69beeb, #f5aa39, #e9643b;
     }
   }
   &:first-child {
-    animation: left 1s infinite;
+    animation: left 2s infinite;
+  }
+  &:nth-child(2) {
+    animation: left 2s infinite 1s;
+  }
+  &:nth-child(3) {
+    animation: right 2s infinite 1s;
   }
   &:last-child {
-    animation: right 1s infinite 0.5s;
+    animation: right 2s infinite ;
   }
 }
 
@@ -79,7 +100,7 @@ $colors: #8cc271, #69beeb, #f5aa39, #e9643b;
     transform: translateX(-60px);
   }
   50% {
-    transform: translateX(0);
+    transform: translateX(50px);
   }
 }
 @keyframes right {
@@ -87,7 +108,12 @@ $colors: #8cc271, #69beeb, #f5aa39, #e9643b;
     transform: translateX(60px);
   }
   50% {
-    transform: translateX(0);
+    transform: translateX(-50px);
   }
+}
+
+svg{
+  width:0;
+  height:0;
 }
 </style>

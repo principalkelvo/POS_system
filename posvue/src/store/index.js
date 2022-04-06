@@ -5,8 +5,10 @@ export default createStore({
         /* Dark mode */
         isDarkModeActive: false,
 
+        //loading
+        isLoading: true,
+
         // authentication 
-        isLoading: false,
         isAuthenticated: false,
         token: ''
     },
@@ -47,7 +49,7 @@ export default createStore({
             state.token = token
             state.isAuthenticated = true
         },
-        // function to signout
+        // function to sign out
         removeToken(state) {
             state.token = ''
             state.isAuthenticated = false

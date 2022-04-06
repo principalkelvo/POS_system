@@ -1,7 +1,7 @@
 <template>
   <div class="about">
-    <!-- <Loader/> -->
-    <Loader2/>
+    <Loader/>
+    <!-- <Loader2/> -->
   </div>
 </template>
 

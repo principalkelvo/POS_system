@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <!-- <Loader/> -->
-    <Loader2  v-if="$store.state.isLoading"/>
     <Asidebar />
+    <Loader2 />
     <Navbar />
     <section class="section">
       <router-view />
