@@ -1,4 +1,3 @@
-posvue/src/components/Chart.vue
 posdjango/db.sqlite3
 posdjango/db.sqlite3
 posdjango/media/uploads/ales-krivec-4miBe6zg5r0-unsplash_1_8OdX8HI.jpg
@@ -20,3 +19,7 @@ posdjango/media/uploads/default.jpg
 posdjango/media/uploads/ales-krivec-4miBe6zg5r0-unsplash_1.jpg
 posdjango/employee/__pycache__/models.cpython-310.pyc
 posdjango/db.sqlite3
+posdjango/media/uploads/pexels-marlon-schmeiski-3839904.jpg
+.gitignore
+posdjango/db.sqlite3
+.gitignore
