@@ -145,7 +145,7 @@ export default {
         .get("/api/v1/employees/")
         .then((response) => {
           this.rows = response.data;
-          console.log(this.rows.id);
+          // console.log(this.rows.id);
         })
         .catch((error) => {
           console.log(error);

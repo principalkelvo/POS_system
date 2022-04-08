@@ -85,7 +85,7 @@
           <li><router-link class="pl-2" to="#">Customers Reviews</router-link></li>
         </ul> -->
       <li>
-        <router-link class="link_icon" to="/customer">
+        <router-link class="link_icon" to="/customers">
           <!-- icon -->
           <i class="has-text-black"
             ><svg
@@ -106,7 +106,7 @@
         </router-link>
         <ul class="sub-menu blank">
           <li>
-            <router-link class="link_name" to="/customer"
+            <router-link class="link_name" to="/customers"
               >Customers</router-link
             >
           </li>

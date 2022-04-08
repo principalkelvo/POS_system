@@ -16,7 +16,7 @@
 
               <img
                 class="is-pulled-right image"
-                src="../assets/arrows/arrows.svg"
+                src="@/assets/arrows/arrows.svg"
                 alt=""
               />
             </div>
@@ -28,7 +28,7 @@
               </h2>
               <img
                 class="is-pulled-right image"
-                src="../assets/arrows/arrows2.svg"
+                src="@/assets/arrows/arrows2.svg"
                 alt=""
               />
             </div>
@@ -41,7 +41,7 @@
 
               <img
                 class="is-pulled-right image"
-                src="../assets/arrows/arrows3.svg"
+                src="@/assets/arrows/arrows3.svg"
                 alt=""
               />
             </div>
@@ -54,11 +54,13 @@
 
               <img
                 class="is-pulled-right image"
-                src="../assets/arrows/arrows4.svg"
+                src="@/assets/arrows/arrows4.svg"
                 alt=""
               />
             </div>
           </div>
+          <!-- <AddCustomer/>
+          <AllCustomers/> -->
 
         </div>
       </div>
@@ -66,10 +68,14 @@
   </div>
 </template>
 <script>
+import AddCustomer from "@/components/AddEdit/AddCustomer.vue";
+import AllCustomers from "@/components/tables/AllCustomers.vue";
 export default {
-  name: "Customer",
+  name: "Customers",
   components: {
-  },
+    AddCustomer,
+    AllCustomers
+},
 };
 </script>
 

@@ -6,13 +6,19 @@ import Category from '../views/Category.vue'
 import Product from '../views/Product.vue'
 import Inventory from '../views/Inventory.vue'
 import Branches from '../views/Branches.vue'
-import Customer from '../views/Customer.vue'
 
-import Employees from '../views/Employees.vue'
-import Employee from '../views/Employee.vue' //view each employee
-import EditEmployee from '../views/EditEmployee.vue'
-import Leave from '../views/Leave.vue'
-import ExEmployees from '../views/ExEmployees.vue'
+//employees
+import Employees from '../views/employees/Employees.vue'
+import Employee from '../views/employees/Employee.vue' //view each employee
+import EditEmployee from '../views/employees/EditEmployee.vue'
+import Leave from '../views/employees/Leave.vue'
+import ExEmployees from '../views/employees/ExEmployees.vue'
+
+//customer
+import Customers from '../views/customers/Customers.vue'
+import Customer from '../views/customers/Customer.vue' //view each employee
+import EditCustomer from '../views/customers/EditCustomer.vue'
+
 
 import Orders from '../views/Orders.vue'
 import Transactions from '../views/Transactions.vue'
@@ -108,8 +114,26 @@ const routes = [
             requireLogin: true
         }
     },
+
+
     {
-        path: '/customer',
+        path: '/customers',
+        name: 'Customers',
+        component: Customers,
+        meta: {
+            requireLogin: true
+        }
+    },
+    {
+        path: '/customers/:id/edit',
+        name: 'EditCustomer',
+        component: EditCustomer,
+        meta: {
+            requireLogin: true
+        }
+    },
+    {
+        path: '/customers/:id',
         name: 'Customer',
         component: Customer,
         meta: {
