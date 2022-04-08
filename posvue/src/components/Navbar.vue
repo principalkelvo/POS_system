@@ -360,7 +360,4 @@ a.navbar-item.is-active,
   background-color: transparent;
   color: #ffffff;
 }
-::placeholder {
-  font-family: "Boxicon";
-}
 </style>
