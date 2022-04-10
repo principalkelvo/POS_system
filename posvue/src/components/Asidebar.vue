@@ -151,7 +151,7 @@
           </li>
           <li><router-link class="pl-2" to="/employees">Staffs</router-link></li>
           <li><router-link class="pl-2" to="Leave">Leave</router-link></li>
-          <li><router-link class="pl-2" to="/ex-employees">Ex employees</router-link></li>
+          <li><router-link class="pl-2" to="/ex_employees">Ex employees</router-link></li>
         </ul>
       </li>
 
@@ -200,13 +200,13 @@
         </div>
         <ul class="sub-menu">
           <li><router-link class="link_name" to="/reports">Reports</router-link></li>
-          <li><router-link class="pl-2" to="/accountsreports">Accounts</router-link></li>
-          <li><router-link class="pl-2" to="/staffsreports">Staffs reports</router-link></li>
+          <li><router-link class="pl-2" to="/accounts_reports">Accounts</router-link></li>
+          <li><router-link class="pl-2" to="/staffs_reports">Staffs reports</router-link></li>
           <li>
-            <router-link class="pl-2" to="/customerreports">Customers reports</router-link>
+            <router-link class="pl-2" to="/customer_reports">Customers reports</router-link>
           </li>
-          <li><router-link class="pl-2" to="/branchesreports">Branch reports</router-link></li>
-          <li><router-link class="pl-2" to="/hrreports">HR reports</router-link></li>
+          <li><router-link class="pl-2" to="/branches_reports">Branch reports</router-link></li>
+          <li><router-link class="pl-2" to="/hr_reports">HR reports</router-link></li>
         </ul>
       </li>
 

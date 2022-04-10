@@ -175,7 +175,7 @@ const routes = [
         }
     },
     {
-        path: '/ex-employees',
+        path: '/ex_employees',
         name: 'ExEmployees',
         component: ExEmployees,
         meta: {
@@ -211,7 +211,7 @@ const routes = [
         }
     },
     {
-        path: '/accountsreports',
+        path: '/accounts_reports',
         name: 'AccountsReports',
         component: AccountsReports,
         meta: {
@@ -219,7 +219,7 @@ const routes = [
         }
     },
     {
-        path: '/staffsreports',
+        path: '/staffs_reports',
         name: 'StaffsReports',
         component: StaffsReports,
         meta: {
@@ -227,7 +227,7 @@ const routes = [
         }
     },
     {
-        path: '/customerreports',
+        path: '/customer_reports',
         name: 'CustomerReports',
         component: CustomerReports,
         meta: {
@@ -235,7 +235,7 @@ const routes = [
         }
     },
     {
-        path: '/branchesreports',
+        path: '/branches_reports',
         name: 'BranchesReports',
         component: BranchesReports,
         meta: {
@@ -243,7 +243,7 @@ const routes = [
         }
     },
     {
-        path: '/hrreports',
+        path: '/hr_reports',
         name: 'HRReports',
         component: HRReports,
         meta: {

@@ -10,7 +10,12 @@ export default createStore({
 
         // authentication 
         isAuthenticated: false,
-        token: ''
+        token: '',
+
+        user: {
+            id: 0,
+            username: '',
+        }
     },
     getters: {},
     mutations: {
@@ -33,10 +38,15 @@ export default createStore({
             if (localStorage.getItem('token')) {
                 state.token = localStorage.getItem('token')
                 state.isAuthenticated = true
+
+                state.user.username = localStorage.getItem('username')
+                state.user.id = localStorage.getItem('user_id')
             } //if not logged in
             else {
                 state.token = ''
                 state.isAuthenticated = false
+                state.user.id = 0
+                state.user.username = ''
             }
         },
 
@@ -53,6 +63,10 @@ export default createStore({
         removeToken(state) {
             state.token = ''
             state.isAuthenticated = false
+        },
+
+        setUser(state, user) {
+            state.user = user
         }
 
     },

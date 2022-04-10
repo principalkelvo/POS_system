@@ -73,7 +73,7 @@
                   Register
                 </router-link><br>
                 Or
-                <router-link to="/forgotpassword" class="has-text-warning">
+                <router-link to="/forgot_password" class="has-text-warning">
                   Forgot Password
                 </router-link>
               </p>
@@ -126,9 +126,7 @@ export default {
             axios.defaults.headers.common['Authorization']='Token '+ token
             localStorage.setItem('token', token)
 
-            //back to previous page or to home
-            const toPath = this.$route.query.to || '/'
-            this.$router.push(toPath)
+            
           })
            .catch(error=>{
               if(error.response){
@@ -140,6 +138,23 @@ export default {
                 this.errors.push('Something went wrong. Please try again')
               }
             })
+
+            await axios
+              .get('/api/v1/users/me')
+              .then(response =>{
+                this.$store.commit('setUser',{'id':response.data.id, 'username':response.data.username})
+
+                //save it to localStorage
+                localStorage.setItem('username', response.data.username)
+                localStorage.setItem('userId', response.data.id)
+                console.log(response.data)
+                //back to previous page or to home
+                const toPath = this.$route.query.to || '/'
+                this.$router.push(toPath)
+              })
+              .catch(error =>{
+                console.log(error)
+              })
 
             this.$store.commit('setIsLoading',false)
       }
