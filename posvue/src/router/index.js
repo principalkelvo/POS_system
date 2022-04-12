@@ -3,11 +3,16 @@ import store from '../store'
 
 import HomeView from '../views/HomeView.vue'
 
-import Category from '../views/inventory/Category.vue'
-import Product from '../views/inventory/Product.vue'
-import Inventory from '../views/inventory/Inventory.vue'
-
+//branches
 import Branches from '../views/branches/Branches.vue'
+import Branch from '../views/branches/Branch.vue'
+import BranchTransfers from '../views/branches/BranchTransfers.vue'
+import EditBranch from '../views/branches/EditBranch.vue'
+
+//customer
+import Customers from '../views/customers/Customers.vue'
+import Customer from '../views/customers/Customer.vue' //view each customer
+import EditCustomer from '../views/customers/EditCustomer.vue'
 
 //employees
 import Employees from '../views/employees/Employees.vue'
@@ -16,14 +21,12 @@ import EditEmployee from '../views/employees/EditEmployee.vue'
 import Leave from '../views/employees/Leave.vue'
 import ExEmployees from '../views/employees/ExEmployees.vue'
 
-//customer
-import Customers from '../views/customers/Customers.vue'
-import Customer from '../views/customers/Customer.vue' //view each customer
-import EditCustomer from '../views/customers/EditCustomer.vue'
-
-//orders and transactions
-import Orders from '../views/transaction/Orders.vue'
-import Transactions from '../views/transaction/Transactions.vue'
+//inventory
+import Category from '../views/inventory/Category.vue'
+import Categories from '../views/inventory/Categories.vue'
+import Product from '../views/inventory/Product.vue'
+import Products from '../views/inventory/Products.vue'
+import Inventory from '../views/inventory/Inventory.vue'
 
 //reports
 import Reports from '../views/reports/Reports.vue'
@@ -33,6 +36,12 @@ import StaffsReports from '../views/reports/StaffsReports.vue'
 import CustomerReports from '../views/reports/CustomerReports.vue'
 import BranchesReports from '../views/reports/BranchesReports.vue'
 import HRReports from '../views/reports/HRReports.vue'
+
+//orders and transactions
+import Orders from '../views/transaction/Orders.vue'
+import Order from '../views/transaction/Order.vue'
+import Transactions from '../views/transaction/Transactions.vue'
+import Transaction from '../views/transaction/Transaction.vue'
 
 //main company settings
 import Settings from '../views/Settings.vue'
@@ -45,6 +54,7 @@ import Success from '../views/auth/Success.vue'
 
 const routes = [
 
+    //auth
     {
         path: '/login',
         name: 'Login',
@@ -71,6 +81,7 @@ const routes = [
         }
     },
 
+    //dashboard
     {
         path: '/',
         name: 'home',
@@ -88,30 +99,8 @@ const routes = [
         component: () =>
             import ( /* webpackChunkName: "about" */ '../views/AboutView.vue')
     },
-    {
-        path: '/category',
-        name: 'Category',
-        component: Category,
-        meta: {
-            requireLogin: true
-        }
-    },
-    {
-        path: '/product',
-        name: 'Product',
-        component: Product,
-        meta: {
-            requireLogin: true
-        }
-    },
-    {
-        path: '/inventory',
-        name: 'Inventory',
-        component: Inventory,
-        meta: {
-            requireLogin: true
-        }
-    },
+
+    //branches
     {
         path: '/branches',
         name: 'Branches',
@@ -121,7 +110,7 @@ const routes = [
         }
     },
 
-
+    //customers
     {
         path: '/customers',
         name: 'Customers',
@@ -147,7 +136,7 @@ const routes = [
         }
     },
 
-
+    //employees
     {
         path: '/employees',
         name: 'Employees',
@@ -189,7 +178,33 @@ const routes = [
         }
     },
 
+    //inventory
+    {
+        path: '/category',
+        name: 'Category',
+        component: Category,
+        meta: {
+            requireLogin: true
+        }
+    },
+    {
+        path: '/product',
+        name: 'Product',
+        component: Product,
+        meta: {
+            requireLogin: true
+        }
+    },
+    {
+        path: '/inventory',
+        name: 'Inventory',
+        component: Inventory,
+        meta: {
+            requireLogin: true
+        }
+    },
 
+    //orders and transactions
     {
         path: '/orders',
         name: 'Orders',
@@ -207,7 +222,7 @@ const routes = [
         }
     },
 
-
+    //reports
     {
         path: '/reports',
         name: 'Reports',
@@ -265,6 +280,7 @@ const routes = [
         }
     },
 
+    //main settings
     {
         path: '/settings',
         name: 'Settings',
