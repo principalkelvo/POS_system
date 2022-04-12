@@ -16,7 +16,7 @@
 
               <img
                 class="is-pulled-right image"
-                src="../assets/arrows/arrows.svg"
+                src="@/assets/arrows/arrows.svg"
                 alt=""
               />
             </div>
@@ -28,7 +28,7 @@
               </h2>
               <img
                 class="is-pulled-right image"
-                src="../assets/arrows/arrows2.svg"
+                src="@/assets/arrows/arrows2.svg"
                 alt=""
               />
             </div>
@@ -41,7 +41,7 @@
 
               <img
                 class="is-pulled-right image"
-                src="../assets/arrows/arrows3.svg"
+                src="@/assets/arrows/arrows3.svg"
                 alt=""
               />
             </div>

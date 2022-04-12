@@ -2,10 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 import store from '../store'
 
 import HomeView from '../views/HomeView.vue'
-import Category from '../views/Category.vue'
-import Product from '../views/Product.vue'
-import Inventory from '../views/Inventory.vue'
-import Branches from '../views/Branches.vue'
+
+import Category from '../views/inventory/Category.vue'
+import Product from '../views/inventory/Product.vue'
+import Inventory from '../views/inventory/Inventory.vue'
+
+import Branches from '../views/branches/Branches.vue'
 
 //employees
 import Employees from '../views/employees/Employees.vue'
@@ -16,26 +18,30 @@ import ExEmployees from '../views/employees/ExEmployees.vue'
 
 //customer
 import Customers from '../views/customers/Customers.vue'
-import Customer from '../views/customers/Customer.vue' //view each employee
+import Customer from '../views/customers/Customer.vue' //view each customer
 import EditCustomer from '../views/customers/EditCustomer.vue'
 
+//orders and transactions
+import Orders from '../views/transaction/Orders.vue'
+import Transactions from '../views/transaction/Transactions.vue'
 
-import Orders from '../views/Orders.vue'
-import Transactions from '../views/Transactions.vue'
+//reports
+import Reports from '../views/reports/Reports.vue'
+import Report from '../views/reports/Report.vue' //view each report
+import AccountsReports from '../views/reports/AccountsReports.vue'
+import StaffsReports from '../views/reports/StaffsReports.vue'
+import CustomerReports from '../views/reports/CustomerReports.vue'
+import BranchesReports from '../views/reports/BranchesReports.vue'
+import HRReports from '../views/reports/HRReports.vue'
 
-import Reports from '../views/Reports.vue'
-import AccountsReports from '../views/AccountsReports.vue'
-import StaffsReports from '../views/StaffsReports.vue'
-import CustomerReports from '../views/CustomerReports.vue'
-import BranchesReports from '../views/BranchesReports.vue'
-import HRReports from '../views/HRReports.vue'
-
+//main company settings
 import Settings from '../views/Settings.vue'
 
-import SignUp from '../views/SignUp.vue'
-import Login from '../views/Login.vue'
-import Password from '../views/Password.vue'
-import Success from '../views/Success.vue'
+//authentication
+import SignUp from '../views/auth/SignUp.vue'
+import Login from '../views/auth/Login.vue'
+import Password from '../views/auth/Password.vue'
+import Success from '../views/auth/Success.vue'
 
 const routes = [
 
@@ -206,6 +212,14 @@ const routes = [
         path: '/reports',
         name: 'Reports',
         component: Reports,
+        meta: {
+            requireLogin: true
+        }
+    },
+    {
+        path: '/reports:id',
+        name: 'Report',
+        component: Report,
         meta: {
             requireLogin: true
         }

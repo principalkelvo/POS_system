@@ -14,7 +14,7 @@
 
             <img
               class="is-pulled-right"
-              src="../assets/arrows/arrows.svg"
+              src="@/assets/arrows/arrows.svg"
               alt=""
             />
           </div>
@@ -25,7 +25,7 @@
             <h3 class="is-size-5 has-text-centered has-text-weight-bold items_received">2,465</h3>
             <img
               class="is-pulled-right"
-              src="../assets/arrows/arrows2.svg"
+              src="@/assets/arrows/arrows2.svg"
               alt=""
             />
           </div>
@@ -37,7 +37,7 @@
 
             <img
               class="is-pulled-right"
-              src="../assets/arrows/arrows3.svg"
+              src="@/assets/arrows/arrows3.svg"
               alt=""
             />
           </div>
@@ -49,7 +49,7 @@
 
             <img
               class="is-pulled-right"
-              src="../assets/arrows/arrows4.svg"
+              src="@/assets/arrows/arrows4.svg"
               alt=""
             />
           </div>

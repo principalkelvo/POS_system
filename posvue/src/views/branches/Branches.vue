@@ -10,7 +10,7 @@
             class="column m-3 box has-background-white is-2 is-webkit-center"
           >
             <figure class="image is-flex is-justify-content-center p-2">
-              <img src="../assets/logo.png" alt="" class="" />
+              <img src="@/assets/logo.png" alt="" class="" />
             </figure>
             <h2 class="is-size-6 has-text-black is-size-4">Branch A</h2>
             <h3 class="is-size-6 has-text-centered items_ordered">
@@ -26,7 +26,7 @@
             class="column m-3 box has-background-white is-2 is-webkit-center"
           >
             <figure class="image is-flex is-justify-content-center p-2">
-              <img src="../assets/logo.png" alt="" class="" />
+              <img src="@/assets/logo.png" alt="" class="" />
             </figure>
             <h2 class="is-size-6 has-text-black is-size-4">Branch A</h2>
             <h3 class="is-size-6 has-text-centered items_ordered">
@@ -42,7 +42,7 @@
             class="column m-3 box has-background-white is-2 is-webkit-center"
           >
             <figure class="image is-flex is-justify-content-center p-2">
-              <img src="../assets/logo.png" alt="" class="" />
+              <img src="@/assets/logo.png" alt="" class="" />
             </figure>
             <h2 class="is-size-6 has-text-black is-size-4">Branch A</h2>
             <h3 class="is-size-6 has-text-centered items_ordered">
@@ -58,7 +58,7 @@
             class="column m-3 box has-background-white is-2 is-webkit-center"
           >
             <figure class="image is-flex is-justify-content-center p-2">
-              <img src="../assets/logo.png" alt="" class="" />
+              <img src="@/assets/logo.png" alt="" class="" />
             </figure>
             <h2 class="is-size-6 has-text-black is-size-4">Branch A</h2>
             <h3 class="is-size-6 has-text-centered items_ordered">
@@ -74,7 +74,7 @@
             class="column m-3 box has-background-white is-2 is-webkit-center"
           >
             <figure class="image is-flex is-justify-content-center p-2">
-              <img src="../assets/logo.png" alt="" class="" />
+              <img src="@/assets/logo.png" alt="" class="" />
             </figure>
             <h2 class="is-size-6 has-text-black is-size-4">Branch A</h2>
             <h3 class="is-size-6 has-text-centered items_ordered">
@@ -90,7 +90,7 @@
             class="column m-3 box has-background-white is-2 is-webkit-center"
           >
             <figure class="image is-flex is-justify-content-center p-2">
-              <img src="../assets/logo.png" alt="" class="" />
+              <img src="@/assets/logo.png" alt="" class="" />
             </figure>
             <h2 class="is-size-6 has-text-black is-size-4">Branch A</h2>
             <h3 class="is-size-6 has-text-centered items_ordered">
@@ -106,7 +106,7 @@
             class="column m-3 box has-background-white is-2 is-webkit-center"
           >
             <figure class="image is-flex is-justify-content-center p-2">
-              <img src="../assets/logo.png" alt="" class="" />
+              <img src="@/assets/logo.png" alt="" class="" />
             </figure>
             <h2 class="is-size-6 has-text-black is-size-4">Branch A</h2>
             <h3 class="is-size-6 has-text-centered items_ordered">
@@ -122,7 +122,7 @@
             class="column m-3 box has-background-white is-2 is-webkit-center"
           >
             <figure class="image is-flex is-justify-content-center p-2">
-              <img src="../assets/logo.png" alt="" class="" />
+              <img src="@/assets/logo.png" alt="" class="" />
             </figure>
             <h2 class="is-size-6 has-text-black is-size-4">Branch A</h2>
             <h3 class="is-size-6 has-text-centered items_ordered">
