@@ -109,6 +109,30 @@ const routes = [
             requireLogin: true
         }
     },
+    {
+        path: '/branches/:id',
+        name: 'Branch',
+        component: Branch,
+        meta: {
+            requireLogin: true
+        }
+    },
+    {
+        path: '/branches/:id/edit',
+        name: 'EditBranch',
+        component: EditBranch,
+        meta: {
+            requireLogin: true
+        }
+    },
+    {
+        path: '/branchTransfer',
+        name: 'BranchTransfers',
+        component: BranchTransfers,
+        meta: {
+            requireLogin: true
+        }
+    },
 
     //customers
     {
@@ -180,7 +204,7 @@ const routes = [
 
     //inventory
     {
-        path: '/category',
+        path: '/categories/:id',
         name: 'Category',
         component: Category,
         meta: {
@@ -188,9 +212,25 @@ const routes = [
         }
     },
     {
-        path: '/product',
+        path: '/categories',
+        name: 'Categories',
+        component: Categories,
+        meta: {
+            requireLogin: true
+        }
+    },
+    {
+        path: '/products/:id',
         name: 'Product',
         component: Product,
+        meta: {
+            requireLogin: true
+        }
+    },
+    {
+        path: '/products',
+        name: 'Products',
+        component: Products,
         meta: {
             requireLogin: true
         }
@@ -199,24 +239,6 @@ const routes = [
         path: '/inventory',
         name: 'Inventory',
         component: Inventory,
-        meta: {
-            requireLogin: true
-        }
-    },
-
-    //orders and transactions
-    {
-        path: '/orders',
-        name: 'Orders',
-        component: Orders,
-        meta: {
-            requireLogin: true
-        }
-    },
-    {
-        path: '/transactions',
-        name: 'Transactions',
-        component: Transactions,
         meta: {
             requireLogin: true
         }
@@ -275,6 +297,41 @@ const routes = [
         path: '/hr_reports',
         name: 'HRReports',
         component: HRReports,
+        meta: {
+            requireLogin: true
+        }
+    },
+
+
+    //orders and transactions
+    {
+        path: '/orders',
+        name: 'Orders',
+        component: Orders,
+        meta: {
+            requireLogin: true
+        }
+    },
+    {
+        path: '/orders:id',
+        name: 'Order',
+        component: Order,
+        meta: {
+            requireLogin: true
+        }
+    },
+    {
+        path: '/transactions',
+        name: 'Transactions',
+        component: Transactions,
+        meta: {
+            requireLogin: true
+        }
+    },
+    {
+        path: '/transactions:id',
+        name: 'Transaction',
+        component: Transaction,
         meta: {
             requireLogin: true
         }

@@ -32,20 +32,6 @@
                   </button>
                 </div>
               </div>
-<!-- 
-              <hr />
-              <p class="is-size-7">
-                Don't have an account yet?<router-link
-                  to="/signup"
-                  class="has-text-warning"
-                >
-                  Register
-                </router-link><br>
-                Or
-                <router-link to="/signup" class="has-text-warning">
-                  Forgot Password
-                </router-link>
-              </p> -->
             </form>
           </div>
         </div>
@@ -66,43 +52,43 @@ export default {
       errors: [],
     };
   },
-  //   mounted(){
-  //     document.title='Welcome | Pokot'
-  //   },
-  //   methods:{
-  //     async submitForm(){
-  //       this.$store.commit('setIsLoading',true)
-  //       axios.defaults.headers.common['Authorization']='' //reset the authorization
-  //       localStorage.removeItem('token') //just to make sure that we are not auntheticated
-  //       const formData={
-  //         username: this.username
-  //       }
-  //       await axios
-  //         .post('/api/v1/token/login/',formData)
-  //         .then(response=>{
-  //           const token=response.data.auth_token
+    mounted(){
+      document.title='Password | Pos'
+    },
+    methods:{
+      async submitForm(){
+        // this.$store.commit('setIsLoading',true)
+        // axios.defaults.headers.common['Authorization']='' //reset the authorization
+        // localStorage.removeItem('token') //just to make sure that we are not auntheticated
+        // const formData={
+        //   username: this.username
+        // }
+        // await axios
+        //   .post('/api/v1/users/activation',formData)
+        //   .then(response=>{
+            // const token=response.data.auth_token
 
-  //           this.$store.commit('setToken', token)
-  //           axios.defaults.headers.common['Authorization']='Token '+ token
-  //           localStorage.setItem('token', token)
+            // this.$store.commit('setToken', token)
+            // axios.defaults.headers.common['Authorization']='Token '+ token
+            // localStorage.setItem('token', token)
 
-  //           //back to previous page or to home
-  //           this.$router.push('/success')
-  //         })
-  //          .catch(error=>{
-  //             if(error.response){
-  //               for(const property in error.response.data){
-  //                 this.errors.push(`${property}:${error.response.data[property]}`)
-  //               }
-  //             }
-  //             else if(error.message){
-  //               this.errors.push('Something went wrong. Please try again')
-  //             }
-  //           })
+            //back to previous page or to home
+          //   this.$router.push('/success')
+          // })
+          //  .catch(error=>{
+          //     if(error.response){
+          //       for(const property in error.response.data){
+          //         this.errors.push(`${property}:${error.response.data[property]}`)
+          //       }
+          //     }
+          //     else if(error.message){
+          //       this.errors.push('Something went wrong. Please try again')
+          //     }
+          //   })
 
-  //           this.$store.commit('setIsLoading',false)
-  //     }
-  //   }
+          //   this.$store.commit('setIsLoading',false)
+      }
+    }
 };
 </script>
 <style scoped>

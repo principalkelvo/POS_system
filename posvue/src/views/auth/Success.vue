@@ -62,7 +62,7 @@ export default {
   //         username: this.username
   //       }
   //       await axios
-  //         .post('/api/v1/token/login/',formData)
+  //         .post('/api/v1/user/activation',formData)
   //         .then(response=>{
   //           const token=response.data.auth_token
 

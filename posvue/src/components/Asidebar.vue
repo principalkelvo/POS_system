@@ -71,7 +71,7 @@
             >
           </li>
           <li>
-            <router-link to="/product" class="pl-2"
+            <router-link to="/products" class="pl-2"
               >Product Management</router-link
             >
           </li>
