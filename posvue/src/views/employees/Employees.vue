@@ -7,14 +7,14 @@
             Staff
           </h2>
           <div class="columns is-fullwidth has-background-white box">
-            <div class="column m-2 box has-background-faded-pink is-clickable" @click="addEmployee = !addEmployee; handleClicksAdd()">
+            <div class="column m-2 box has-background-faded-pink is-clickable" @click="activeTab= 'AddEmployee'">
               <h2
                 class="is-size-6 has-text-weight-bold has-text-black is-size-4 has-text-centered"
               >
                 Add Employees
               </h2>
             </div>
-            <div class="column m-2 box has-background-faded-pink is-clickable" @click="allEmployees= !allEmployees;handleClicksAll()">
+            <div class="column m-2 box has-background-faded-pink is-clickable" @click="activeTab = 'AllEmployees' ">
               <h2
                 class="is-size-6 has-text-weight-bold has-text-black is-size-4 has-text-centered"
               >
@@ -36,8 +36,7 @@
               </h2>
             </div>
           </div>
-          <AddEmployee v-if="addEmployee===true"/>
-          <AllEmployees v-if="allEmployees===true"/>
+          <component :is="activeTab"/>
         </div>
       </div>
     </section>
@@ -52,8 +51,7 @@ export default {
   name: "Employees",
   data() {
     return{
-      addEmployee: false,
-      allEmployees: false,
+      activeTab: 'AddEmployee'
     }
   },
   components: {
@@ -61,18 +59,7 @@ export default {
     AllEmployees,
   },
   methods: {
-    handleClicksAdd(){
-      if(this.addEmployee===true){
-        this.allEmployees = false;
-        console.log(this.allEmployees)
-      }
-    },
-    handleClicksAll(){      
-      if(this.allEmployees===true){
-        this.addEmployee=false
-        console.log(this.addEmployee)
-      }
-    }
+    
   },
 };
 </script>
