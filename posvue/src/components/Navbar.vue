@@ -201,6 +201,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 @media screen and (max-width: 425px) {
   .navbar-item {
     padding-right: 0;

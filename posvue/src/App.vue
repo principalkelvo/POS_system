@@ -90,12 +90,13 @@ nav.navbar {
   background: linear-gradient(
     90.65deg,
     #8a33de 21.43%,
-    rgba(147, 98, 247, 0.71) 112.7%
+    #9362f7 112.7%
   );
   left: 260px;
   width: calc(100% - 260px);
   padding: 0 10px;
   transition: all 0.5s ease;
+  position: fixed;
 }
 
 .sidebar.close ~ .navbar {
