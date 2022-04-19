@@ -14,25 +14,10 @@
           Experience info -->
     <form @submit.prevent="submitForm">
       <div class="columns is-multiline has-background-white box">
-        <!-- upload profile image -->
+        <!-- profile image -->
         <div class="column is-12 is-flex is-justify-content-center">
           <div class="image main_image">
             <img class="p-2" v-bind:src="branch.image"/>
-
-            <!-- <i
-              class="bx bx-pencil box is-clickable"
-              @click="$refs.file.click()"
-            >
-            </i>
-
-            <input
-              ref="file"
-              type="file"
-              accept="image/*"
-              style="display:none"
-              @change="onFileSelected"
-              @input="pickFile"
-            /> -->
           </div>         
         </div>
 
@@ -40,26 +25,18 @@
 
         <div class="column m-4">
           <div class="field is-horizontal">
-            <!-- Name -->
+            <!-- Branch Name -->
             <div class="field-body">
               <div class="field">
                 <label class="label is-uppercase is-size-7">name *</label>
-                <p class="control is-expanded has-icons-left">
-                  <input
-                    class="input is-small"
-                    type="text"
-                    placeholder="Name"
-                    v-model="branch.name"
-                  />
-                  <span class="icon is-small is-left">
-                    <i class="bx bx-user"></i>
-                  </span>
+                <p > branch.name
+                  
                 </p>
               </div>
             </div>
           </div>
 
-          <label class="label is-uppercase mt-5 is-size-7">National ID *</label>
+          <label class="label is-uppercase mt-5 is-size-7">CODE *</label>
           <div class="field is-4">
             <div class="field-body">
               <div class="field">
@@ -67,8 +44,7 @@
                   <input
                     class="input is-small"
                     type="text"
-                    v-model="branch.id_card"
-                    placeholder="ID number"
+                    v-model="branch.code"
                   />
                   <span class="icon is-small is-left">
                     <i class="bx bx-card"></i>
