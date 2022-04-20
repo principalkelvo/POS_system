@@ -20,34 +20,31 @@ import Footer from "@/components/Footer.vue";
 import Loader2 from "@/components/Loader2.vue";
 import Loader from "@/components/Loader.vue";
 
-
-
-
 export default {
   name: "App",
-   
+
   components: {
     Navbar,
     Asidebar,
     Footer,
     Loader2,
-    Loader
+    Loader,
   },
   beforeCreate() {
-    this.$store.commit('initializeStore')
-    const token= this.$store.state.token
+    this.$store.commit("initializeStore");
+    const token = this.$store.state.token;
     // check if token exists
-    if(this.$store.state.token){
-      axios.defaults.headers.common['Authorization']= "Token "+ this.$store.state.token
-    }
-    else{
-      axios.defaults.headers.common['Authorization']=" "
+    if (this.$store.state.token) {
+      axios.defaults.headers.common["Authorization"] =
+        "Token " + this.$store.state.token;
+    } else {
+      axios.defaults.headers.common["Authorization"] = " ";
     }
   },
   data() {
     return {
-      width: window.innerWidth, 
-      height: window.innerHeight
+      width: window.innerWidth,
+      height: window.innerHeight,
     };
   },
   created() {
@@ -58,22 +55,21 @@ export default {
   },
   mounted() {
     this.onResize();
-
   },
-  methods:{
+  methods: {
     onResize() {
       this.width = window.innerWidth;
       this.height = window.innerHeight;
-      console.log(this.width +'port'+ this.height)
-      if (this.width<=768){
-      let sidebar = document.querySelector(".sidebar");
-                let menu = document.querySelector(".menu");
-                console.log(menu);
-                sidebar.classList.add("close");
-                console.log('menu');}
+      console.log(this.width + "port" + this.height);
+      if (this.width <= 768) {
+        let sidebar = document.querySelector(".sidebar");
+        let menu = document.querySelector(".menu");
+        console.log(menu);
+        sidebar.classList.add("close");
+        console.log("menu");
+      }
     },
   },
-  
 };
 </script>
 
@@ -81,17 +77,16 @@ export default {
 @import "@/../node_modules/bulma";
 @import "../node_modules/boxicons/css/boxicons.min.css";
 
-
-#app{
-  background: linear-gradient(122.46deg, #DD51ED 11.61%, rgba(221, 81, 237, 0.35) 103.87%);
+#app {
+  background: linear-gradient(
+    122.46deg,
+    #dd51ed 11.61%,
+    rgba(221, 81, 237, 0.35) 103.87%
+  );
 }
 
 nav.navbar {
-  background: linear-gradient(
-    90.65deg,
-    #8a33de 21.43%,
-    #9362f7 112.7%
-  );
+  background: linear-gradient(90.65deg, #8a33de 21.43%, #9362f7 112.7%);
   left: 260px;
   width: calc(100% - 260px);
   padding: 0 10px;
@@ -102,7 +97,6 @@ nav.navbar {
   left: 78px;
   width: calc(100% - 78px);
 }
-
 
 section.section {
   position: relative;
@@ -119,33 +113,33 @@ section.section {
   left: 78px;
   width: calc(100% - 78px);
 }
-@media screen and (max-width: 720px){
-   section.section {
-    padding:0 !important;
-    margin:0 !important;
+@media screen and (max-width: 720px) {
+  section.section {
+    padding: 0 !important;
+    margin: 0 !important;
   }
 }
-@media screen and (max-width: 425px){
+@media screen and (max-width: 425px) {
   .sidebar.close ~ .section {
-  opacity:1;
-  transition: all 0.4s ease;
-}
-.sidebar.close ~ .footer {
-  opacity:1;
-  transition: all 0.4s ease;
-}
-  .sidebar ~ .section{
-    opacity:0;
+    opacity: 1;
+    transition: all 0.4s ease;
   }
-  .sidebar ~ .footer{
-    opacity:0;
+  .sidebar.close ~ .footer {
+    opacity: 1;
+    transition: all 0.4s ease;
+  }
+  .sidebar ~ .section {
+    opacity: 0;
+  }
 
+  .sidebar ~ .footer {
+    opacity: 0;
   }
   .title.is-3 {
     font-size: 1.4rem;
-}
-.subtitle.is-size-5 {
+  }
+  .subtitle.is-size-5 {
     font-size: 1rem !important;
-}
+  }
 }
 </style>

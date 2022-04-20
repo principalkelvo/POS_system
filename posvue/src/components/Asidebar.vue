@@ -303,7 +303,7 @@ export default {
   height: 100%;
   width: 260px;
   background: linear-gradient(177.08deg, #892bda -7.99%, #9362f7 118.63%);
-  z-index: 100;
+  z-index: 20;
   transition: all 0.5s ease;
 }
 .sidebar.close {
