@@ -96,7 +96,6 @@ nav.navbar {
   width: calc(100% - 260px);
   padding: 0 10px;
   transition: all 0.5s ease;
-  position: fixed;
 }
 
 .sidebar.close ~ .navbar {
