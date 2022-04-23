@@ -69,13 +69,13 @@
             <!-- Name -->
             <div class="field-body">
               <div class="field">
-                <label class="label is-uppercase is-size-7">name *</label>
+                <label class="label is-uppercase is-size-7">First name *</label>
                 <p class="control is-expanded has-icons-left">
                   <input
                     class="input is-small"
                     type="text"
-                    placeholder="Name"
-                    v-model="name"
+                    placeholder="First name"
+                    v-model="fname"
                   />
                   <span class="icon is-small is-left">
                     <i class="bx bx-user"></i>
@@ -108,13 +108,13 @@
             <!-- Name -->
             <div class="field-body">
               <div class="field">
-                <label class="label is-uppercase is-size-7">reg no. *</label>
+                <label class="label is-uppercase is-size-7">Last Name *</label>
                 <p class="control is-expanded has-icons-left">
                   <input
                     class="input is-small"
-                    type="number"
-                    placeholder="Registration Number"
-                    v-model="reg_no"
+                    type="name"
+                    placeholder="Last Name"
+                    v-model="lname"
                   />
                   <span class="icon is-small is-left">
                     <i class="bx bx-package"></i>
@@ -285,9 +285,9 @@ export default {
   name: "AddEmployee",
   data() {
     return {
-      name: "",
+      fname: "",
+      lname: "",
       id_card: "",
-      reg_no: "",
       emp_status: "active",
       phone: "",
       email: "",
@@ -341,9 +341,9 @@ export default {
 
       let formData = new FormData();
       formData.append("image", this.image);
-      formData.append("name", this.name);
+      formData.append("fname", this.fname);
+      formData.append("lname", this.lname);
       formData.append("id_card", this.id_card);
-      formData.append("reg_no", this.reg_no);
       formData.append("email", this.email);
       formData.append("emp_status", this.emp_status);
       formData.append("phone", this.phone);

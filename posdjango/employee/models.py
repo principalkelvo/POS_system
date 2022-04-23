@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinLengthValidator, RegexValidator
 from django.utils.translation import gettext_lazy as _
 
 from io import BytesIO
@@ -31,11 +32,16 @@ class Employee(models.Model):
         (MARRIED,'married')
     )
     
-    name= models.CharField(max_length=255)
-    id_card= models.CharField(max_length=9)
-    reg_no= models.CharField(max_length=255)
-    phone= models.CharField(max_length=255)
-    email= models.EmailField()
+    user= models.OneToOneField(User,related_name='userprofile', on_delete=models.CASCADE)
+    is_employee= models.BooleanField(default=True)
+    fname= models.CharField(max_length=255)
+    lname= models.CharField(max_length=255)
+    username= models.CharField(max_length=255, unique=True,blank=True, null=True, editable=False)
+    id_card= models.CharField(max_length=9,validators=[MinLengthValidator(9)], unique=True)
+    reg_no= models.AutoField(unique='True',primary_key=True)
+    phoneNumberRegex =RegexValidator(regex= r"^\+?1?\d{8,15}$")
+    phone= models.CharField(max_length=16, validators=[phoneNumberRegex], unique=True)
+    email= models.EmailField(blank=True, max_length=255)
     location= models.CharField(max_length=255)
     marital_status= models.CharField(max_length=255, choices=MARITAL_CHOICES, default=SINGLE)
     position= models.CharField(max_length=255)
@@ -52,10 +58,10 @@ class Employee(models.Model):
         
 
     def __str__(self): #change to string
-            return self.name
+            return self.fname
         
     def get_absolute_url(self):
-        return f'/{self.id}/'
+        return f'/{self.reg_no}/'
         
         
     def get_image(self):                
@@ -87,3 +93,9 @@ class Employee(models.Model):
 
         return thumbnail
     
+    def get_username(self):
+        first_letter= self.fname
+        return first_letter[0].upper() + self.lname.upper()
+        
+
+User.userprofile = property(lambda u:Employee.objects.get_or_create(user=u)[0])
