@@ -43,7 +43,7 @@
           <span v-if="props.column.field == 'btn'">
             <span class="icon mr-2 is-clickable"
               ><router-link
-                :to="{ name: 'Employee', params: { id: props.row.id } }"
+                :to="{ name: 'Employee', params: { id: props.row.reg_no } }"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="has-text-dark"
@@ -68,10 +68,10 @@
 
             <span class="icon is-clickable">
               <router-link
-                :to="{ name: 'EditEmployee', params: { id: props.row.id } }"
+                :to="{ name: 'EditEmployee', params: { id: props.row.reg_no } }"
                 ><i class="bx bx-pencil has-text-dark"></i
               ></router-link>
-              <!-- {{props.row.id}} -->
+              <!-- {{props.row.reg_no}} -->
               <!-- <i class="bx bx-pencil "></i> -->
             </span>
 
@@ -114,10 +114,10 @@ export default {
     return {
       searchTerm: "",
       columns: [
-        { label: "ID", field: "id", tdClass: "is-size-7" },
+        { label: "ID", field: "reg_no", tdClass: "is-size-7" },
         { label: "Employee", field: "get_image", tdClass: "is-size-7" },
         { label: "Number", field: "reg_no", tdClass: "is-size-7" },
-        { label: "Name", field: "name", tdClass: "is-size-7" },
+        { label: "Name", field: "fname", tdClass: "is-size-7" },
         {
           label: "E-mail",
           field: "email",
@@ -145,7 +145,7 @@ export default {
         .get("/api/v1/employees/")
         .then((response) => {
           this.rows = response.data;
-          // console.log(this.rows.id);
+          // console.log(this.rows.reg_no);
         })
         .catch((error) => {
           console.log(error);

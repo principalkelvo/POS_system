@@ -4,7 +4,7 @@
       <div class="hero-body">
         <div class="">
     <h2 class="title has-text-weight-bold has-text-black is-size-4">
-      {{employee.name}} #{{employee.id}}
+      {{employee.name}} #{{employee.reg_no}}
     </h2>
     <!-- Personal info Date of join, birthday, Address,gender, Id no. Nationality Religion marital status
           Bank info Bank name, account number,kra
@@ -318,7 +318,7 @@ export default {
     async getEmployee(){
       this.$store.commit('setIsLoading',true)
 
-      const employeeID= this.$route.params.id
+      const employeeID= this.$route.params.reg_no
       axios
         .get(`api/v1/employees/${employeeID}/`)
         .then(response=>{
@@ -339,7 +339,7 @@ export default {
     async submitForm() {
       this.$store.commit('setIsLoading',true)
 
-      const employeeID= this.$route.params.id
+      const employeeID= this.$route.params.reg_no
 
       let formData = new FormData();
       formData.append("image", this.image);

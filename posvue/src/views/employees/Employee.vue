@@ -15,7 +15,7 @@
                     </figure>
                   </div>
                   <div class="media-content">
-                    <p class="title is-4">{{ employee.name }}</p>
+                    <p class="title is-4">{{ employee.fname }}</p>
                     <p class="subtitle is-6">{{ employee.position }}</p>
                     <p class="has-text-weight-bold">
                       Employee ID : #{{ employee.id_card }}
@@ -330,14 +330,14 @@
                       <div class="field-body">
                         <div class="field">
                           <label class="label is-uppercase is-size-7"
-                            >name *</label
+                            >First name *</label
                           >
                           <p class="control is-expanded has-icons-left">
                             <input
                               class="input is-small"
                               type="text"
-                              placeholder="Name"
-                              v-model="employee.name"
+                              placeholder="First Name"
+                              v-model="employee.fname"
                             />
                             <span class="icon is-small is-left">
                               <i class="bx bx-user"></i>
@@ -578,7 +578,8 @@ export default {
   name: "EditEmployee",
   data() {
     return {
-      name: "",
+      fname: "",
+      lname: "",
       id_card: "",
       reg_no: "",
       emp_status: "active",
@@ -666,12 +667,12 @@ export default {
 
     async getEmployee() {
       this.$store.commit("setIsLoading", true);
-      const employeeID = this.$route.params.id;
+      const employeeID = this.$route.params.reg_no;
       axios
         .get(`api/v1/employees/${employeeID}/`)
         .then((response) => {
           this.employee = response.data;
-          console.log(this.employee.id);
+          console.log(this.employee.reg_no);
           this.previewImage = this.employee.image;
           console.log(this.previewImage)
         })
@@ -683,12 +684,12 @@ export default {
 
     async submitForm() {
       this.$store.commit("setIsLoading", true);
-      const employeeID= this.$route.params.id
+      const employeeID= this.$route.params.reg_no
 
       let formData = new FormData();
       formData.append("image", this.image);
-      formData.append("name", this.employee.name);
-      formData.append("id_card", this.employee.id_card);
+      formData.append("name", this.employee.fname);
+      formData.append("id_card", this.employee.reg_no_card);
       formData.append("reg_no", this.employee.reg_no);
       formData.append("email", this.employee.email);
       formData.append("emp_status", this.employee.emp_status);
