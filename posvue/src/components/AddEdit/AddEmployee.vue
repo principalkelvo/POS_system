@@ -14,7 +14,7 @@
         <!-- upload profile image -->
         <div class="column is-4 m-4">
           <div class="image main_image">
-            <img class="p-2" v-bind:src="previewImage"/>
+            <img class="p-2" v-bind:src="previewImage" />
 
             <i
               class="bx bx-pencil box is-clickable"
@@ -26,7 +26,7 @@
               ref="file"
               type="file"
               accept="image/*"
-              style="display:none"
+              style="display: none"
               @change="onFileSelected"
               @input="pickFile"
             />
@@ -280,7 +280,7 @@
 
 <script>
 import axios from "axios";
-import {toast} from 'bulma-toast'
+import { toast } from "bulma-toast";
 export default {
   name: "AddEmployee",
   data() {
@@ -303,6 +303,16 @@ export default {
       progress: 0,
       message: "",
       imageInfos: [],
+
+      user: [
+        {          
+        username:'fname',        
+        },
+        {          
+        password: "admin",        
+        },
+      ]
+      
     };
   },
   components: {
@@ -317,29 +327,32 @@ export default {
       console.log(this.image);
     },
 
-    selectImage(){
-      this.$refs.file.click()
+    selectImage() {
+      this.$refs.file.click();
     },
     pickFile() {
-      let input= this.$refs.file
-      let file= input.files
-      if(file && file[0]){
-        let reader =new FileReader()
-        reader.onload= e => {
-          this.previewImage= reader.result
-          console.log(' image '+this.previewImage)
-        }
-      reader.readAsDataURL(file[0])
-      this.$emit('input',file[0])
-
+      let input = this.$refs.file;
+      let file = input.files;
+      if (file && file[0]) {
+        let reader = new FileReader();
+        reader.onload = (e) => {
+          this.previewImage = reader.result;
+          console.log(" image " + this.previewImage);
+        };
+        reader.readAsDataURL(file[0]);
+        this.$emit("input", file[0]);
       }
     },
 
     async submitForm() {
-      
-      this.$store.commit('setIsLoading',true)
+      this.$store.commit("setIsLoading", true);
 
       let formData = new FormData();
+      var json_arr= JSON.stringify(this.user);
+
+      formData.append("user", json_arr);
+      // formData.append("user", this.user);
+
       formData.append("image", this.image);
       formData.append("fname", this.fname);
       formData.append("lname", this.lname);
@@ -350,32 +363,32 @@ export default {
       formData.append("position", this.position);
       formData.append("location", this.location);
       formData.append("marital_status", this.marital_status);
-      console.log(this.formData);
 
-      
+      console.log(...formData);
+
       await axios
-        .post("/api/v1/employees/", formData,{
+        .post("/api/v1/employees/", formData, {
           headers: {
-            "Content-Type": "multipart/form-data"
-            }
+            "Content-Type": "multipart/form-data",
+          },
         })
         .then((response) => {
           console.log(response.data);
           toast({
-            message:'The employee was successfully created',
-            type: 'is-success',
-            dismissible:true,
-            pauseOnHover:true,
-            duration:2000,
-            position:'bottom-right',
-          })
-          this.$router.push('/')
+            message: "The employee was successfully created",
+            type: "is-success",
+            dismissible: true,
+            pauseOnHover: true,
+            duration: 2000,
+            position: "bottom-right",
+          });
+          this.$router.push("/");
         })
         .catch((error) => {
           console.log(error);
         });
-        
-      this.$store.commit('setIsLoading',false)
+
+      this.$store.commit("setIsLoading", false);
     },
   },
   // mounted() {

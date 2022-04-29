@@ -263,7 +263,6 @@ export default {
     return {
       name: "",
       id_card: "",
-      reg_no: "",
       emp_status: "active",
       phone: "",
       email: "",
@@ -318,7 +317,7 @@ export default {
     async getEmployee(){
       this.$store.commit('setIsLoading',true)
 
-      const employeeID= this.$route.params.reg_no
+      const employeeID= this.$route.params.id
       axios
         .get(`api/v1/employees/${employeeID}/`)
         .then(response=>{
@@ -339,7 +338,7 @@ export default {
     async submitForm() {
       this.$store.commit('setIsLoading',true)
 
-      const employeeID= this.$route.params.reg_no
+      const employeeID= this.$route.params.id
 
       let formData = new FormData();
       formData.append("image", this.image);

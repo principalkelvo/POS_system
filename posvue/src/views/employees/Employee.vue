@@ -16,9 +16,10 @@
                   </div>
                   <div class="media-content">
                     <p class="title is-4">{{ employee.fname }}</p>
+                    <p class="title is-4">## {{ employee.username }}</p>
                     <p class="subtitle is-6">{{ employee.position }}</p>
                     <p class="has-text-weight-bold">
-                      Employee ID : #{{ employee.id_card }}
+                      Employee ID : #{{ employee.id_card }} 
                     </p>
                     <p class="has-text-weight-normal">
                       Employee status : {{ employee.status }}
@@ -667,12 +668,12 @@ export default {
 
     async getEmployee() {
       this.$store.commit("setIsLoading", true);
-      const employeeID = this.$route.params.reg_no;
+      const employeeID = this.$route.params.id;
       axios
         .get(`api/v1/employees/${employeeID}/`)
         .then((response) => {
           this.employee = response.data;
-          console.log(this.employee.reg_no);
+          console.log(this.employee.user.username);
           this.previewImage = this.employee.image;
           console.log(this.previewImage)
         })
@@ -684,7 +685,7 @@ export default {
 
     async submitForm() {
       this.$store.commit("setIsLoading", true);
-      const employeeID= this.$route.params.reg_no
+      const employeeID= this.$route.params.id
 
       let formData = new FormData();
       formData.append("image", this.image);
